@@ -1,15 +1,15 @@
-import nextPlugin from '@next/eslint-plugin-next';
+import nextPlugin from "@next/eslint-plugin-next";
 
 export default tseslint.config([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     plugins: {
-      '@next/next': nextPlugin,
+      "@next/next": nextPlugin,
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
+      ...nextPlugin.configs["core-web-vitals"].rules,
     },
     languageOptions: {
       ecmaVersion: 2020,

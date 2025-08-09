@@ -1,14 +1,24 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 interface SolidButtonProps {
   children: ReactNode;
   onClick?: () => void;
+  href?: string;
 }
 
-const SolidButton = ({ children, onClick }: SolidButtonProps) => {
+const SolidButton = ({ children, onClick, href }: SolidButtonProps) => {
+  if (href)
+    return (
+      <a
+        className="border-sub text-sub hover:bg-sub transform rounded-sm border bg-light px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:text-light"
+        href={href}
+      >
+        {children}
+      </a>
+    );
   return (
     <button
-      className="bg-light text-dark px-4 py-2 rounded-sm text-lg hover:bg-primary hover:text-light hover:scale-105 transform transition-all duration-300"
+      className="border-sub text-sub hover:bg-sub transform rounded-sm border bg-light px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:text-light"
       onClick={onClick}
     >
       {children}

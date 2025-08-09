@@ -6,11 +6,13 @@ import SolidButton from "../shared/ui/SolidButton";
 
 const Profile = () => {
   return (
-    <div className="w-full h-full bg-transparent flex flex-col justify-center items-center p-8">
-      <Title>My Profile</Title>
-      <Divider />
-      <Subtitle>Frontend Developer</Subtitle>
-      <div className="flex gap-4 mt-8">
+    <div className="flex h-full w-full flex-row items-center justify-center gap-7 bg-transparent p-8 xl:flex-col xl:gap-0">
+      <div className="flex flex-col xl:items-center">
+        <Title>My Profile</Title>
+        <Subtitle>Frontend Developer</Subtitle>
+      </div>
+
+      <div className="flex gap-4 xl:mt-8">
         <OutlineButton>View Resume</OutlineButton>
         <SolidButton>Contact Me</SolidButton>
       </div>

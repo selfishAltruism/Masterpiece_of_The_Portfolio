@@ -1,6 +1,22 @@
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.multi-gradient-background {
+  background-color: #1f2937; /* fallback color */
+  background-image:
+    radial-gradient(at 0% 0%, #4338ca 0px, transparent 50%),
+    radial-gradient(at 100% 0%, #2f405c 0px, transparent 50%),
+    radial-gradient(at 100% 100%, #000000 0px, transparent 50%);
+}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -11,7 +27,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: #ffffff4b;
   border-radius: 4px;
 }
 

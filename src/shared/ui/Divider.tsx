@@ -1,5 +1,5 @@
 const Divider = () => {
-  return <hr className="border-t border-light my-4" />;
+  return <hr className="my-4 w-full border border-light" />;
 };
 
 export default Divider;

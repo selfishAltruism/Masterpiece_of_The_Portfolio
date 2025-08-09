@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 interface TitleProps {
   children: ReactNode;
 }
 
 const Title = ({ children }: TitleProps) => {
-  return <h1 className="text-4xl font-bold text-light">{children}</h1>;
+  return <h1 className="mb-3 text-3xl text-light">{children}</h1>;
 };
 
 export default Title;

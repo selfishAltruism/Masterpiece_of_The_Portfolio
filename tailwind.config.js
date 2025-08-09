@@ -8,14 +8,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#6241f6',
-        'dark': '#1c1c1c',
-        'light': '#ffffff',
+        primary: "#4338CA",
+        sub: "#0f0093",
+        dark: "#1c1c1c",
+        light: "#ffffff",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ["S-CoreDream-3Light", "Inter", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
+};
