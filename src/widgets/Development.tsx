@@ -1,8 +1,9 @@
 import React from "react";
 import Title from "../shared/ui/Title";
-import { developmentLogs } from "../data/development";
+import { developmentLogs } from "../shared/data/development";
 import OutlineButton from "../shared/ui/OutlineButton";
 import SolidButton from "@/shared/ui/SolidButton";
+import { StackSpan } from "@/shared/ui/StackSpan";
 
 const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -10,7 +11,7 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8"
     >
-      <Title>Development Log</Title>
+      <Title>Development Detail</Title>
       <div className="mt-2 flex flex-col gap-6">
         {developmentLogs.map((log, index) => (
           <div
@@ -23,18 +24,13 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
               <p className="mb-4 text-sm text-gray-600">{log.description}</p>
               <div className="mb-4 flex flex-wrap gap-2">
                 {log.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="rounded-md bg-gray-200 px-3 pb-[3px] pt-[4px] text-sm text-gray-700"
-                  >
-                    {tag}
-                  </span>
+                  <StackSpan idx={i} tag={tag} />
                 ))}
               </div>
             </div>
             <div className="flex items-center justify-between">
               <p className="text-xs text-gray-500">{log.period}</p>
-              <SolidButton href={log.link}>자세히 보기</SolidButton>
+              <OutlineButton href={log.link}>자세히 보기</OutlineButton>
             </div>
           </div>
         ))}

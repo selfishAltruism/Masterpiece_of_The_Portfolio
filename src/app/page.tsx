@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Profile from "../widgets/Profile";
 import Career from "../widgets/Career";
 import Development from "../widgets/Development";
-import { developmentLogs } from "../data/development";
-import { careers, projectsAndActivities } from "../data/career"; // Import careers and projectsAndActivities
+import { developmentLogs } from "../shared/data/development";
+import { careers, projectsAndActivities } from "../shared/data/career"; // Import careers and projectsAndActivities
 
 interface Line {
   path: string;
@@ -68,7 +68,8 @@ export default function Home() {
       const isXlScreen = window.innerWidth >= 1280; // Tailwind's default xl breakpoint
 
       if (isXlScreen && profileSourceRef.current) {
-        const profileSourceRect = profileSourceRef.current.getBoundingClientRect();
+        const profileSourceRect =
+          profileSourceRef.current.getBoundingClientRect();
 
         // Connect to Career cards
         careers.forEach((career) => {
@@ -78,7 +79,10 @@ export default function Home() {
             const careerRect = careerCard.getBoundingClientRect();
 
             const startX = profileSourceRect.right - mainRect.left;
-            const startY = profileSourceRect.top - mainRect.top + profileSourceRect.height / 2;
+            const startY =
+              profileSourceRect.top -
+              mainRect.top +
+              profileSourceRect.height / 2;
             const endX = careerRect.left - mainRect.left;
             const endY = careerRect.top - mainRect.top + careerRect.height / 2;
 
@@ -93,15 +97,21 @@ export default function Home() {
 
         // Connect to Projects & Activities cards
         projectsAndActivities.forEach((activity) => {
-          const activityCard = document.getElementById(`activity-${activity.id}`);
+          const activityCard = document.getElementById(
+            `activity-${activity.id}`,
+          );
 
           if (activityCard) {
             const activityRect = activityCard.getBoundingClientRect();
 
             const startX = profileSourceRect.right - mainRect.left;
-            const startY = profileSourceRect.top - mainRect.top + profileSourceRect.height / 2;
+            const startY =
+              profileSourceRect.top -
+              mainRect.top +
+              profileSourceRect.height / 2;
             const endX = activityRect.left - mainRect.left;
-            const endY = activityRect.top - mainRect.top + activityRect.height / 2;
+            const endY =
+              activityRect.top - mainRect.top + activityRect.height / 2;
 
             const offset = (endX - startX) * 0.5;
             const controlX1 = startX + offset;

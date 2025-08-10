@@ -1,0 +1,30 @@
+export const techStacks = {
+  "Pretty well-used / Language": ["JavaScript", "TypeScript", "HTML5"],
+  "Pretty well-used / Framework": ["React", "Next.js", "React Native"],
+  "Pretty well-used / Tool": [
+    "VS Code",
+    "Cursor AI",
+    "Vite",
+    "Webpack",
+    "ESLint",
+  ],
+  "Pretty well-used / Library": [
+    "Axios",
+    "Zustand",
+    "TanStack Query",
+    "React Router",
+    "Emotion",
+    "Tailwind CSS",
+  ],
+  "Well-used / Language": ["C++", "Python", "Dart", "Java"],
+  "Well-used / Framework": ["Flutter"],
+  "Well-used / Library": [
+    "Recoil",
+    "Redux",
+    "react-hook-form",
+    "Tiptap",
+    "react-doc-viewer",
+    "RN-async-storage",
+    "RN-ble-manager",
+  ],
+};

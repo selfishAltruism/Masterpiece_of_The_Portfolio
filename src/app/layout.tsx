@@ -5,7 +5,7 @@ import "../index.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "강민규 | Kyus Log",
+  title: "Kyu | 강민규",
   description:
     "프론트엔드 개발자 강민규의 개발 블로그입니다. Next.js, React, React Native 등 다양한 기술 스택을 다룹니다.",
   keywords: [
