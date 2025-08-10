@@ -5,6 +5,7 @@ import Profile from "../widgets/Profile";
 import Career from "../widgets/Career";
 import Development from "../widgets/Development";
 import { developmentLogs } from "../data/development";
+import { careers, projectsAndActivities } from "../data/career"; // Import careers and projectsAndActivities
 
 interface Line {
   path: string;
@@ -15,6 +16,7 @@ export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
   const careerRef = useRef<HTMLDivElement>(null);
   const devLogRef = useRef<HTMLDivElement>(null);
+  const profileSourceRef = useRef<HTMLDivElement>(null); // New ref for Profile source
 
   useEffect(() => {
     const calculateLines = () => {
@@ -28,19 +30,27 @@ export default function Home() {
         (careerRef.current?.getBoundingClientRect().top ?? 0) - mainRect.top;
 
       developmentLogs.forEach((log) => {
-        const careerCard = document.getElementById(`career-${log.careerId}`);
         const devCard = document.getElementById(`dev-${log.id}`);
+        let startCard = null;
 
-        if (careerCard && devCard) {
-          const careerRect = careerCard.getBoundingClientRect();
+        if (log.linkedTo === "career") {
+          startCard = document.getElementById(`career-${log.linkedId}`);
+        } else if (log.linkedTo === "activity") {
+          startCard = document.getElementById(`activity-${log.linkedId}`);
+        }
+
+        if (startCard && devCard) {
+          const startRect = startCard.getBoundingClientRect();
           const devRect = devCard.getBoundingClientRect();
 
-          const startX = careerRect.right - mainRect.left;
-          const startY = careerRect.top - mainRect.top + careerRect.height / 2;
+          const startX = startRect.right - mainRect.left;
+          const startY = startRect.top - mainRect.top + startRect.height / 2;
           const endX = devRect.left - mainRect.left;
           const endY = devRect.top - mainRect.top + devRect.height / 2;
 
           // Career top을 넘어가는 경우 그리지 않음.
+          // This condition might need adjustment if activities can be above careerPanelTop
+          // For now, keeping it as is, assuming similar vertical positioning.
           if (startY < careerPanelTop || endY < careerPanelTop) {
             return; // skip
           }
@@ -53,6 +63,55 @@ export default function Home() {
           newLines.push({ path });
         }
       });
+
+      // New logic for Profile to Career lines (only on xl screens)
+      const isXlScreen = window.innerWidth >= 1280; // Tailwind's default xl breakpoint
+
+      if (isXlScreen && profileSourceRef.current) {
+        const profileSourceRect = profileSourceRef.current.getBoundingClientRect();
+
+        // Connect to Career cards
+        careers.forEach((career) => {
+          const careerCard = document.getElementById(`career-${career.id}`);
+
+          if (careerCard) {
+            const careerRect = careerCard.getBoundingClientRect();
+
+            const startX = profileSourceRect.right - mainRect.left;
+            const startY = profileSourceRect.top - mainRect.top + profileSourceRect.height / 2;
+            const endX = careerRect.left - mainRect.left;
+            const endY = careerRect.top - mainRect.top + careerRect.height / 2;
+
+            const offset = (endX - startX) * 0.5;
+            const controlX1 = startX + offset;
+            const controlX2 = endX - offset;
+
+            const path = `M ${startX} ${startY} C ${controlX1} ${startY}, ${controlX2} ${endY}, ${endX} ${endY}`;
+            newLines.push({ path });
+          }
+        });
+
+        // Connect to Projects & Activities cards
+        projectsAndActivities.forEach((activity) => {
+          const activityCard = document.getElementById(`activity-${activity.id}`);
+
+          if (activityCard) {
+            const activityRect = activityCard.getBoundingClientRect();
+
+            const startX = profileSourceRect.right - mainRect.left;
+            const startY = profileSourceRect.top - mainRect.top + profileSourceRect.height / 2;
+            const endX = activityRect.left - mainRect.left;
+            const endY = activityRect.top - mainRect.top + activityRect.height / 2;
+
+            const offset = (endX - startX) * 0.5;
+            const controlX1 = startX + offset;
+            const controlX2 = endX - offset;
+
+            const path = `M ${startX} ${startY} C ${controlX1} ${startY}, ${controlX2} ${endY}, ${endX} ${endY}`;
+            newLines.push({ path });
+          }
+        });
+      }
 
       setLines(newLines);
     };
@@ -84,7 +143,7 @@ export default function Home() {
         className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-6"
         aria-label="프로필"
       >
-        <Profile />
+        <Profile ref={profileSourceRef} /> {/* Pass ref to Profile */}
       </section>
       <section
         className="col-span-4 row-span-5 xl:col-span-3 xl:row-span-6"

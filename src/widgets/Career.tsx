@@ -34,6 +34,7 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
       <div>
         {projectsAndActivities.map((activity, index) => (
           <div
+            id={`activity-${activity.id}`} // Added ID
             key={index}
             className="mb-6 mt-2 flex items-center justify-between rounded-lg border border-white bg-transparent p-4 px-7 shadow-md"
           >

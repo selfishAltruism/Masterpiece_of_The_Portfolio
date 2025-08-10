@@ -35,12 +35,14 @@ export const careers = [
 
 export const projectsAndActivities = [
   {
+    id: 1, // Added ID
     name: "개인 프로젝트 (예시)",
     description: "Next.js와 Tailwind CSS를 활용한 개인 포트폴리오 웹사이트 개발",
     period: "2024.01 ~ 2024.03",
     link: "#", // 프로젝트 링크 (GitHub, 데모 등)
   },
   {
+    id: 2, // Added ID
     name: "오픈소스 기여 (예시)",
     description: "React 기반 UI 라이브러리 버그 수정 및 기능 개선 참여",
     period: "2023.07 ~ 2023.09",

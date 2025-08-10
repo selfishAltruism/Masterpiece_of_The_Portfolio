@@ -1,13 +1,17 @@
+import React from "react";
 import Title from "../shared/ui/Title";
 import Subtitle from "../shared/ui/Subtitle";
-import Divider from "../shared/ui/Divider";
 import OutlineButton from "../shared/ui/OutlineButton";
 import SolidButton from "../shared/ui/SolidButton";
 
-const Profile = () => {
+const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div className="flex h-full w-full flex-row items-center justify-center gap-7 bg-transparent p-8 xl:flex-col xl:gap-0">
-      <div className="flex flex-col xl:items-center">
+      <div
+        ref={ref}
+        id="profile-source"
+        className="flex flex-col px-4 xl:items-center"
+      >
         <Title>My Profile</Title>
         <Subtitle>Frontend Developer</Subtitle>
       </div>
@@ -18,6 +22,8 @@ const Profile = () => {
       </div>
     </div>
   );
-};
+});
+
+Profile.displayName = "Profile";
 
 export default Profile;
