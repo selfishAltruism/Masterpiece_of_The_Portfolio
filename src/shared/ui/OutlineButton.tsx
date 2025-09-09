@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { ArrowRight } from "lucide-react";
+
 interface OutlineButtonProps {
   children: ReactNode;
   onClick?: () => void;
@@ -8,7 +10,7 @@ interface OutlineButtonProps {
 
 const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
   const baseClass =
-    "whitespace-nowrap transform rounded-md border border-primary bg-primary px-4 py-2 text-sm text-light transition-all duration-300 hover:scale-105 flex items-center";
+    "whitespace-nowrap transform rounded-sm border border-white bg-primary px-4 py-2 text-sm text-light transition-all duration-300 hover:scale-105 flex items-center justify-between";
 
   if (href)
     return (
@@ -19,7 +21,7 @@ const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
         rel="noopener noreferrer"
       >
         {children}
-        <span className="icon-[material-symbols-light--arrow-forward-ios-rounded] -mr-1 ml-1 text-lg" />
+        <ArrowRight size={17} className="-mr-1 mb-[2px] ml-1" />
       </a>
     );
   return (

@@ -1,7 +1,8 @@
 import React from "react";
-import Title from "../shared/ui/Title";
-import OutlineButton from "../shared/ui/OutlineButton";
-import { careers, projectsAndActivities } from "../shared/data/career";
+
+import Title from "@/shared/ui/Title";
+import OutlineButton from "@/shared/ui/OutlineButton";
+import { careers, projectsAndActivities } from "@/shared/data/career";
 import SolidButton from "@/shared/ui/SolidButton";
 
 const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
@@ -11,7 +12,7 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
       className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8"
     >
       <Title>Career</Title>
-      <div>
+      <div className="mb-2">
         {careers.map((career, index) => (
           <div
             id={`career-${career.id}`}
@@ -38,7 +39,7 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
           <div
             id={`activity-${activity.id}`} // Added ID
             key={index}
-            className="mb-6 mt-2 flex items-center justify-between rounded-lg border border-white bg-transparent p-4 px-7 shadow-md"
+            className="mb-6 mt-2 flex items-center justify-between rounded-md border border-white bg-transparent p-4 px-7 shadow-md"
           >
             <div>
               <h3 className="mb-1 text-lg text-light">{activity.name}</h3>
