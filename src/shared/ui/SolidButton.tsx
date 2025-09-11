@@ -28,14 +28,14 @@ const SolidButton = ({ children, onClick, href }: SolidButtonProps) => {
         rel="noopener noreferrer"
       >
         {children}
-        <ArrowRight size={17} className="-mr-1 mb-[2px] ml-1" />
+        <ArrowRight size={17} className="-mr-1 ml-1" />
       </a>
     );
 
   return (
     <button className={baseClass} onClick={onClick}>
       {children}
-      <ArrowDown size={17} className="-mr-1 mb-[2px] ml-1" />
+      <ArrowDown size={17} className="-mr-1 ml-1" />
     </button>
   );
 };

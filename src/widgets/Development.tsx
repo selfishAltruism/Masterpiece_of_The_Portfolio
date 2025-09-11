@@ -12,7 +12,7 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
       className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8"
     >
       <Title>Development Detail</Title>
-      <div className="mt-2 flex flex-col gap-6">
+      <div className="mt-2 flex flex-col gap-4">
         {developmentLogs.map((log, index) => (
           <div
             id={`dev-${log.id}`}

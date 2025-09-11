@@ -1,13 +1,13 @@
 export const techStacks = {
-  "Pretty well-used / Language": ["JavaScript", "TypeScript", "HTML5"],
-  "Pretty well-used / Framework": ["React", "Next.js", "React Native"],
-  "Pretty well-used / Tool": [
-    "VS Code",
-    "Cursor AI",
-    "Vite",
-    "Webpack",
-    "ESLint",
+  Keyword: [
+    "User Interaction: CSR-Based Development",
+    "Web Graphics",
+    "SEO: SSR-Based Development",
   ],
+
+  "Pretty well-used / Language": ["JavaScript", "TypeScript"],
+  "Pretty well-used / Framework": ["React", "Next.js", "React Native"],
+  "Pretty well-used / Tool": ["VS Code", "Vite", "Webpack", "ESLint"],
   "Pretty well-used / Library": [
     "Axios",
     "Zustand",
@@ -16,15 +16,8 @@ export const techStacks = {
     "Emotion",
     "Tailwind CSS",
   ],
-  "Well-used / Language": ["C++", "Python", "Dart", "Java"],
+
+  "Well-used / Language": ["C++", "Python", "Dart"],
   "Well-used / Framework": ["Flutter"],
-  "Well-used / Library": [
-    "Recoil",
-    "Redux",
-    "react-hook-form",
-    "Tiptap",
-    "react-doc-viewer",
-    "RN-async-storage",
-    "RN-ble-manager",
-  ],
+  "Well-used / Library": ["Redux", "Recoil", "react-hook-form", "Tiptap"],
 };

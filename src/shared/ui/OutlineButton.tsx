@@ -6,9 +6,15 @@ interface OutlineButtonProps {
   children: ReactNode;
   onClick?: () => void;
   href?: string;
+  offArrow?: boolean;
 }
 
-const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
+const OutlineButton = ({
+  children,
+  onClick,
+  href,
+  offArrow,
+}: OutlineButtonProps) => {
   const baseClass =
     "whitespace-nowrap transform rounded-sm border border-white bg-primary px-4 py-2 text-sm text-light transition-all duration-300 hover:scale-105 flex items-center justify-between";
 
@@ -21,7 +27,7 @@ const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
         rel="noopener noreferrer"
       >
         {children}
-        <ArrowRight size={17} className="-mr-1 mb-[2px] ml-1" />
+        {!offArrow && <ArrowRight size={17} className="-mr-1 ml-1" />}
       </a>
     );
   return (

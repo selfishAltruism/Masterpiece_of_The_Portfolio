@@ -5,7 +5,13 @@ import OutlineButton from "../shared/ui/OutlineButton";
 import SolidButton from "../shared/ui/SolidButton";
 import { DrawerTrigger, Drawer } from "@/shared/shadcn/components/ui/drawer";
 import { TechStackDrawer } from "@/entities/TechStackDrawer";
-import { Linkedin, LinkedinIcon, LucideLinkedin } from "lucide-react";
+import {
+  Github,
+  Layers,
+  Linkedin,
+  LinkedinIcon,
+  LucideLinkedin,
+} from "lucide-react";
 
 const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -29,19 +35,20 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
       </div>
 
       <div className="flex flex-col items-center xl:mt-5">
-        <div className="flex flex-col gap-3">
-          <div className="flex gap-3">
-            <OutlineButton href="https://github.com/selfishAltruism">
-              Github
-            </OutlineButton>
-            <OutlineButton href="https://github.com/selfishAltruism">
-              LinkedIn
-            </OutlineButton>
-          </div>
+        <div className="flex gap-1">
+          <OutlineButton href="https://github.com/selfishAltruism" offArrow>
+            <Github size={20} />
+          </OutlineButton>
+          <OutlineButton href="https://github.com/selfishAltruism" offArrow>
+            <Linkedin size={19} />
+          </OutlineButton>
 
           <Drawer>
             <DrawerTrigger asChild>
-              <SolidButton>Tech Stack</SolidButton>
+              <SolidButton>
+                <Layers size={20} className="mr-2" />
+                Tech Stack
+              </SolidButton>
             </DrawerTrigger>
             <TechStackDrawer />
           </Drawer>

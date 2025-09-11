@@ -17,15 +17,15 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
           <div
             id={`career-${career.id}`}
             key={index}
-            className="mb-6 mt-2 flex items-center justify-between rounded-lg border border-white bg-transparent p-4 px-7 shadow-md"
+            className="mb-4 mt-2 flex items-center justify-between rounded-lg border border-white bg-transparent p-4 px-7 shadow-md"
           >
             <div className="flex flex-row">
               <div>
                 <h3 className="mb-1 text-lg text-light">{career.company}</h3>
-                <p className="mb-1 text-sm text-gray-300">
-                  {career.position} ({career.type})
+                <p className="mb-1 text-sm text-gray-300">{career.position}</p>
+                <p className="text-xs text-gray-400">
+                  {career.period} ({career.type})
                 </p>
-                <p className="text-xs text-gray-400">{career.period}</p>
               </div>
             </div>
             <SolidButton href={career.homepage}>About Company</SolidButton>
@@ -33,13 +33,13 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
         ))}
       </div>
 
-      <Title>Projects & Activities</Title>
+      <Title>Startup & Project</Title>
       <div>
         {projectsAndActivities.map((activity, index) => (
           <div
             id={`activity-${activity.id}`} // Added ID
             key={index}
-            className="mb-6 mt-2 flex items-center justify-between rounded-md border border-white bg-transparent p-4 px-7 shadow-md"
+            className="mb-4 mt-2 flex items-center justify-between rounded-md border border-white bg-transparent p-4 px-7 shadow-md"
           >
             <div>
               <h3 className="mb-1 text-lg text-light">{activity.name}</h3>
@@ -48,7 +48,7 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
               </p>
               <p className="text-xs text-gray-400">{activity.period}</p>
             </div>
-            <div className="flex flex-col items-end gap-3">
+            <div className="flex flex-col items-end gap-2">
               <OutlineButton href={activity.result}>Result</OutlineButton>
               <SolidButton href={activity.link}>About Team</SolidButton>
             </div>
