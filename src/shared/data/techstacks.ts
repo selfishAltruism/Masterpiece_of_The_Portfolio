@@ -1,5 +1,5 @@
 export const techStacks = {
-  Keyword: ["Cross-Platform", "Web Graphics", "SSR Based SEO"],
+  Keyword: ["Web & App Cross-Platform", "Web Graphics", "SSR Based SEO"],
 
   "Pretty well-used / Language": ["JavaScript", "TypeScript"],
   "Pretty well-used / Framework": ["React", "Next.js", "React Native"],

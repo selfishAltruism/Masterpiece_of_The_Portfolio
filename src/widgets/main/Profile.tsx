@@ -1,8 +1,8 @@
 import React from "react";
-import Title from "../shared/ui/Title";
-import Subtitle from "../shared/ui/Subtitle";
+import Title from "../../shared/ui/Title";
+import Subtitle from "../../shared/ui/Subtitle";
 import OutlineButton from "@/shared/ui/OutlineButton";
-import SolidButton from "../shared/ui/SolidButton";
+import SolidButton from "../../shared/ui/SolidButton";
 import { DrawerTrigger, Drawer } from "@/shared/shadcn/components/ui/drawer";
 import { TechStackDrawer } from "@/entities/TechStackDrawer";
 import {
@@ -45,7 +45,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
           <Drawer>
             <DrawerTrigger asChild>
-              <OutlineButton>
+              <OutlineButton whiteBg>
                 <Layers size={20} className="mr-2" />
                 Tech Stack
               </OutlineButton>

@@ -5,7 +5,7 @@ import OutlineButton from "@/shared/ui/OutlineButton";
 import { careers, projectsAndActivities } from "@/shared/data/career";
 import SolidButton from "@/shared/ui/SolidButton";
 
-const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
+const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
@@ -59,6 +59,6 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
   );
 });
 
-Career.displayName = "Career";
+CareerList.displayName = "CareerList";
 
-export default Career;
+export default CareerList;

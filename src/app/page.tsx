@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Profile from "../widgets/Profile";
-import Career from "../widgets/Career";
-import Development from "../widgets/Development";
+import Profile from "../widgets/main/Profile";
+import CareerList from "../widgets/main/CareerList";
+import DevelopmentList from "../widgets/main/DevelopmentList";
 import { developmentLogs } from "../shared/data/development";
 import { careers, projectsAndActivities } from "../shared/data/career"; // Import careers and projectsAndActivities
 
@@ -159,13 +159,13 @@ export default function Home() {
         className="col-span-4 row-span-5 xl:col-span-3 xl:row-span-6"
         aria-label="주요 경력"
       >
-        <Career ref={careerRef} />
+        <CareerList ref={careerRef} />
       </section>
       <section
         className="col-span-4 row-span-5 xl:col-span-3 xl:row-span-6"
         aria-label="개발 로그"
       >
-        <Development ref={devLogRef} />
+        <DevelopmentList ref={devLogRef} />
       </section>
       <svg
         className="absolute left-0 top-0 h-full w-full"

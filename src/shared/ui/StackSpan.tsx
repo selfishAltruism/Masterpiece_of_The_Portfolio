@@ -32,7 +32,7 @@ export const OutlineStackSpan = ({
   return (
     <span
       key={idx}
-      className="shadowg whitespace-nowrap rounded-sm border border-primary bg-primary px-[10px] pb-[4px] pt-[5px] text-xs text-white shadow-lg shadow-black/50"
+      className="shadowg whitespace-nowrap rounded-sm border border-primary bg-white/20 px-[10px] pb-[4px] pt-[5px] text-xs text-white shadow-lg shadow-black/50"
     >
       {tag}
     </span>

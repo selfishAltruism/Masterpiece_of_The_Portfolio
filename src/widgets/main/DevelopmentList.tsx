@@ -6,13 +6,15 @@ import { developmentLogs } from "@/shared/data/development";
 import { SolidStackSpan, OutlineStackSpan } from "@/shared/ui/StackSpan";
 import { cn } from "@/shared/shadcn/lib/utils";
 
-const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
+const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
       className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8"
     >
-      <Title>Development Detail</Title>
+      <Title>
+        <span className="text-primary">Development Detail</span>
+      </Title>
       <div className="mt-2 flex flex-col gap-4">
         {developmentLogs.map((log, index) => (
           <div
@@ -21,7 +23,7 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
             className={cn(
               "flex flex-col justify-between rounded-md border border-white p-4 px-7 shadow-md backdrop-blur-md",
               log.linkedTo === "career"
-                ? "bg-primary/30 text-white"
+                ? "bg-primary text-white"
                 : "bg-white/80 text-black",
             )}
           >
@@ -41,7 +43,7 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
             <div className="flex items-center justify-between">
               <p className="text-xs">{log.period}</p>
               <BlackOutlineButton
-                href={log.link}
+                to={log.link}
                 blackBorder={log.linkedTo !== "career"}
                 whiteBg={log.linkedTo === "career"}
               >
@@ -55,6 +57,6 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
   );
 });
 
-Development.displayName = "Development";
+DevelopmentList.displayName = "DevelopmentList";
 
-export default Development;
+export default DevelopmentList;
