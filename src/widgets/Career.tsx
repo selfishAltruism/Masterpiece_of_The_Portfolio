@@ -48,7 +48,7 @@ const Career = React.forwardRef<HTMLDivElement>((props, ref) => {
               </p>
               <p className="text-xs text-gray-400">{activity.period}</p>
             </div>
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex flex-col items-end gap-1">
               <OutlineButton href={activity.result}>Result</OutlineButton>
               <SolidButton href={activity.link}>About Team</SolidButton>
             </div>

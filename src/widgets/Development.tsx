@@ -1,9 +1,10 @@
 import React from "react";
 
 import Title from "@/shared/ui/Title";
-import OutlineButton from "@/shared/ui/OutlineButton";
+import BlackOutlineButton from "@/shared/ui/OutlineButton";
 import { developmentLogs } from "@/shared/data/development";
-import { StackSpan } from "@/shared/ui/StackSpan";
+import { SolidStackSpan, OutlineStackSpan } from "@/shared/ui/StackSpan";
+import { cn } from "@/shared/shadcn/lib/utils";
 
 const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -17,20 +18,35 @@ const Development = React.forwardRef<HTMLDivElement>((props, ref) => {
           <div
             id={`dev-${log.id}`}
             key={index}
-            className="flex flex-col justify-between rounded-md border border-white bg-white/80 p-6 shadow-md backdrop-blur-md"
+            className={cn(
+              "flex flex-col justify-between rounded-md border border-white p-4 px-7 shadow-md backdrop-blur-md",
+              log.linkedTo === "career"
+                ? "bg-primary/30 text-white"
+                : "bg-white/80 text-black",
+            )}
           >
             <div>
-              <h3 className="mb-2 text-lg text-gray-800">{log.title}</h3>
-              <p className="mb-4 text-sm text-gray-700">{log.description}</p>
-              <div className="mb-4 flex flex-wrap gap-2">
-                {log.tags.map((tag, i) => (
-                  <StackSpan idx={i} tag={tag} />
-                ))}
+              <h3 className="mb-2 text-lg">{log.title}</h3>
+              <p className="mb-4 text-sm">{log.description}</p>
+              <div className="mb-4 flex flex-wrap gap-1">
+                {log.tags.map((tag, i) =>
+                  log.linkedTo === "career" ? (
+                    <OutlineStackSpan idx={i} tag={tag} />
+                  ) : (
+                    <SolidStackSpan idx={i} tag={tag} />
+                  ),
+                )}
               </div>
             </div>
             <div className="flex items-center justify-between">
-              <p className="text-xs text-gray-700">{log.period}</p>
-              <OutlineButton href={log.link}>자세히 보기</OutlineButton>
+              <p className="text-xs">{log.period}</p>
+              <BlackOutlineButton
+                href={log.link}
+                blackBorder={log.linkedTo !== "career"}
+                whiteBg={log.linkedTo === "career"}
+              >
+                자세히 보기
+              </BlackOutlineButton>
             </div>
           </div>
         ))}

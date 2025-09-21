@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../shared/ui/Title";
 import Subtitle from "../shared/ui/Subtitle";
-import OutlineButton from "../shared/ui/OutlineButton";
+import OutlineButton from "@/shared/ui/OutlineButton";
 import SolidButton from "../shared/ui/SolidButton";
 import { DrawerTrigger, Drawer } from "@/shared/shadcn/components/ui/drawer";
 import { TechStackDrawer } from "@/entities/TechStackDrawer";
@@ -18,9 +18,9 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
     <div className="flex h-full w-full flex-row items-center justify-center gap-7 bg-transparent p-8 pt-12 xl:flex-col xl:gap-0 xl:pt-8">
       <div ref={ref}>
         <img
-          src="/profile_img.jpg" // Placeholder image URL
+          src="/profile_img.jpg"
           alt="Profile"
-          className="mb-4 h-24 w-24 rounded-full object-cover xl:h-36 xl:w-36" // Tailwind classes for circular image
+          className="relative mb-4 h-24 w-24 rounded-md object-cover xl:h-36 xl:w-36" // Tailwind classes for circular image
         />
       </div>
       <div id="profile-source" className="flex flex-col xl:items-center">
@@ -36,26 +36,26 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
       <div className="flex flex-col items-center xl:mt-5">
         <div className="flex gap-1">
-          <OutlineButton href="https://github.com/selfishAltruism" offArrow>
+          <SolidButton href="https://github.com/selfishAltruism" offIcon>
             <Github size={20} />
-          </OutlineButton>
-          <OutlineButton href="https://github.com/selfishAltruism" offArrow>
-            <Linkedin size={19} />
-          </OutlineButton>
+          </SolidButton>
+          <SolidButton href="https://www.linkedin.com/in/kyus/" offIcon>
+            <Linkedin size={20} />
+          </SolidButton>
 
           <Drawer>
             <DrawerTrigger asChild>
-              <SolidButton>
+              <OutlineButton>
                 <Layers size={20} className="mr-2" />
                 Tech Stack
-              </SolidButton>
+              </OutlineButton>
             </DrawerTrigger>
             <TechStackDrawer />
           </Drawer>
         </div>
       </div>
       <p className="absolute left-3 top-3 text-sm text-white">
-        Designed & Built by <strong>Kyus</strong>
+        Designed & Made by <strong>Kyus</strong>
       </p>
     </div>
   );
