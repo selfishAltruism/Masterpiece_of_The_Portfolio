@@ -13,7 +13,7 @@ export const SolidStackSpan = ({
     <span
       key={idx}
       className={cn(
-        "whitespace-nowrap rounded-sm border border-white bg-white px-[10px] pb-[4px] pt-[5px] text-xs text-gray-700 shadow-lg shadow-black/50",
+        "whitespace-nowrap rounded-sm border border-white bg-white px-[10px] pb-[4px] pt-[5px] text-xs text-gray-700",
         className,
       )}
     >
@@ -32,7 +32,7 @@ export const OutlineStackSpan = ({
   return (
     <span
       key={idx}
-      className="shadowg whitespace-nowrap rounded-sm border border-primary bg-white/20 px-[10px] pb-[4px] pt-[5px] text-xs text-white shadow-lg shadow-black/50"
+      className="whitespace-nowrap rounded-sm border border-primary bg-white/20 px-[10px] pb-[4px] pt-[5px] text-xs text-white"
     >
       {tag}
     </span>

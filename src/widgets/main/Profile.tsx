@@ -4,7 +4,7 @@ import Subtitle from "../../shared/ui/Subtitle";
 import OutlineButton from "@/shared/ui/OutlineButton";
 import SolidButton from "../../shared/ui/SolidButton";
 import { DrawerTrigger, Drawer } from "@/shared/shadcn/components/ui/drawer";
-import { TechStackDrawer } from "@/entities/TechStackDrawer";
+import { TechStackDrawer } from "@/entities/main/TechStackDrawer";
 import {
   Github,
   Layers,
@@ -27,7 +27,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         <Title>
           <strong>Kyus,</strong> 강민규
         </Title>
-        <Subtitle>Web Developer</Subtitle>
+        <Subtitle>Front-end Developer</Subtitle>
         <span className="text-sm text-white">IDIS SW 연구원</span>
         <span className="text-sm text-white">
           중앙대학교 컴퓨터공학사 우등 졸업
@@ -37,16 +37,16 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
       <div className="flex flex-col items-center xl:mt-5">
         <div className="flex gap-1">
           <SolidButton href="https://github.com/selfishAltruism" offIcon>
-            <Github size={20} />
+            <Github size={16} />
           </SolidButton>
           <SolidButton href="https://www.linkedin.com/in/kyus/" offIcon>
-            <Linkedin size={20} />
+            <Linkedin size={16} />
           </SolidButton>
 
           <Drawer>
             <DrawerTrigger asChild>
               <OutlineButton whiteBg>
-                <Layers size={20} className="mr-2" />
+                <Layers size={16} className="mr-2" />
                 Tech Stack
               </OutlineButton>
             </DrawerTrigger>

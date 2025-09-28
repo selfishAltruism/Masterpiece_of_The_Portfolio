@@ -5,7 +5,7 @@ import Profile from "../widgets/main/Profile";
 import CareerList from "../widgets/main/CareerList";
 import DevelopmentList from "../widgets/main/DevelopmentList";
 import { developmentLogs } from "../shared/data/development";
-import { careers, projectsAndActivities } from "../shared/data/career"; // Import careers and projectsAndActivities
+import { careers, activities } from "../shared/data/career"; // Import careers and activities
 
 interface Line {
   path: string;
@@ -96,7 +96,7 @@ export default function Home() {
         });
 
         // Connect to Projects & Activities cards
-        projectsAndActivities.forEach((activity) => {
+        activities.forEach((activity) => {
           const activityCard = document.getElementById(
             `activity-${activity.id}`,
           );
@@ -146,7 +146,7 @@ export default function Home() {
   return (
     <main
       ref={mainRef}
-      className="multi-gradient-background relative grid h-screen w-screen grid-cols-8 grid-rows-6 xl:gap-8"
+      className="multi-gradient-background relative grid h-screen w-screen grid-cols-9 grid-rows-6 xl:gap-8"
     >
       <h1 className="sr-only">강민규 프론트엔드 개발자 포트폴리오</h1>
       <section
@@ -162,7 +162,7 @@ export default function Home() {
         <CareerList ref={careerRef} />
       </section>
       <section
-        className="col-span-4 row-span-5 xl:col-span-3 xl:row-span-6"
+        className="col-span-4 row-span-5 xl:col-span-4 xl:row-span-6"
         aria-label="개발 로그"
       >
         <DevelopmentList ref={devLogRef} />
