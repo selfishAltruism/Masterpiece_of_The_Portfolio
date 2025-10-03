@@ -1,9 +1,8 @@
 import React from "react";
 
 import Title, { SubTitle } from "@/shared/ui/Title";
-import OutlineButton from "@/shared/ui/OutlineButton";
 import { careers, activities } from "@/shared/data/career";
-import SolidButton from "@/shared/ui/SolidButton";
+
 import { CareerCard } from "@/entities/main/CareerCard";
 import { ActivityCard } from "@/entities/main/ActivityCard";
 

@@ -1,12 +1,11 @@
 import React from "react";
 
-import Title from "@/shared/ui/Title";
-import BlackOutlineButton from "@/shared/ui/OutlineButton";
-import { developmentLogs } from "@/shared/data/development";
-import { SolidStackSpan, OutlineStackSpan } from "@/shared/ui/StackSpan";
 import { cn } from "@/shared/shadcn/lib/utils";
-import SolidButton from "@/shared/ui/SolidButton";
-import OutlineButton from "@/shared/ui/OutlineButton";
+
+import Title from "@/shared/ui/Title";
+import { developmentLogs } from "@/shared/data/development";
+import { OutlineStackSpan } from "@/shared/ui/StackSpan";
+import BasicButton from "@/shared/ui/BasicButton";
 
 const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -15,7 +14,7 @@ const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
       className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 text-white"
     >
       <Title>
-        <span className="text-white">Dev Log</span>
+        <span className="text-white">Development Log</span>
       </Title>
       <div className="flex flex-col">
         {developmentLogs.map((log, index) => (
@@ -37,9 +36,9 @@ const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
             </div>
             <div className="flex items-center justify-between">
               <p className="text-xs text-white/50">{log.period}</p>
-              <OutlineButton whiteBg to={log.link}>
+              <BasicButton whiteBg to={log.link}>
                 자세히 보기
-              </OutlineButton>
+              </BasicButton>
             </div>
           </div>
         ))}

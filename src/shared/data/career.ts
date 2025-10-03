@@ -12,7 +12,7 @@ export const careers: Data.Career[] = [
 export const activities: Data.Activity[] = [
   {
     id: 0,
-    name: "Fitrace",
+    name: "FITRACE",
     description: "Home Training IoT 서비스 App 개발",
     period: "App 개발자 (계약직) | 2024.11 ~ 2025.05",
     result:

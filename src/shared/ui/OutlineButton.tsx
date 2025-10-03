@@ -1,35 +1,29 @@
 import { ReactNode } from "react";
+import { Link2 as LinkIcon } from "lucide-react";
 
-import { ArrowDown, ArrowRight, Link } from "lucide-react";
-import { cn } from "../shadcn/lib/utils";
+import { cn } from "@/shared/shadcn/lib/utils";
 
 interface OutlineButtonProps {
   children: ReactNode;
   onClick?: () => void;
   href?: string;
-  to?: string;
   offIcon?: boolean;
-  blackBorder?: boolean;
-  whiteBg?: boolean;
 }
 
 const OutlineButton = ({
   children,
   onClick,
   href,
-  to,
   offIcon,
-  blackBorder,
-  whiteBg,
 }: OutlineButtonProps) => {
   const baseClass = cn(
-    "whitespace-nowrap transform rounded-sm border border-white px-3 py-1 text-xs",
-    "transition-all duration-300 hover:scale-105 flex items-center justify-between",
-    blackBorder ? "border-black" : "border-white",
-    whiteBg ? "bg-white text-primary" : "bg-primary text-white",
+    "whitespace-nowrap inline-flex items-center justify-between rounded-sm px-3 py-1 text-xs",
+    "bg-white/5 border border-white backdrop-blur-md",
+    "text-white",
+    "transition-all duration-300 hover:scale-105 hover:bg-white/10 active:scale-100",
   );
 
-  if (href || to)
+  if (href)
     return (
       <a
         className={baseClass}
@@ -38,15 +32,15 @@ const OutlineButton = ({
         rel="noopener noreferrer"
       >
         {children}
-        {!to && !offIcon && <Link size={15} className="-mr-[2px] ml-[6px]" />}
-        {to && <ArrowRight size={15} className="-mr-[2px] ml-[6px]" />}
+        {!offIcon && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
       </a>
     );
-  return (
-    <button className={baseClass} onClick={onClick}>
-      {children}
-    </button>
-  );
+  else
+    return (
+      <button className={baseClass} onClick={onClick}>
+        {children}
+      </button>
+    );
 };
 
 export default OutlineButton;

@@ -13,7 +13,7 @@
 .multi-gradient-background {
   background-color: #000017; /* fallback color */
   background-image:
-    radial-gradient(at 72% 5%, #000017 0px, transparent 20%),
+    radial-gradient(at 0% 0%, #00006f 0px, transparent 40%),
     radial-gradient(at 0% 100%, #000017 0px, transparent 50%),
     radial-gradient(at 100% 0%, #000017 0px, transparent 50%),
     radial-gradient(at 100% 100%, #000017 0px, transparent 50%);
