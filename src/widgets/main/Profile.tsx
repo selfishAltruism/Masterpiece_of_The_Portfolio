@@ -50,7 +50,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           </Drawer>
         </div>
       </div>
-      <p className="absolute left-3 top-3 text-sm text-white">
+      <p className="absolute left-3 top-3 text-xs text-white">
         Designed & Made by <strong>Kyu</strong>
       </p>
     </div>

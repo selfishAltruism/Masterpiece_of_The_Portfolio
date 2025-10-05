@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-
 import { ArrowRight, Link2 as LinkIcon } from "lucide-react";
-import { cn } from "../shadcn/lib/utils";
+import Link from "next/link";
+
+import { cn } from "@/shared/shadcn/lib/utils";
 
 interface BasicButtonProps {
   children: ReactNode;
@@ -29,7 +30,16 @@ const BasicButton = ({
     whiteBg ? "bg-white text-primary" : "bg-primary text-white",
   );
 
-  if (href || to)
+  if (to)
+    return (
+      <Link href={to} className={baseClass}>
+        {children}
+        {!offIcon && !to && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
+        <ArrowRight size={17} className="-mr-[1px] ml-2" />
+      </Link>
+    );
+
+  if (href)
     return (
       <a
         className={baseClass}
@@ -39,9 +49,9 @@ const BasicButton = ({
       >
         {children}
         {!offIcon && !to && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
-        {to && <ArrowRight size={15} className="-mr-[1px] ml-2" />}
       </a>
     );
+
   return (
     <button className={baseClass} onClick={onClick}>
       {children}

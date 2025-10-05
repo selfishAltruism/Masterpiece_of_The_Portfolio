@@ -1,10 +1,5 @@
-import {
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/shared/shadcn/components/ui/drawer";
+import { DrawerContent } from "@/shared/shadcn/components/ui/drawer";
 import Divider from "@/shared/ui/Divider";
-
 import { SolidStackSpan } from "@/shared/ui/StackSpan";
 import { techStacks } from "@/shared/data/techstacks";
 
@@ -18,7 +13,7 @@ export const TechStackDrawer = () => {
           {techStacks["Keyword"].map((item) => (
             <span
               key={item}
-              className="whitespace-nowrap rounded-sm bg-primary px-3 pb-[11px] pt-[12px] text-sm text-white"
+              className="whitespace-nowrap rounded-full bg-primary px-4 pb-[8px] pt-[9px] text-sm text-white"
             >
               {item}
             </span>
@@ -30,7 +25,7 @@ export const TechStackDrawer = () => {
         <div className="flex flex-wrap items-start gap-2 text-[11px] text-white">
           <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
             <strong className="ml-[1px]">Language</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Language"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -39,7 +34,7 @@ export const TechStackDrawer = () => {
 
           <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
             <strong className="ml-[1px]">Framework</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Framework"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -48,7 +43,7 @@ export const TechStackDrawer = () => {
 
           <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
             <strong className="ml-[1px]">Tool</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Tool"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -57,7 +52,7 @@ export const TechStackDrawer = () => {
 
           <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
             <strong className="ml-[1px]">Library</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Library"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -71,7 +66,7 @@ export const TechStackDrawer = () => {
         <div className="flex flex-wrap items-start gap-2 text-xs text-white">
           <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
             <strong className="ml-[1px]">Language</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Language"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -80,7 +75,7 @@ export const TechStackDrawer = () => {
 
           <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
             <strong className="ml-[1px]">Framework</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Framework"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}
@@ -89,7 +84,7 @@ export const TechStackDrawer = () => {
 
           <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
             <strong className="ml-[1px]">Library</strong>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Library"].map((name, idx) => (
                 <SolidStackSpan tag={name} idx={idx} />
               ))}

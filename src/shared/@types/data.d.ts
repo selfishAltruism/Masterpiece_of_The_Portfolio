@@ -16,4 +16,16 @@ declare namespace Data {
     result: string;
     link: string;
   }
+
+  export interface Development {
+    id: number;
+    linkedTo: string;
+    linkedId: number;
+    title: string;
+    description: string;
+    period: string;
+    tags: string[];
+    techStacks: string[];
+    link: string;
+  }
 }
