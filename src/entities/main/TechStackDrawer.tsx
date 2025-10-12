@@ -6,14 +6,14 @@ import { techStacks } from "@/shared/data/techstacks";
 export const TechStackDrawer = () => {
   return (
     <DrawerContent>
-      <div className="flex max-h-[70vh] w-full flex-col gap-2 overflow-y-auto px-4 pb-7 pt-2">
-        <strong className="-mb-2 text-primary">Keyword</strong>
+      <div className="flex max-h-[70vh] w-full flex-col gap-2 overflow-y-auto px-4 pb-10 pt-2">
+        <strong className="-mb-2 text-primary">Core Dev Area</strong>
         <Divider />
         <div className="flex flex-wrap items-start gap-2 text-xs text-white">
-          {techStacks["Keyword"].map((item) => (
+          {techStacks["Core Dev Area"].map((item) => (
             <span
               key={item}
-              className="whitespace-nowrap rounded-full bg-primary px-4 pb-[8px] pt-[9px] text-sm text-white"
+              className="whitespace-nowrap rounded-md bg-primary px-4 pb-[8px] pt-[9px] text-sm text-white"
             >
               {item}
             </span>

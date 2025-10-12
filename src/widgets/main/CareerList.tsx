@@ -6,12 +6,9 @@ import { careers, activities } from "@/shared/data/career";
 import { CareerCard } from "@/entities/main/CareerCard";
 import { ActivityCard } from "@/entities/main/ActivityCard";
 
-const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Careers = () => {
   return (
-    <div
-      ref={ref}
-      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8"
-    >
+    <>
       <Title>Career</Title>
       <div className="mb-2">
         {careers.map((career, index) => (
@@ -25,6 +22,17 @@ const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
           <ActivityCard activity={activity} key={index} />
         ))}
       </div>
+    </>
+  );
+};
+
+const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
+  return (
+    <div
+      ref={ref}
+      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 max-xl:py-0 max-sm:p-1 max-sm:pr-2"
+    >
+      <Careers />
     </div>
   );
 });

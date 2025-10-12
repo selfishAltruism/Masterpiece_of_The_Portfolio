@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,7 +29,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: #ffffff4b;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -95,6 +95,12 @@
 @layer base {
   * {
     @apply border-border;
+
+    span,
+    p {
+      word-break: keep-all;
+      white-space: normal;
+    }
   }
   body {
     @apply bg-background text-foreground;

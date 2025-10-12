@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Profile from "../widgets/main/Profile";
-import CareerList from "../widgets/main/CareerList";
-import DevelopmentList from "../widgets/main/DevelopmentList";
-import { developmentLogs } from "../shared/data/development";
-import { careers, activities } from "../shared/data/career"; // Import careers and activities
+
+import Profile from "@/widgets/main/Profile";
+import CareerList from "@/widgets/main/CareerList";
+import DevelopmentList from "@/widgets/main/DevelopmentList";
+
+import { developmentLogs } from "@/shared/data/development";
+import { careers, activities } from "@/shared/data/career";
 
 interface Line {
   path: string;
@@ -16,7 +18,7 @@ export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
   const careerRef = useRef<HTMLDivElement>(null);
   const devLogRef = useRef<HTMLDivElement>(null);
-  const profileSourceRef = useRef<HTMLDivElement>(null); // New ref for Profile source
+  const profileSourceRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const calculateLines = () => {
@@ -146,23 +148,23 @@ export default function Home() {
   return (
     <main
       ref={mainRef}
-      className="multi-gradient-background relative grid h-screen w-screen grid-cols-8 grid-rows-6 xl:grid-cols-9 xl:gap-8"
+      className="multi-gradient-background grid h-screen w-screen grid-cols-8 grid-rows-4 xl:grid-cols-9 xl:gap-8"
     >
       <h1 className="sr-only">강민규 프론트엔드 개발자 포트폴리오</h1>
       <section
-        className="col-span-8 row-span-2 xl:col-span-2 xl:row-span-6"
+        className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-4"
         aria-label="프로필"
       >
         <Profile ref={profileSourceRef} /> {/* Pass ref to Profile */}
       </section>
       <section
-        className="col-span-4 row-span-4 xl:col-span-3 xl:row-span-6"
+        className="col-span-4 row-span-3 xl:col-span-3 xl:row-span-4"
         aria-label="주요 경력"
       >
         <CareerList ref={careerRef} />
       </section>
       <section
-        className="col-span-4 row-span-4 xl:col-span-4 xl:row-span-6"
+        className="col-span-4 row-span-3 xl:col-span-4 xl:row-span-4"
         aria-label="개발 로그"
       >
         <DevelopmentList ref={devLogRef} />

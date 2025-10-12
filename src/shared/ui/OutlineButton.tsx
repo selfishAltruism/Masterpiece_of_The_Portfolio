@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Link2 as LinkIcon } from "lucide-react";
 
 import { cn } from "@/shared/shadcn/lib/utils";
 
@@ -7,20 +6,16 @@ interface OutlineButtonProps {
   children: ReactNode;
   onClick?: () => void;
   href?: string;
-  offIcon?: boolean;
 }
 
-const OutlineButton = ({
-  children,
-  onClick,
-  href,
-  offIcon,
-}: OutlineButtonProps) => {
+const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
   const baseClass = cn(
-    "whitespace-nowrap inline-flex items-center justify-between rounded-sm px-3 py-1 text-xs",
-    "bg-white/5 border border-white backdrop-blur-md",
+    "whitespace-nowrap inline-flex items-center justify-between rounded-full px-4 pb-[3px] pt-[5px] text-[12.5px]",
+    "bg-white/15 border border-white backdrop-blur-md",
+    "max-md:text-[11px] max-md:px-2 max-md:pb-[1px] max-md:pt-[3px] ",
     "text-white",
-    "transition-all duration-300 hover:scale-105 hover:bg-white/10 active:scale-100",
+    "transition-all duration-200 active:scale-95 active:text-[#cbcbcb] active:border-[#cbcbcb]",
+    "hover:text-[#cecece] hover:border-[#cbcbcb]",
   );
 
   if (href)
@@ -32,7 +27,6 @@ const OutlineButton = ({
         rel="noopener noreferrer"
       >
         {children}
-        {!offIcon && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
       </a>
     );
   else

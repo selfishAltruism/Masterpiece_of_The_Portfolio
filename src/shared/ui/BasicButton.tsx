@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ArrowRight, Link2 as LinkIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/shared/shadcn/lib/utils";
@@ -9,7 +9,6 @@ interface BasicButtonProps {
   onClick?: () => void;
   href?: string;
   to?: string;
-  offIcon?: boolean;
   blackBorder?: boolean;
   whiteBg?: boolean;
 }
@@ -19,13 +18,14 @@ const BasicButton = ({
   onClick,
   href,
   to,
-  offIcon,
   blackBorder,
   whiteBg,
 }: BasicButtonProps) => {
   const baseClass = cn(
-    "whitespace-nowrap transform rounded-sm border border-white px-3 py-1 text-xs",
-    "transition-all duration-300 hover:scale-105 flex items-center justify-between",
+    "whitespace-nowrap transform rounded-full border border-white px-4 pb-[3px] pt-[5px] text-[12.5px] flex items-center justify-between",
+    "transition-all duration-200 active:scale-95 active:bg-[#cbcbcb] active:border-[#cbcbcb]",
+    "max-md:text-[11px] max-md:px-2 max-md:pb-[1px] max-md:pt-[3px] ",
+    "hover:bg-[#cbcbcb] hover:border-[#cbcbcb]",
     blackBorder ? "border-black" : "border-white",
     whiteBg ? "bg-white text-primary" : "bg-primary text-white",
   );
@@ -34,8 +34,10 @@ const BasicButton = ({
     return (
       <Link href={to} className={baseClass}>
         {children}
-        {!offIcon && !to && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
-        <ArrowRight size={17} className="-mr-[1px] ml-2" />
+        <ArrowRight
+          size={17}
+          className="-mr-[1px] -mt-[3px] ml-2 max-md:ml-1"
+        />
       </Link>
     );
 
@@ -48,7 +50,6 @@ const BasicButton = ({
         rel="noopener noreferrer"
       >
         {children}
-        {!offIcon && !to && <LinkIcon size={17} className="-mr-[1px] ml-2" />}
       </a>
     );
 

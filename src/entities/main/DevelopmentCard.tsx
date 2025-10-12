@@ -1,6 +1,5 @@
 import { Layers, Key } from "lucide-react";
 
-import { cn } from "@/shared/shadcn/lib/utils";
 import BasicButton from "@/shared/ui/BasicButton";
 import { OutlineStackSpan, SolidStackSpan } from "@/shared/ui/StackSpan";
 
@@ -12,26 +11,28 @@ export const DevelopmentCard = ({
   return (
     <div
       id={`dev-${development.id}`}
-      className={cn(
-        "mb-2 mt-2 flex items-end justify-between rounded-lg border border-white bg-transparent p-5",
-      )}
+      className="mb-2 mt-2 flex items-end justify-between rounded-lg border border-white bg-white/10 p-5 text-white max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:gap-1 max-sm:p-2 max-sm:pt-1"
     >
-      <div>
-        <h3 className="mb-4 text-lg">{development.title}</h3>
+      <div className="w-full">
+        <h3 className="mb-4 text-lg max-md:mb-0 max-md:text-[13px]">
+          {development.title}
+        </h3>
         <div className="mb-1 flex flex-wrap items-center gap-1">
           <Key size={16} className="mr-1" />
           {development.tags.map((tag, i) => (
             <OutlineStackSpan idx={i} tag={tag} />
           ))}
         </div>
-        <div className="mb-4 flex flex-wrap items-center gap-1">
+        <div className="mb-5 flex flex-wrap items-center gap-1 max-md:mb-2">
           <Layers size={16} className="mr-1" />
           {development.techStacks.map((tag, i) => (
             <SolidStackSpan idx={i} tag={tag} />
           ))}
         </div>
-        <p className="mb-[2px] text-xs text-white/50">{development.period}</p>
-        <p className="mb-[2px] text-sm text-white/90">
+        <p className="mb-[2px] text-xs leading-tight text-white/60 max-md:text-[10px]">
+          {development.period}
+        </p>
+        <p className="mb-[2px] text-sm leading-tight text-white/90 max-md:text-[11px]">
           {development.description}
         </p>
       </div>
