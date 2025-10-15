@@ -30,7 +30,7 @@ const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 max-xl:py-0 max-sm:p-1 max-sm:pr-2"
+      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pr-3"
     >
       <Careers />
     </div>

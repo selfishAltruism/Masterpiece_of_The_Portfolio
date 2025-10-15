@@ -21,7 +21,7 @@ const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 text-white max-xl:py-0 max-sm:p-1 max-sm:pl-2"
+      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 text-white max-xl:py-0 max-sm:p-2 max-sm:pl-3"
     >
       <Developments />
     </div>

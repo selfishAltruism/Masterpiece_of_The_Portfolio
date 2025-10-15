@@ -10,12 +10,12 @@ interface OutlineButtonProps {
 
 const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
   const baseClass = cn(
-    "whitespace-nowrap inline-flex items-center justify-between rounded-full px-4 pb-[3px] pt-[5px] text-[12.5px]",
-    "bg-white/15 border border-white backdrop-blur-md",
+    "whitespace-nowrap inline-flex items-center justify-between rounded-md px-4 pb-[3px] pt-[5px] text-[12.5px]",
+    "bg-[#0A5BBD]/30 border-2 border-[#0A5BBD] backdrop-blur-md",
     "max-md:text-[11px] max-md:px-2 max-md:pb-[1px] max-md:pt-[3px] ",
     "text-white",
-    "transition-all duration-200 active:scale-95 active:text-[#cbcbcb] active:border-[#cbcbcb]",
-    "hover:text-[#cecece] hover:border-[#cbcbcb]",
+    "transition-all duration-200 active:scale-95 active:text-white/70 active:border-[#083e80]",
+    "sm:hover:text-white/70 sm:hover:border-[#083e80]",
   );
 
   if (href)

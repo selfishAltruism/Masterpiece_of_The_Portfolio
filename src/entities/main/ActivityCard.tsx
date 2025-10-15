@@ -5,25 +5,33 @@ export const ActivityCard = ({ activity }: { activity: Data.Activity }) => {
   return (
     <div
       id={`activity-${activity.id}`}
-      className="mb-4 mt-2 flex items-end justify-between rounded-md border border-white bg-white/10 p-5 max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:gap-1 max-sm:p-2 max-sm:pt-1"
+      className="mb-4 mt-2 flex items-end justify-between rounded-lg border-2 border-white bg-white/20 p-5 max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2"
     >
       <div className="w-full">
-        <h3 className="mb-4 text-xl text-light max-md:mb-0 max-md:text-[16px]">
+        <h3 className="mb-4 text-xl leading-tight text-light max-md:mb-1 max-md:text-[16px] max-sm:mb-0">
           {activity.name}
         </h3>
-        <p className="mb-[2px] text-xs leading-tight text-white/60 max-md:text-[10px]">
+
+        {/* pc mode. */}
+        <p className="mb-[2px] text-xs leading-tight text-white/60 max-md:text-[10px] max-sm:hidden">
+          {activity.position} | {activity.period}
+        </p>
+        {/* mobile mode. */}
+        <p className="mb-2 text-[10px] leading-tight text-white/90 sm:hidden">
+          {activity.position}
+        </p>
+        <p className="mb-0 text-[10px] leading-tight text-white/60 sm:hidden">
           {activity.period}
         </p>
+
         <p className="text-sm leading-tight text-white/90 max-md:text-[11px]">
           {activity.description}
         </p>
       </div>
 
-      <div className="flex flex-col items-end gap-[6px] max-lg:flex-row">
+      <div className="flex flex-col items-end gap-1 max-lg:flex-row">
         <OutlineButton href={activity.result}>Result</OutlineButton>
-        <BasicButton whiteBg href={activity.link}>
-          About Team
-        </BasicButton>
+        <BasicButton href={activity.link}>About Team</BasicButton>
       </div>
     </div>
   );

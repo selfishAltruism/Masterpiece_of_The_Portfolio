@@ -8,8 +8,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   minimumScale: 1,
-  maximumScale: 5,
-  userScalable: true,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export const metadata: Metadata = {
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  themeColor: "#000017",
 };
 
 export default function RootLayout({

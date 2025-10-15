@@ -3,7 +3,7 @@ declare namespace Data {
     id: number;
     company: string;
     position: string;
-    type: string;
+    description: string;
     period: string;
     homepage: string;
   }
@@ -11,6 +11,7 @@ declare namespace Data {
   export interface Activity {
     id: number;
     name: string;
+    position: string;
     description: string;
     period: string;
     result: string;

@@ -13,7 +13,7 @@ export const TechStackDrawer = () => {
           {techStacks["Core Dev Area"].map((item) => (
             <span
               key={item}
-              className="whitespace-nowrap rounded-md bg-primary px-4 pb-[8px] pt-[9px] text-sm text-white"
+              className="whitespace-nowrap rounded-[3px] bg-primary px-4 pb-[8px] pt-[9px] text-sm text-white"
             >
               {item}
             </span>
@@ -23,7 +23,7 @@ export const TechStackDrawer = () => {
         <strong className="-mb-2 mt-1 text-primary">Pretty well-used</strong>
         <Divider />
         <div className="flex flex-wrap items-start gap-2 text-[11px] text-white">
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/85 p-2">
             <strong className="ml-[1px]">Language</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Language"].map((name, idx) => (
@@ -32,7 +32,7 @@ export const TechStackDrawer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/85 p-2">
             <strong className="ml-[1px]">Framework</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Framework"].map((name, idx) => (
@@ -41,7 +41,7 @@ export const TechStackDrawer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/85 p-2">
             <strong className="ml-[1px]">Tool</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Tool"].map((name, idx) => (
@@ -50,7 +50,7 @@ export const TechStackDrawer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/85 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/85 p-2">
             <strong className="ml-[1px]">Library</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Pretty well-used / Library"].map((name, idx) => (
@@ -64,7 +64,7 @@ export const TechStackDrawer = () => {
         <Divider />
 
         <div className="flex flex-wrap items-start gap-2 text-xs text-white">
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/70 p-2">
             <strong className="ml-[1px]">Language</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Language"].map((name, idx) => (
@@ -73,7 +73,7 @@ export const TechStackDrawer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/70 p-2">
             <strong className="ml-[1px]">Framework</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Framework"].map((name, idx) => (
@@ -82,7 +82,7 @@ export const TechStackDrawer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-md border bg-primary/70 p-2">
+          <div className="flex flex-col gap-2 rounded-[3px] border bg-primary/70 p-2">
             <strong className="ml-[1px]">Library</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Library"].map((name, idx) => (
