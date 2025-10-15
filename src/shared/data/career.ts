@@ -38,6 +38,6 @@ export const activities: Data.Activity[] = [
     position: "Front-end 팀장",
     period: "2023.12 ~ 2025.05",
     result: "https://causw.co.kr",
-    link: "#",
+    link: "https://about.causw.co.kr/",
   },
 ];
