@@ -1,6 +1,7 @@
 import React from "react";
 
 import { DevelopmentCard } from "@/entities/main/DevelopmentCard";
+
 import Title from "@/shared/ui/Title";
 import { developmentLogs } from "@/shared/data/development";
 

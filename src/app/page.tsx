@@ -27,7 +27,6 @@ export default function Home() {
       const newLines: Line[] = [];
       const mainRect = mainRef.current.getBoundingClientRect();
 
-      // Career 컨테이너의 화면 기준 top을 main 기준 좌표로 변환
       const careerPanelTop =
         (careerRef.current?.getBoundingClientRect().top ?? 0) - mainRect.top;
 
@@ -50,11 +49,8 @@ export default function Home() {
           const endX = devRect.left - mainRect.left;
           const endY = devRect.top - mainRect.top + devRect.height / 2;
 
-          // Career top을 넘어가는 경우 그리지 않음.
-          // This condition might need adjustment if activities can be above careerPanelTop
-          // For now, keeping it as is, assuming similar vertical positioning.
           if (startY < careerPanelTop || endY < careerPanelTop) {
-            return; // skip
+            return;
           }
 
           const offset = (endX - startX) * 0.5;
@@ -66,14 +62,13 @@ export default function Home() {
         }
       });
 
-      // New logic for Profile to Career lines (only on xl screens)
-      const isXlScreen = window.innerWidth >= 1280; // Tailwind's default xl breakpoint
+      const isXlScreen = window.innerWidth >= 1280;
 
       if (isXlScreen && profileSourceRef.current) {
         const profileSourceRect =
           profileSourceRef.current.getBoundingClientRect();
 
-        // Connect to Career cards
+        // profile-career cards.
         careers.forEach((career) => {
           const careerCard = document.getElementById(`career-${career.id}`);
 
@@ -97,7 +92,7 @@ export default function Home() {
           }
         });
 
-        // Connect to Projects & Activities cards
+        // career-activity cards.
         activities.forEach((activity) => {
           const activityCard = document.getElementById(
             `activity-${activity.id}`,

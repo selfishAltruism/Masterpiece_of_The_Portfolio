@@ -13,9 +13,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/shared/shadcn/components/ui/dialog";
+import { cn } from "@/shared/shadcn/lib/utils";
 
 import { TechStackDrawer } from "@/entities/main/TechStackDrawer";
-import { cn } from "@/shared/shadcn/lib/utils";
 
 const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -98,7 +98,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       </div>
 
-      <div className="absolute right-2 top-2 w-max text-xs text-white/40 xl:left-2">
+      <div className="absolute right-2 top-2 w-max text-[10px] text-white/40 xl:left-2 xl:text-xs">
         Designed & Made by <strong>Kyu</strong>
       </div>
     </div>

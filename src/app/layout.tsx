@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     "Front-end Developer",
     "React 개발자",
     "Next.js 개발자",
+    "Web Graphics 개발",
     "React Native 개발자",
     "중앙대학교 소프트웨어학부",
     "IDIS 연구원",
