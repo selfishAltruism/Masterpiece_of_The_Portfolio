@@ -1,10 +1,15 @@
+import { cn } from "@/shared/shadcn/lib/utils";
 import BasicButton from "@/shared/ui/BasicButton";
 
 export const CareerCard = ({ career }: { career: Data.Career }) => {
   return (
     <div
       id={`career-${career.id}`}
-      className="mb-4 mt-2 flex items-end justify-between rounded-md border-2 border-white bg-white/20 p-5 max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2"
+      className={cn(
+        "relative z-10 mb-4 mt-2 flex items-end justify-between rounded-md border-2 border-white bg-[#343434] p-5",
+        "max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2",
+        "duration-200 sm:hover:scale-[1.015]",
+      )}
     >
       <div className="w-full">
         <h3 className="mb-4 text-xl leading-tight text-light max-md:mb-1 max-md:text-[16px] max-sm:mb-0">

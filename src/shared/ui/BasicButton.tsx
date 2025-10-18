@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
+import { Logs } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/shared/shadcn/lib/utils";
@@ -23,10 +23,7 @@ const BasicButton = ({ children, onClick, href, to }: BasicButtonProps) => {
     return (
       <Link href={to} className={baseClass}>
         {children}
-        <ArrowRight
-          size={17}
-          className="-mr-[1px] -mt-[3px] ml-2 max-md:ml-1"
-        />
+        <Logs size={17} className="-mr-[1px] -mt-[3px] ml-2 max-md:ml-1" />
       </Link>
     );
 

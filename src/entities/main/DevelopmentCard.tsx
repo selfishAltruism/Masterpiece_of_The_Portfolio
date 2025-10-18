@@ -2,6 +2,7 @@ import { Layers, Key } from "lucide-react";
 
 import BasicButton from "@/shared/ui/BasicButton";
 import { OutlineStackSpan, SolidStackSpan } from "@/shared/ui/StackSpan";
+import { cn } from "@/shared/shadcn/lib/utils";
 
 export const DevelopmentCard = ({
   development,
@@ -11,7 +12,11 @@ export const DevelopmentCard = ({
   return (
     <div
       id={`dev-${development.id}`}
-      className="mb-2 mt-2 flex items-end justify-between rounded-lg border-2 border-white bg-white/15 p-5 text-white max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2"
+      className={cn(
+        "z-10 mb-2 mt-2 flex items-end justify-between rounded-lg border-2 border-white bg-[#343434] p-5 text-white",
+        "max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2",
+        "duration-200 sm:hover:scale-[1.015]",
+      )}
     >
       <div className="w-full">
         <h3 className="mb-4 text-lg leading-tight max-md:mb-2 max-md:text-[13px]">
@@ -21,7 +26,7 @@ export const DevelopmentCard = ({
           <Key size={16} className="mr-1 min-w-4" />
           <div className="mb-1 flex flex-wrap items-center gap-1">
             {development.tags.map((tag, i) => (
-              <OutlineStackSpan idx={i} tag={tag} />
+              <OutlineStackSpan key={tag} idx={i} tag={tag} />
             ))}
           </div>
         </div>
@@ -29,7 +34,7 @@ export const DevelopmentCard = ({
           <Layers size={16} className="mr-1 min-w-4" />
           <div className="mb-5 flex flex-wrap items-center gap-1 max-md:mb-2">
             {development.techStacks.map((tag, i) => (
-              <SolidStackSpan idx={i} tag={tag} />
+              <SolidStackSpan key={tag} idx={i} tag={tag} />
             ))}
           </div>
         </div>

@@ -19,7 +19,13 @@ import { TechStackDrawer } from "@/entities/main/TechStackDrawer";
 
 const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="flex h-full w-full flex-row items-end justify-center gap-7 bg-transparent pb-3 max-xl:gap-3 max-sm:gap-1 max-sm:px-0 xl:flex-col xl:items-center xl:gap-0 xl:p-8 xl:pt-12">
+    <div
+      className={cn(
+        "flex h-full w-full flex-row items-end justify-start gap-7 bg-transparent p-8 pb-4",
+        "max-xl:gap-3 max-sm:gap-1 max-sm:px-2",
+        "xl:flex-col xl:items-center xl:justify-center xl:gap-0 xl:p-8 xl:pt-12",
+      )}
+    >
       <div ref={ref}>
         <img
           src="/profile_img.jpg"
@@ -75,7 +81,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </span>
       </div>
 
-      <div className="flex flex-col items-end max-xl:h-full max-xl:justify-end xl:mt-5">
+      <div className="flex flex-col items-end max-xl:h-full max-xl:flex-1 max-xl:justify-end xl:mt-5">
         <div className="flex items-end gap-1 max-xl:flex-col">
           <div className="flex justify-end gap-1">
             <OutlineButton href="https://github.com/selfishAltruism">
