@@ -1,7 +1,10 @@
 // http://localhost:3000/detail/23248a08-56d4-8058-a94b-caec414175df
 
+import { isStringArray } from "@/shared/shadcn/lib/utils";
+import { OutlineStackSpan, SolidStackSpan } from "@/shared/ui/StackSpan";
 import Title from "@/shared/ui/Title";
 import { Client } from "@notionhq/client";
+import { Construction, Key, Layers } from "lucide-react";
 import React, { Fragment } from "react";
 
 export const runtime = "nodejs";
@@ -279,7 +282,7 @@ function ListGroup({ blocks }: { blocks: any[] }) {
 
   // 그룹 타입에 따라 ul/ol/단일 블록 렌더링.
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-y-auto px-3 pb-16 max-xl:pt-20">
       {grouped.map((g: any, idx: number) => {
         if (g._type === "ul") {
           return (
@@ -321,30 +324,63 @@ export default async function NotionPage({
   // 라우터로부터 페이지 ID 수신.
   const PAGE_ID = params.pageId;
 
-  // 루트 children 수집.
   const rootChildren = await fetchChildren(PAGE_ID);
-
-  // 트리 구성.
   const tree = await buildTree(rootChildren);
+  const titleData = (await getPageTitle(PAGE_ID)).split("_");
+
+  if (
+    !rootChildren ||
+    !tree ||
+    !titleData ||
+    !isStringArray(titleData) ||
+    titleData.length < 4
+  )
+    return (
+      <div className="multi-gradient-background flex h-screen w-screen items-center justify-center text-white">
+        <Construction />
+        <Construction className="mr-2" />
+        Under Construction...
+        <Construction className="ml-2" />
+        <Construction />
+      </div>
+    );
 
   // 최상위 리스트 그룹화.
   const grouped = groupLists(tree);
 
   // 제목 조회.
-  const titles = (await getPageTitle(PAGE_ID)).split("_");
+
+  const title = titleData[0];
+  const peroid = titleData[1];
+  const tags = titleData[2].split("/");
+  const techs = titleData[3].split("/");
 
   // 렌더링 수행.
   return (
-    <main className="multi-gradient-background flex h-screen w-screen flex-col gap-3 text-white xl:flex-row">
-      <header className="flex w-[500px] flex-col items-end justify-center">
+    <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
+      <header className="flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-black/60 max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
         <Title>
-          <div className="bg-white pr-2 text-end leading-tight text-black">
-            {titles[0]}
+          <div className="w-full rounded-r-md bg-white px-3 text-end leading-tight text-black">
+            {title}
           </div>
         </Title>
-        <h1 className="font-bold tracking-tight">{titles[1]}</h1>
-        <h1 className="font-bold tracking-tight">{titles[2]}</h1>
-        <h1 className="font-bold tracking-tight">{titles[3]}</h1>
+        <div className="flex flex-col items-end gap-1 max-xl:pb-3">
+          <h1 className="mt-4 text-[10px] font-bold leading-tight tracking-tight md:text-sm">
+            {peroid}
+          </h1>
+          <h1 className="flex gap-1 font-bold tracking-tight">
+            {tags.map((tag, i) => (
+              <OutlineStackSpan key={tag} tag={tag} idx={i} />
+            ))}
+            <Key size={16} className="ml-1 min-w-4" />
+          </h1>
+          <h1 className="flex gap-1 font-bold tracking-tight">
+            {techs.map((tech, i) => (
+              <SolidStackSpan key={tech} tag={tech} idx={i} />
+            ))}
+            <Layers size={16} className="ml-1 min-w-4" />
+          </h1>
+        </div>
       </header>
 
       <ListGroup blocks={grouped} />
