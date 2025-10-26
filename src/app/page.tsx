@@ -13,7 +13,7 @@ interface Line {
   path: string;
 }
 
-export default function Home() {
+export default function MainPage() {
   const [lines, setLines] = useState<Line[]>([]);
   const mainRef = useRef<HTMLDivElement>(null);
   const careerRef = useRef<HTMLDivElement>(null);
