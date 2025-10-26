@@ -1,10 +1,13 @@
 // http://localhost:3000/detail/23248a08-56d4-8058-a94b-caec414175df
 
+import Title from "@/shared/ui/Title";
 import { Client } from "@notionhq/client";
 import React, { Fragment } from "react";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const revalidate = 0; // 매 요청 렌더
+export const fetchCache = "force-no-store"; // 기본적으로 no-store
 
 // Notion 클라이언트 초기화.
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -276,7 +279,7 @@ function ListGroup({ blocks }: { blocks: any[] }) {
 
   // 그룹 타입에 따라 ul/ol/단일 블록 렌더링.
   return (
-    <>
+    <div className="h-full overflow-y-auto">
       {grouped.map((g: any, idx: number) => {
         if (g._type === "ul") {
           return (
@@ -298,7 +301,7 @@ function ListGroup({ blocks }: { blocks: any[] }) {
         }
         return <Block key={idx} block={g} />;
       })}
-    </>
+    </div>
   );
 }
 
@@ -328,20 +331,23 @@ export default async function NotionPage({
   const grouped = groupLists(tree);
 
   // 제목 조회.
-  const title = await getPageTitle(PAGE_ID);
+  const titles = (await getPageTitle(PAGE_ID)).split("_");
 
   // 렌더링 수행.
   return (
-    <main className="multi-gradient-background px-6 py-10 text-white">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold tracking-tight">{title}</h1>
+    <main className="multi-gradient-background flex h-screen w-screen flex-col gap-3 text-white xl:flex-row">
+      <header className="flex w-[500px] flex-col items-end justify-center">
+        <Title>
+          <div className="bg-white pr-2 text-end leading-tight text-black">
+            {titles[0]}
+          </div>
+        </Title>
+        <h1 className="font-bold tracking-tight">{titles[1]}</h1>
+        <h1 className="font-bold tracking-tight">{titles[2]}</h1>
+        <h1 className="font-bold tracking-tight">{titles[3]}</h1>
       </header>
 
       <ListGroup blocks={grouped} />
-
-      <footer className="mt-16 text-xs text-gray-500">
-        이미지(file.url)는 임시 URL이므로 ISR/재호출 전략을 권장함.
-      </footer>
     </main>
   );
 }

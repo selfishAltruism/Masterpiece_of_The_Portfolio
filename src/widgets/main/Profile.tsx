@@ -23,7 +23,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
       className={cn(
         "flex h-full w-full flex-row items-end justify-start gap-7 bg-transparent p-8 pb-4",
         "max-xl:gap-3 max-sm:gap-1 max-sm:px-2",
-        "xl:flex-col xl:items-center xl:justify-center xl:gap-0 xl:p-8 xl:pt-12",
+        "xl:flex-col xl:items-center xl:justify-center xl:gap-0 xl:p-0 xl:pt-0",
       )}
     >
       <div ref={ref}>
@@ -36,19 +36,21 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
       <div id="profile-source" className="flex flex-col xl:items-center">
         <Title>
-          <strong>Kyu,</strong> 강민규
+          <strong>Kyu,</strong>강민규
         </Title>
 
         <Dialog>
-          <DialogTrigger
-            className={cn(
-              "mb-3 mt-2 w-max cursor-pointer bg-[#0A5BBD] italic text-white transition-all duration-200",
-              "max-lg:mt-0 max-lg:text-[13px] max-sm:text-[12px]",
-              "active:scale-95 active:border-[#083e80] active:bg-[#083e80]",
-              "sm:hover:border-[#083e80] sm:hover:bg-[#083e80] sm:hover:text-white/70",
-            )}
-          >
-            안전지대를 넘어서는 개발자.
+          <DialogTrigger className="mt-1 w-max xl:mt-2">
+            <span
+              className={cn(
+                "mb-3 mt-3 w-max cursor-pointer bg-[#0A5BBD] p-0 text-lg italic text-white transition-all duration-200",
+                "max-xl:text-[14px] max-lg:mt-0 max-lg:text-[13px] max-sm:text-[12px]",
+                "active:scale-95 active:border-[#083e80] active:bg-[#083e80]",
+                "sm:hover:border-[#083e80] sm:hover:bg-[#083e80] sm:hover:text-white/70",
+              )}
+            >
+              안전지대를 넘어서는 개발자.
+            </span>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -102,10 +104,6 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             <TechStackDrawer />
           </Drawer>
         </div>
-      </div>
-
-      <div className="absolute right-2 top-2 w-max text-[10px] text-white/40 xl:left-2 xl:text-xs">
-        Designed & Made by <strong>Kyu</strong>
       </div>
     </div>
   );
