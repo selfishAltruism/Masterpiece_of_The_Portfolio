@@ -4,37 +4,35 @@ import React from "react";
 import {
   buildTree,
   fetchChildren,
-  getPageTitle,
+  fetchPageTitle,
   groupLists,
 } from "@/entities/detail/util";
+
 import { isStringArray } from "@/shared/shadcn/lib/utils";
 import { OutlineStackSpan, SolidStackSpan } from "@/shared/ui/StackSpan";
 import Title from "@/shared/ui/Title";
-import { NotionContent } from "@/widgets/detail/Notion";
+
+import { NotionContent } from "@/widgets/detail/NotionContent";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const revalidate = 0; // 매 요청 렌더
-export const fetchCache = "force-no-store"; // 기본적으로 no-store
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
 
 export default async function NotionPage({
   params,
 }: {
   params: { pageId: string };
 }) {
-  // 환경 변수 존재 여부 확인.
   if (!process.env.NOTION_API_KEY) {
-    throw new Error(
-      "NOTION_API_KEY 누락: .env.local 설정 후 서버 재시작이 필요함.",
-    );
+    throw new Error("NOTION_API_KEY 누락.");
   }
 
-  // 라우터로부터 페이지 ID 수신.
   const PAGE_ID = params.pageId;
 
   const rootChildren = await fetchChildren(PAGE_ID);
   const tree = await buildTree(rootChildren);
-  const titleData = (await getPageTitle(PAGE_ID)).split("_");
+  const titleData = (await fetchPageTitle(PAGE_ID)).split("_");
 
   if (
     !rootChildren ||
@@ -53,17 +51,13 @@ export default async function NotionPage({
       </div>
     );
 
-  // 최상위 리스트 그룹화.
   const grouped = groupLists(tree);
-
-  // 제목 조회.
 
   const title = titleData[0];
   const peroid = titleData[1];
   const tags = titleData[2].split("/");
   const techs = titleData[3].split("/");
 
-  // 렌더링 수행.
   return (
     <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
       <header className="flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-black/60 max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
@@ -91,7 +85,9 @@ export default async function NotionPage({
         </div>
       </header>
 
-      <NotionContent blocks={grouped} />
+      <div className="h-full overflow-y-auto px-3 pb-16 max-xl:pt-20">
+        <NotionContent blocks={grouped} />
+      </div>
     </main>
   );
 }
