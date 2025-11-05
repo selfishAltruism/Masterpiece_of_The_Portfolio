@@ -49,7 +49,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  themeColor: "#000017",
+  openGraph: {
+    title: "Kyu | 강민규",
+    description:
+      "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. React, Next.js, Web Graphics를 주로 다루고 있습니다.",
+    images: ["https://kyu-log.vercel.app/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
