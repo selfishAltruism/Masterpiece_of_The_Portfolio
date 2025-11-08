@@ -36,9 +36,14 @@ export const ActivityCard = ({ activity }: { activity: Data.Activity }) => {
 
       <div className="flex flex-col items-end gap-1 max-lg:flex-row">
         {activity.result && (
-          <OutlineButton href={activity.result}>Result</OutlineButton>
+          <OutlineButton href={activity.result}>To Service</OutlineButton>
         )}
-        <BasicButton href={activity.link}>About Team</BasicButton>
+        {activity.teamLink && (
+          <BasicButton href={activity.teamLink}>About Team</BasicButton>
+        )}
+        {activity.companyLink && (
+          <BasicButton href={activity.companyLink}>About Company</BasicButton>
+        )}
       </div>
     </div>
   );

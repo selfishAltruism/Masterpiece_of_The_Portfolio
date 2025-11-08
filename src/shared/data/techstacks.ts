@@ -2,7 +2,8 @@ export const techStacks = {
   "Core Dev Area": [
     "Web & App Cross-Platform",
     "Web Graphics",
-    "SSR Based SEO",
+    "SSR-based SEO",
+    "RWD",
   ],
 
   "Pretty well-used / Language": ["JavaScript", "TypeScript"],

@@ -15,7 +15,8 @@ declare namespace Data {
     description: string;
     period: string;
     result?: string;
-    link: string;
+    teamLink?: string;
+    companyLink?: string;
   }
 
   export interface Development {
