@@ -141,43 +141,48 @@ export default function MainPage() {
   }, []);
 
   return (
-    <main
-      ref={mainRef}
-      className="multi-gradient-background grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
-    >
-      <h1 className="sr-only">강민규 프론트엔드 개발자 포트폴리오</h1>
-      <section
-        className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
-        aria-label="프로필"
+    <>
+      <main
+        ref={mainRef}
+        className="multi-gradient-background grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
       >
-        <Profile ref={profileSourceRef} /> {/* Pass ref to Profile */}
-      </section>
-      <section
-        className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
-        aria-label="주요 경력"
-      >
-        <CareerList ref={careerRef} />
-      </section>
-      <section
-        className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
-        aria-label="개발 로그"
-      >
-        <DevelopmentList ref={devLogRef} />
-      </section>
-      <svg
-        className="absolute left-0 top-0 h-full w-full"
-        style={{ pointerEvents: "none" }}
-      >
-        {lines.map((line, index) => (
-          <path
-            key={index}
-            d={line.path}
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="2"
-          />
-        ))}
-      </svg>
-    </main>
+        <h1 className="sr-only">강민규 프론트엔드 개발자 포트폴리오</h1>
+        <section
+          className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
+          aria-label="프로필"
+        >
+          <Profile ref={profileSourceRef} /> {/* Pass ref to Profile */}
+        </section>
+        <section
+          className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
+          aria-label="주요 경력"
+        >
+          <CareerList ref={careerRef} />
+        </section>
+        <section
+          className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
+          aria-label="개발 로그"
+        >
+          <DevelopmentList ref={devLogRef} />
+        </section>
+        <svg
+          className="absolute left-0 top-0 h-full w-full"
+          style={{ pointerEvents: "none" }}
+        >
+          {lines.map((line, index) => (
+            <path
+              key={index}
+              d={line.path}
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="2"
+            />
+          ))}
+        </svg>
+      </main>
+      <footer className="fixed right-2 top-2 w-max text-[10px] text-white/40 xl:left-2 xl:text-xs">
+        Designed & Made by <strong>Kyu</strong>
+      </footer>
+    </>
   );
 }

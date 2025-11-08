@@ -64,12 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} font-sans`}>
-        {children}
-        <footer className="absolute right-2 top-2 w-max text-[10px] text-white/40 xl:left-2 xl:text-xs">
-          Designed & Made by <strong>Kyu</strong>
-        </footer>
-      </body>
+      <body className={`${inter.className} font-sans`}>{children}</body>
     </html>
   );
 }

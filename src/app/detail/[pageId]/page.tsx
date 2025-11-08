@@ -1,4 +1,4 @@
-import { Construction, Key, Layers } from "lucide-react";
+import { Construction } from "lucide-react";
 import React from "react";
 
 import {
@@ -9,10 +9,9 @@ import {
 } from "@/entities/detail/util";
 
 import { isStringArray } from "@/shared/shadcn/lib/utils";
-import { OutlineStackSpan, SolidStackSpan } from "@/shared/ui/StackSpan";
-import Title from "@/shared/ui/Title";
 
 import { NotionContent } from "@/widgets/detail/NotionContent";
+import { Header } from "@/widgets/detail/Header";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,35 +58,19 @@ export default async function NotionPage({
   const techs = titleData[3].split("/");
 
   return (
-    <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-      <header className="flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-black/60 max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
-        <Title>
-          <div className="w-full rounded-r-md bg-white px-3 text-end leading-tight text-black">
-            {title}
-          </div>
-        </Title>
-        <div className="flex flex-col items-end gap-1 max-xl:pb-3">
-          <h1 className="mt-4 text-[10px] font-bold leading-tight tracking-tight md:text-sm">
-            {peroid}
-          </h1>
-          <h1 className="flex gap-1 font-bold tracking-tight">
-            {tags.map((tag, i) => (
-              <OutlineStackSpan key={tag} tag={tag} idx={i} />
-            ))}
-            <Key size={16} className="ml-1 min-w-4" />
-          </h1>
-          <h1 className="flex gap-1 font-bold tracking-tight">
-            {techs.map((tech, i) => (
-              <SolidStackSpan key={tech} tag={tech} idx={i} />
-            ))}
-            <Layers size={16} className="ml-1 min-w-4" />
-          </h1>
-        </div>
-      </header>
+    <>
+      <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
+        <header className="relative flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-black/60 max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
+          <Header title={title} peroid={peroid} tags={tags} techs={techs} />
+        </header>
 
-      <div className="h-full overflow-y-auto px-3 pb-16 max-xl:pt-20">
-        <NotionContent blocks={grouped} />
-      </div>
-    </main>
+        <div className="h-full overflow-y-auto px-3 pb-16 max-xl:pt-20">
+          <NotionContent blocks={grouped} />
+        </div>
+      </main>
+      <footer className="fixed bottom-2 right-2 w-max text-[10px] text-white/40 max-xl:top-2 xl:left-2 xl:text-xs">
+        Designed & Made by <strong>Kyu</strong>
+      </footer>
+    </>
   );
 }
