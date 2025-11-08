@@ -38,7 +38,7 @@ export default async function NotionPage({
     !tree ||
     !titleData ||
     !isStringArray(titleData) ||
-    titleData.length < 4
+    titleData.length !== 4
   )
     return (
       <div className="multi-gradient-background flex h-screen w-screen items-center justify-center text-white">

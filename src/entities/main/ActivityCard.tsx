@@ -13,7 +13,7 @@ export const ActivityCard = ({ activity }: { activity: Data.Activity }) => {
       )}
     >
       <div className="w-full">
-        <h3 className="mb-4 text-xl leading-tight text-light max-md:mb-1 max-md:text-[16px] max-sm:mb-0">
+        <h3 className="mb-4 text-xl leading-tight text-light max-md:mb-1 max-md:text-[16px] max-sm:mb-0 lg:w-[calc(100%+130px)]">
           {activity.name}
         </h3>
 
@@ -35,7 +35,9 @@ export const ActivityCard = ({ activity }: { activity: Data.Activity }) => {
       </div>
 
       <div className="flex flex-col items-end gap-1 max-lg:flex-row">
-        <OutlineButton href={activity.result}>Result</OutlineButton>
+        {activity.result && (
+          <OutlineButton href={activity.result}>Result</OutlineButton>
+        )}
         <BasicButton href={activity.link}>About Team</BasicButton>
       </div>
     </div>

@@ -19,10 +19,10 @@ export const DevelopmentCard = ({
       )}
     >
       <div className="w-full">
-        <h3 className="mb-4 text-lg leading-tight max-md:mb-2 max-md:text-[13px]">
+        <h3 className="mb-4 text-lg leading-tight max-md:mb-2 max-md:text-[13px] lg:w-[calc(100%+175px)]">
           {development.title}
         </h3>
-        <div className="flex gap-1">
+        <div className="flex gap-1 lg:w-[calc(100%+175px)]">
           <Key size={16} className="mr-1 min-w-4" />
           <div className="mb-1 flex flex-wrap items-center gap-1">
             {development.tags.map((tag, i) => (
@@ -30,7 +30,7 @@ export const DevelopmentCard = ({
             ))}
           </div>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-1 lg:w-[calc(100%+175px)]">
           <Layers size={16} className="mr-1 min-w-4" />
           <div className="mb-5 flex flex-wrap items-center gap-1 max-md:mb-2">
             {development.techStacks.map((tag, i) => (

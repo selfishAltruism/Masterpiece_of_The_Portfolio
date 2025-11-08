@@ -14,7 +14,7 @@ declare namespace Data {
     position: string;
     description: string;
     period: string;
-    result: string;
+    result?: string;
     link: string;
   }
 

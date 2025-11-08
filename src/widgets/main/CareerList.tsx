@@ -16,7 +16,7 @@ const Careers = () => {
         ))}
       </div>
 
-      <SubTitle>Startup & Project</SubTitle>
+      <SubTitle>Activity</SubTitle>
       <div>
         {activities.map((activity, index) => (
           <ActivityCard activity={activity} key={index} />
