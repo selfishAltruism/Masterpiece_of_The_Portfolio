@@ -11,12 +11,12 @@
 @tailwind utilities;
 
 .multi-gradient-background {
-  background-color: #000000; /* fallback color */
+  background-color: #161616; /* fallback color */
   background-image:
-    radial-gradient(at 0% 0%, #000000 0px, transparent 40%),
-    radial-gradient(at 0% 100%, #000000 0px, transparent 50%),
-    radial-gradient(at 100% 0%, #000000 0px, transparent 50%),
-    radial-gradient(at 100% 100%, #000000 0px, transparent 50%);
+    radial-gradient(at 0% 0%, #161616 0px, transparent 40%),
+    radial-gradient(at 0% 100%, #161616 0px, transparent 50%),
+    radial-gradient(at 100% 0%, #161616 0px, transparent 50%),
+    radial-gradient(at 100% 100%, #161616 0px, transparent 50%);
 }
 
 ::-webkit-scrollbar {

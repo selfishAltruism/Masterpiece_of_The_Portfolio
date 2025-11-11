@@ -17,7 +17,7 @@ export const Header = ({ title, peroid, tags, techs }: HeaderProps) => (
       <ChevronLeft className="h-6 w-6 max-xl:h-5 max-xl:w-5" />
     </Link>
     <Title>
-      <p className="w-full rounded-r-md bg-white px-3 text-end leading-tight text-black">
+      <p className="w-full rounded-r-md bg-white px-3 text-end leading-tight text-[#161616]">
         {title}
       </p>
     </Title>

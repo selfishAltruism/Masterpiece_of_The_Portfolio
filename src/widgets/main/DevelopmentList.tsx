@@ -7,25 +7,27 @@ import { developmentLogs } from "@/shared/data/development";
 
 const Developments = () => {
   return (
-    <>
-      <Title>Dev Log</Title>
-      <div className="flex flex-col">
-        {developmentLogs.map((log, index) => (
-          <DevelopmentCard development={log} key={index} />
-        ))}
-      </div>
-    </>
+    <div className="flex flex-col pt-14 max-lg:pt-10 max-sm:pt-8">
+      {developmentLogs.map((log, index) => (
+        <DevelopmentCard development={log} key={index} />
+      ))}
+    </div>
   );
 };
 
 const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div
-      ref={ref}
-      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 text-white max-xl:py-0 max-sm:p-2 max-sm:pl-3"
-    >
-      <Developments />
-    </div>
+    <>
+      <div className="fixed z-[60] w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pl-3">
+        <Title>Dev Log</Title>
+      </div>
+      <div
+        ref={ref}
+        className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 text-white max-xl:py-0 max-sm:p-2 max-sm:pl-3"
+      >
+        <Developments />
+      </div>
+    </>
   );
 });
 

@@ -8,8 +8,7 @@ import { ActivityCard } from "@/entities/main/ActivityCard";
 
 const Careers = () => {
   return (
-    <>
-      <Title>Career</Title>
+    <div className="pt-14 max-lg:pt-10 max-sm:pt-8">
       <div className="mb-2">
         {careers.map((career, index) => (
           <CareerCard career={career} key={index} />
@@ -22,18 +21,23 @@ const Careers = () => {
           <ActivityCard activity={activity} key={index} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
 const CareerList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div
-      ref={ref}
-      className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pr-3"
-    >
-      <Careers />
-    </div>
+    <>
+      <div className="fixed z-[60] w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pl-3">
+        <Title>Career</Title>
+      </div>
+      <div
+        ref={ref}
+        className="flex h-full w-full flex-col overflow-y-auto bg-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pr-3"
+      >
+        <Careers />
+      </div>
+    </>
   );
 });
 

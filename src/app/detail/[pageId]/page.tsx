@@ -60,7 +60,7 @@ export default async function NotionPage({
   return (
     <>
       <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-        <header className="relative flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-black/60 max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
+        <header className="relative flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-gradient-to-b max-xl:from-[#161616] max-xl:to-transparent max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
           <Header title={title} peroid={peroid} tags={tags} techs={techs} />
         </header>
 
