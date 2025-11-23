@@ -18,7 +18,7 @@ const Developments = () => {
 const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
-      <div className="fixed z-[60] w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pl-3">
+      <div className="fixed z-40 w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pl-3">
         <Title>Dev Log</Title>
       </div>
       <div

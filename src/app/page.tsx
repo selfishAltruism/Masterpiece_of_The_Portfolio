@@ -146,7 +146,7 @@ export default function MainPage() {
         ref={mainRef}
         className="multi-gradient-background grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
       >
-        <h1 className="sr-only">강민규 프론트엔드 개발자 포트폴리오</h1>
+        <h1 className="sr-only">Kyu, 강민규</h1>
         <section
           className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
           aria-label="프로필"
