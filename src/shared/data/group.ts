@@ -9,6 +9,16 @@ export const careers: Data.Career[] = [
   },
 ];
 
+export const ownedServices: Data.OwnedServcie[] = [
+  {
+    id: 1,
+    name: "cvr.",
+    description: "React Code-based Rendering Visualization Tool",
+    period: "2025.11 ~ 현재 유지보수 중",
+    result: "https://react-crv.vercel.app/",
+  },
+];
+
 export const activities: Data.Activity[] = [
   {
     id: 1,

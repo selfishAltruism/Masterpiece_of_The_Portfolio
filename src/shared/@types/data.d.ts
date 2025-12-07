@@ -8,6 +8,14 @@ declare namespace Data {
     homepage: string;
   }
 
+  export interface OwnedServcie {
+    id: number;
+    name: string;
+    description: string;
+    period: string;
+    result: string;
+  }
+
   export interface Activity {
     id: number;
     name: string;

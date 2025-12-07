@@ -7,7 +7,7 @@ import { developmentLogs } from "@/shared/data/development";
 
 const Developments = () => {
   return (
-    <div className="flex flex-col pt-14 max-lg:pt-10 max-sm:pt-8">
+    <div className="flex flex-col pt-11 max-lg:pt-10 max-sm:pt-8">
       {developmentLogs.map((log, index) => (
         <DevelopmentCard development={log} key={index} />
       ))}

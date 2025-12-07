@@ -32,8 +32,12 @@ export const metadata: Metadata = {
     "React Native",
     "중앙대학교 소프트웨어학부",
     "CAUSW",
-    "IDIS",
+    "IDIS 개발자",
+    "IDIS 현직자",
+    "IDIS 연구원",
     "아이디스",
+    "아이디스 현직자",
+    "아이디스 연구원",
     "영상 보안 개발자",
   ],
   icons: {

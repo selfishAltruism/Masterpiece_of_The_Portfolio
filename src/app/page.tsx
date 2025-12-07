@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 
 import Profile from "@/widgets/main/Profile";
-import CareerList from "@/widgets/main/CareerList";
+import GroupList from "@/widgets/main/GroupList";
 import DevelopmentList from "@/widgets/main/DevelopmentList";
 
 import { developmentLogs } from "@/shared/data/development";
-import { careers, activities } from "@/shared/data/career";
+import { careers, activities, ownedServices } from "@/shared/data/group";
 
 interface Line {
   path: string;
@@ -30,6 +30,7 @@ export default function MainPage() {
       const careerPanelTop =
         (careerRef.current?.getBoundingClientRect().top ?? 0) - mainRect.top;
 
+      // group(career, owned service, activity) - dev log cards edge.
       developmentLogs.forEach((log) => {
         const devCard = document.getElementById(`dev-${log.id}`);
         let startCard = null;
@@ -38,6 +39,8 @@ export default function MainPage() {
           startCard = document.getElementById(`career-${log.linkedId}`);
         } else if (log.linkedTo === "activity") {
           startCard = document.getElementById(`activity-${log.linkedId}`);
+        } else if (log.linkedTo === "owned-service") {
+          startCard = document.getElementById(`owned-service-${log.linkedId}`);
         }
 
         if (startCard && devCard) {
@@ -68,7 +71,7 @@ export default function MainPage() {
         const profileSourceRect =
           profileSourceRef.current.getBoundingClientRect();
 
-        // profile-career cards.
+        // profile-career cards edge.
         careers.forEach((career) => {
           const careerCard = document.getElementById(`career-${career.id}`);
 
@@ -92,7 +95,34 @@ export default function MainPage() {
           }
         });
 
-        // career-activity cards.
+        // profile-owned service cards edge.
+        ownedServices.forEach((service) => {
+          const serviceCard = document.getElementById(
+            `owned-service-${service.id}`,
+          );
+
+          if (serviceCard) {
+            const serviceRect = serviceCard.getBoundingClientRect();
+
+            const startX = profileSourceRect.right - mainRect.left;
+            const startY =
+              profileSourceRect.top -
+              mainRect.top +
+              profileSourceRect.height / 2;
+            const endX = serviceRect.left - mainRect.left;
+            const endY =
+              serviceRect.top - mainRect.top + serviceRect.height / 2;
+
+            const offset = (endX - startX) * 0.5;
+            const controlX1 = startX + offset;
+            const controlX2 = endX - offset;
+
+            const path = `M ${startX} ${startY} C ${controlX1} ${startY}, ${controlX2} ${endY}, ${endX} ${endY}`;
+            newLines.push({ path });
+          }
+        });
+
+        // profile-activity cards edge.
         activities.forEach((activity) => {
           const activityCard = document.getElementById(
             `activity-${activity.id}`,
@@ -157,7 +187,7 @@ export default function MainPage() {
           className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
           aria-label="주요 경력"
         >
-          <CareerList ref={careerRef} />
+          <GroupList ref={careerRef} />
         </section>
         <section
           className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
