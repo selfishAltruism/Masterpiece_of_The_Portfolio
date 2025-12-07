@@ -13,6 +13,8 @@ interface Line {
   path: string;
 }
 
+const EDGE_CORRECTION = 10;
+
 export default function MainPage() {
   const [lines, setLines] = useState<Line[]>([]);
   const mainRef = useRef<HTMLDivElement>(null);
@@ -47,9 +49,9 @@ export default function MainPage() {
           const startRect = startCard.getBoundingClientRect();
           const devRect = devCard.getBoundingClientRect();
 
-          const startX = startRect.right - mainRect.left;
+          const startX = startRect.right - mainRect.left - EDGE_CORRECTION;
           const startY = startRect.top - mainRect.top + startRect.height / 2;
-          const endX = devRect.left - mainRect.left;
+          const endX = devRect.left - mainRect.left + EDGE_CORRECTION;
           const endY = devRect.top - mainRect.top + devRect.height / 2;
 
           if (startY < careerPanelTop || endY < careerPanelTop) {
@@ -83,7 +85,7 @@ export default function MainPage() {
               profileSourceRect.top -
               mainRect.top +
               profileSourceRect.height / 2;
-            const endX = careerRect.left - mainRect.left;
+            const endX = careerRect.left - mainRect.left + EDGE_CORRECTION;
             const endY = careerRect.top - mainRect.top + careerRect.height / 2;
 
             const offset = (endX - startX) * 0.5;
@@ -109,7 +111,7 @@ export default function MainPage() {
               profileSourceRect.top -
               mainRect.top +
               profileSourceRect.height / 2;
-            const endX = serviceRect.left - mainRect.left;
+            const endX = serviceRect.left - mainRect.left + EDGE_CORRECTION;
             const endY =
               serviceRect.top - mainRect.top + serviceRect.height / 2;
 
@@ -136,7 +138,7 @@ export default function MainPage() {
               profileSourceRect.top -
               mainRect.top +
               profileSourceRect.height / 2;
-            const endX = activityRect.left - mainRect.left;
+            const endX = activityRect.left - mainRect.left + EDGE_CORRECTION;
             const endY =
               activityRect.top - mainRect.top + activityRect.height / 2;
 
