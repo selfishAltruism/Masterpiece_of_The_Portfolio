@@ -17,7 +17,7 @@ const Groups = () => {
         ))}
       </div>
 
-      <Title>Owned Service</Title>
+      <Title>Owned</Title>
       <div className="mb-2">
         {ownedServices.map((service, index) => (
           <OwnedServiceCard service={service} key={index} />

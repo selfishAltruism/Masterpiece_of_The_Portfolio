@@ -13,7 +13,7 @@ export const ownedServices: Data.OwnedServcie[] = [
   {
     id: 1,
     name: "cvr.",
-    description: "React Code-based Rendering Visualization Tool",
+    description: "React Code-based Rendering Visualization (CRV) Web 도구",
     period: "2025.11 ~ 현재 유지보수 중",
     result: "https://react-crv.vercel.app/",
   },
