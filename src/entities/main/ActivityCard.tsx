@@ -34,7 +34,7 @@ export const ActivityCard = ({ activity }: { activity: Data.Activity }) => {
         </p>
       </div>
 
-      <div className="flex flex-col items-end gap-1 max-lg:flex-row">
+      <div className="flex flex-col items-end gap-1 max-lg:flex-row max-sm:flex-col">
         {activity.result && (
           <OutlineButton href={activity.result}>To Service</OutlineButton>
         )}
