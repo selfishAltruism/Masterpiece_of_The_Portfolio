@@ -10,21 +10,21 @@ import { OwnedServiceCard } from "@/entities/main/OwnedServiceCard";
 const Groups = () => {
   return (
     <div className="max-sm:mb-28">
-      <Title>Career</Title>
+      <Title description="정규직 경력">Career</Title>
       <div className="mb-2">
         {careers.map((career, index) => (
           <CareerCard career={career} key={index} />
         ))}
       </div>
 
-      <Title>Owned</Title>
+      <Title description="개인 기획 및 개발 서비스">Owned</Title>
       <div className="mb-2">
         {ownedServices.map((service, index) => (
           <OwnedServiceCard service={service} key={index} />
         ))}
       </div>
 
-      <Title>Activity</Title>
+      <Title description="계약직 및 인턴 경력 & 대내외 활동">Activity</Title>
       <div>
         {activities.map((activity, index) => (
           <ActivityCard activity={activity} key={index} />
