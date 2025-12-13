@@ -24,6 +24,7 @@ export const developmentLogs: Data.Development[] = [
     techStacks: ["Next.js", "Python", "React Native"],
     link: "detail/23248a0856d480c094d6de520c708f2d",
   },
+
   {
     id: 0,
     linkedTo: "activity",
@@ -61,7 +62,8 @@ export const developmentLogs: Data.Development[] = [
     ],
     link: "detail/23248a0856d480b2aa44c113e1a8acde",
   },
-  {
+
+  /* {
     id: 4,
     linkedTo: "activity",
     linkedId: 2,
@@ -71,5 +73,5 @@ export const developmentLogs: Data.Development[] = [
     tags: ["SSR-based SEO", "RWD"],
     techStacks: ["Next.js", "TypeScript", "Shadcn"],
     link: "detail/26848a0856d480a483f5d0091e191f46",
-  },
+  }, */
 ];
