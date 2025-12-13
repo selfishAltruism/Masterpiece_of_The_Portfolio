@@ -7,7 +7,7 @@ import { developmentLogs } from "@/shared/data/development";
 
 const Developments = () => {
   return (
-    <div className="flex flex-col pt-11 max-lg:pt-10 max-sm:pt-8">
+    <div className="flex flex-col pt-11 max-lg:pt-10 max-sm:mb-[119px] max-sm:pt-8">
       {developmentLogs.map((log, index) => (
         <DevelopmentCard development={log} key={index} />
       ))}
@@ -18,7 +18,7 @@ const Developments = () => {
 const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
-      <div className="fixed z-40 w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pl-3">
+      <div className="fixed z-40 w-full bg-gradient-to-b from-[#161616] to-transparent p-8 max-xl:-mt-1 max-xl:py-0 max-sm:p-2 max-sm:pl-3 max-sm:pt-3">
         <Title>Dev Log</Title>
       </div>
       <div

@@ -176,7 +176,7 @@ export default function MainPage() {
     <>
       <main
         ref={mainRef}
-        className="multi-gradient-background grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
+        className="multi-gradient-background fixed grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
       >
         <h1 className="sr-only">Kyu, 강민규</h1>
         <section
