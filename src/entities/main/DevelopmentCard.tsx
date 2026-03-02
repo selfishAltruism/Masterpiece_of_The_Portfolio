@@ -47,9 +47,9 @@ export const DevelopmentCard = ({
         </p>
       </div>
 
-      <div className="">
+      {/* <div className="">
         <BasicButton to={development.link}>To Dev Detail</BasicButton>
-      </div>
+      </div> */}
     </div>
   );
 };
