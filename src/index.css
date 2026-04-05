@@ -11,12 +11,29 @@
 @tailwind utilities;
 
 .multi-gradient-background {
-  background-color: #161616; /* fallback color */
+  background-color: var(--page-bg);
   background-image:
-    radial-gradient(at 0% 0%, #161616 0px, transparent 40%),
-    radial-gradient(at 0% 100%, #161616 0px, transparent 50%),
-    radial-gradient(at 100% 0%, #161616 0px, transparent 50%),
-    radial-gradient(at 100% 100%, #161616 0px, transparent 50%);
+    radial-gradient(
+      at 0% 0%,
+      color-mix(in srgb, var(--page-bg) 98%, white 2%) 0px,
+      transparent 40%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      color-mix(in srgb, var(--page-bg) 98%, white 2%) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 0%,
+      color-mix(in srgb, var(--page-bg) 98%, white 2%) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 100%,
+      color-mix(in srgb, var(--page-bg) 98%, white 2%) 0px,
+      transparent 50%
+    );
+  color: var(--page-fg);
 }
 
 ::-webkit-scrollbar {
@@ -28,12 +45,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff4b;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f0f0f0;
+  background: var(--scrollbar-thumb-hover);
 }
 
 @layer base {
@@ -63,7 +80,49 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --page-bg: #faf9f6;
+    --page-fg: #1f2937;
+    --page-fg-muted: rgba(31, 41, 55, 0.72);
+    --page-fg-soft: rgba(31, 41, 55, 0.55);
+    --panel-bg: rgba(255, 255, 255, 0.82);
+    --panel-border: rgba(15, 23, 42, 0.12);
+    --panel-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    --line-color: rgba(15, 23, 42, 0.28);
+    --accent-brand: #0a5bbd;
+    --accent-brand-strong: #083e80;
+    --accent-brand-soft: rgba(10, 91, 189, 0.12);
+    --badge-solid-bg: #0a5bbd;
+    --badge-solid-fg: #ffffff;
+    --badge-outline-bg: rgba(10, 91, 189, 0.08);
+    --badge-outline-fg: #1f2937;
+    --overlay: rgba(15, 23, 42, 0.35);
+    --scrollbar-thumb: rgba(203, 213, 225, 0.9);
+    --scrollbar-thumb-hover: rgba(148, 163, 184, 0.9);
+    --fade-bg: linear-gradient(
+      to bottom,
+      rgba(246, 244, 239, 0.96),
+      transparent
+    );
   }
+}
+
+:root[data-theme="dark"] {
+  --page-bg: #161616;
+  --page-fg: #ffffff;
+  --page-fg-muted: rgba(255, 255, 255, 0.9);
+  --page-fg-soft: rgba(255, 255, 255, 0.6);
+  --panel-bg: #343434;
+  --panel-border: rgba(255, 255, 255, 0.9);
+  --panel-shadow: none;
+  --line-color: #ffffff;
+  --badge-solid-bg: #ffffff;
+  --badge-solid-fg: #374151;
+  --badge-outline-bg: rgba(255, 255, 255, 0.15);
+  --badge-outline-fg: #ffffff;
+  --overlay: rgba(22, 22, 22, 0.8);
+  --scrollbar-thumb: #ffffff4b;
+  --scrollbar-thumb-hover: #f0f0f0;
+  --fade-bg: linear-gradient(to bottom, rgba(22, 22, 22, 0.96), transparent);
 }
 
 @layer base {
@@ -83,5 +142,45 @@
   html,
   body {
     overscroll-behavior: none;
+  }
+  html {
+    background: var(--page-bg);
+    color: var(--page-fg);
+  }
+}
+
+@layer components {
+  .theme-panel {
+    background: var(--panel-bg);
+    border-color: var(--panel-border);
+    box-shadow: var(--panel-shadow);
+    color: var(--page-fg);
+    backdrop-filter: blur(18px);
+  }
+
+  .theme-text-primary {
+    color: var(--page-fg);
+  }
+
+  .theme-text-muted {
+    color: var(--page-fg-muted);
+  }
+
+  .theme-text-soft {
+    color: var(--page-fg-soft);
+  }
+
+  .theme-fade-top {
+    background-image: var(--fade-bg);
+  }
+
+  .theme-badge-solid {
+    background: var(--badge-solid-bg);
+    color: var(--badge-solid-fg);
+  }
+
+  .theme-badge-outline {
+    background: var(--badge-outline-bg);
+    color: var(--badge-outline-fg);
   }
 }

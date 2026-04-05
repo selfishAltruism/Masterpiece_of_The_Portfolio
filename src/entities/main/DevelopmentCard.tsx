@@ -13,7 +13,7 @@ export const DevelopmentCard = ({
     <div
       id={`dev-${development.id}`}
       className={cn(
-        "z-10 mb-2 mt-2 flex items-end justify-between rounded-lg border-2 border-white bg-[#343434] p-5 text-white",
+        "theme-panel theme-text-primary z-10 mb-2 mt-2 flex items-end justify-between rounded-lg border-2 p-5",
         "max-lg:flex-col max-lg:gap-5 max-md:gap-2 max-sm:p-2",
         "duration-200 sm:hover:scale-[1.015]",
       )}
@@ -39,10 +39,10 @@ export const DevelopmentCard = ({
           </div>
         </div>
 
-        <p className="mb-[2px] text-xs leading-tight text-white/60 max-md:text-[10px]">
+        <p className="theme-text-soft mb-[2px] text-xs leading-tight max-md:text-[10px]">
           {development.period}
         </p>
-        <p className="mb-[2px] text-sm leading-tight text-white/90 max-md:text-[11px]">
+        <p className="theme-text-muted mb-[2px] text-sm leading-tight max-md:text-[11px]">
           {development.description}
         </p>
       </div>

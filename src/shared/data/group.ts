@@ -38,7 +38,6 @@ export const activities: Data.Activity[] = [
     period: "2024.11 ~ 2025.05",
     result:
       "https://apps.apple.com/kr/app/%ED%95%8F%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8A%A4/id6457255298",
-    companyLink: "https://www.fitrace.co.kr/ko/",
   },
   {
     id: 2,

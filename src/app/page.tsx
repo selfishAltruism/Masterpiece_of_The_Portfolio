@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { Moon, Sun } from "lucide-react";
 
 import Profile from "@/widgets/main/Profile";
 import GroupList from "@/widgets/main/GroupList";
@@ -17,10 +18,20 @@ const EDGE_CORRECTION = 10;
 
 export default function MainPage() {
   const [lines, setLines] = useState<Line[]>([]);
+  const [isWhiteMode, setIsWhiteMode] = useState(true);
   const mainRef = useRef<HTMLDivElement>(null);
   const careerRef = useRef<HTMLDivElement>(null);
   const devLogRef = useRef<HTMLDivElement>(null);
   const profileSourceRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.theme = isWhiteMode ? "light" : "dark";
+
+    return () => {
+      root.dataset.theme = "light";
+    };
+  }, [isWhiteMode]);
 
   useEffect(() => {
     const calculateLines = () => {
@@ -206,13 +217,22 @@ export default function MainPage() {
               key={index}
               d={line.path}
               fill="none"
-              stroke="#ffffff"
+              stroke="var(--line-color)"
               strokeWidth="2"
             />
           ))}
         </svg>
       </main>
-      <footer className="fixed right-2 top-2 w-max text-[10px] text-white/40 xl:left-2 xl:text-xs">
+      <button
+        type="button"
+        onClick={() => setIsWhiteMode((prev) => !prev)}
+        className="theme-panel theme-text-primary fixed bottom-4 left-4 z-50 hidden items-center gap-2 rounded-full border px-4 py-2 text-sm lg:flex"
+        aria-label={isWhiteMode ? "다크 모드로 전환" : "화이트 모드로 전환"}
+      >
+        {isWhiteMode ? <Moon size={16} /> : <Sun size={16} />}
+        {isWhiteMode ? "Dark mode" : "White mode"}
+      </button>
+      <footer className="theme-text-soft fixed right-2 top-2 w-max text-[10px] xl:left-2 xl:text-xs">
         Designed & Made by <strong>Kyu</strong>
       </footer>
     </>
