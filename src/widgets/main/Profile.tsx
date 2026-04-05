@@ -36,7 +36,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
       <div id="profile-source" className="flex flex-col xl:items-center">
         <Title>
-          <strong>Kyu,</strong>강민규
+          <strong>강민규,</strong> Kyu
         </Title>
 
         <Dialog>
@@ -79,7 +79,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <strong>연구원</strong> @ IDIS Co., Ltd
         </span>
         <span className="text-sm leading-tight text-white max-lg:text-[12px] max-sm:text-[11px]">
-          <strong>컴퓨터공학사 우등 졸업</strong> @ 중앙대학교
+          <strong>컴퓨터공학사 졸업</strong> @ 중앙대학교
         </span>
       </div>
 
