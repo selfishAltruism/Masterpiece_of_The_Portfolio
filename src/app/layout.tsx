@@ -14,6 +14,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "강민규",
+  manifest: "/site.webmanifest",
   description:
     "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. Web과 App에서 Web Graphics, RWD, SEO를 주로 다루고 있습니다.",
   keywords: [
@@ -58,7 +59,25 @@ export const metadata: Metadata = {
         type: "image/png",
         sizes: "16x16",
       },
+      {
+        url: "/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "/android-chrome-512x512.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
     ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    shortcut: ["/favicon.ico"],
   },
   openGraph: {
     title: "강민규",
