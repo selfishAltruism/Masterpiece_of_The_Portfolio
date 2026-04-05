@@ -47,9 +47,11 @@ export const DevelopmentCard = ({
         </p>
       </div>
 
-      {/* <div className="">
-        <BasicButton to={development.link}>To Dev Detail</BasicButton>
-      </div> */}
+      {development.link && (
+        <div className="">
+          <BasicButton to={development.link}>To Dev Detail</BasicButton>
+        </div>
+      )}
     </div>
   );
 };

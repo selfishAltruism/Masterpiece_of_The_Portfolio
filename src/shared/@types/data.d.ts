@@ -36,6 +36,6 @@ declare namespace Data {
     period: string;
     tags: string[];
     techStacks: string[];
-    link: string;
+    link?: string;
   }
 }

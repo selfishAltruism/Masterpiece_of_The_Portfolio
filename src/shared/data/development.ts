@@ -1,5 +1,22 @@
 export const developmentLogs: Data.Development[] = [
   {
+    id: 99,
+    linkedTo: "career",
+    linkedId: 1,
+    title: "Cloud Platform 서비스 개발",
+    description: "보안 장비 통합 Cloud Platform Web 서비스 개발",
+    period: "2025.06 ~",
+    tags: ["Spatial Object Placement", "WASM", "2D Rendering"],
+    techStacks: [
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+  },
+
+  {
     id: 2,
     linkedTo: "activity",
     linkedId: 1,
@@ -61,6 +78,17 @@ export const developmentLogs: Data.Development[] = [
       "Tailwind CSS",
     ],
     link: "detail/23248a0856d480b2aa44c113e1a8acde",
+  },
+
+  {
+    id: 9,
+    linkedTo: "activity",
+    linkedId: 3,
+    title: "Grid Library 개발",
+    description: "지하철 내부 부품 Tree List 전시 및 관리 Grid Library 개발",
+    period: "2023.09 ~ 2023.11",
+    tags: ["Grid Library"],
+    techStacks: ["React", "TypeScript", "Redux"],
   },
 
   /* {

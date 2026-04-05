@@ -43,7 +43,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <DialogTrigger className="mt-1 w-max xl:mt-2">
             <span
               className={cn(
-                "mb-3 mt-3 w-max cursor-pointer border-b border-transparent bg-[var(--accent-brand)] px-[2px] p-0 text-lg italic text-white transition-all duration-200",
+                "mb-3 mt-3 w-max cursor-pointer border-b border-transparent bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white transition-all duration-200",
                 "max-xl:text-[14px] max-lg:mt-0 max-lg:text-[13px] max-sm:text-[12px]",
                 "active:scale-95 active:border-[var(--accent-brand-strong)] active:bg-[var(--accent-brand-strong)]",
                 "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
@@ -79,7 +79,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <strong>연구원</strong> @ IDIS Co., Ltd
         </span>
         <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
-          <strong>컴퓨터공학사 졸업</strong> @ 중앙대학교
+          <strong>컴퓨터공학사 우등 졸업</strong> @ 중앙대학교
         </span>
       </div>
 
