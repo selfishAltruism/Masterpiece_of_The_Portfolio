@@ -40,13 +40,13 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </Title>
 
         <Dialog>
-          <DialogTrigger className="mt-1 w-max xl:mt-2">
+          <DialogTrigger className="mt-1 w-max xl:mb-2 xl:mt-2">
             <span
               className={cn(
-                "mb-3 mt-3 w-max cursor-pointer bg-[#0A5BBD] p-0 text-lg italic text-white transition-all duration-200",
+                "mb-3 mt-3 w-max cursor-pointer border-b border-transparent bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white transition-all duration-200",
                 "max-xl:text-[14px] max-lg:mt-0 max-lg:text-[13px] max-sm:text-[12px]",
-                "active:scale-95 active:border-[#083e80] active:bg-[#083e80]",
-                "sm:hover:border-[#083e80] sm:hover:bg-[#083e80] sm:hover:text-white/70",
+                "active:scale-95 active:border-[var(--accent-brand-strong)] active:bg-[var(--accent-brand-strong)]",
+                "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
               )}
             >
               안전지대를 넘어서는 개발자.
@@ -54,32 +54,42 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle className="mb-1">
+              <DialogTitle className="mb-4">
                 안전지대를 넘어서는 개발자, 강민규입니다.
               </DialogTitle>
-              <DialogDescription>
+              <DialogDescription className="text-[14px]">
                 개발 경험이 쌓이면 익숙한 기술과 환경 속에서{" "}
                 <strong className="text-[#0A5BBD]">안전지대</strong>가
-                형성됩니다. 발전과 변화가 빠른 개발 분야에서 이러한 안전지대에
-                머무르기보다,{" "}
+                형성됩니다.
+                <div className="p-1" />
+                발전과 변화가 빠른 개발 분야에서 이러한 안전지대에 머무르기보다,
+                <br />
                 <strong className="text-[#0A5BBD]">
                   넘어서고 도전하며, 성장을 지향
                 </strong>
-                해야 한다고 생각합니다. 이러한 소신을 가지고{" "}
-                <strong className="text-[#0A5BBD]">
-                  변화와 문제를 두려워하지 않으며{" "}
-                </strong>
-                개발 직무에 임하고 있습니다.
+                해야 한다고 생각합니다.
+                <div className="p-1" />
+                <div>
+                  이러한 소신을 가지고{" "}
+                  <strong className="text-[#0A5BBD]">
+                    변화와 문제를 두려워하지 않으며
+                  </strong>
+                  ,{" "}
+                  <strong className="text-[#0A5BBD]">
+                    효과적인 기술과 문제 해결방법
+                  </strong>
+                  을 도입하며 개발 직무에 임하고 있습니다.
+                </div>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>
 
-        <span className="text-sm leading-tight text-white max-lg:text-[12px] max-sm:text-[11px]">
+        <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
           <strong>연구원</strong> @ IDIS Co., Ltd
         </span>
-        <span className="text-sm leading-tight text-white max-lg:text-[12px] max-sm:text-[11px]">
-          <strong>컴퓨터공학사 졸업</strong> @ 중앙대학교
+        <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
+          <strong>컴퓨터공학사 우등 졸업</strong> @ 중앙대학교
         </span>
       </div>
 

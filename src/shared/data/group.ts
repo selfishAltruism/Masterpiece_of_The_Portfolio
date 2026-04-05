@@ -4,7 +4,7 @@ export const careers: Data.Career[] = [
     company: "IDIS",
     position: "연구원 (정규직)",
     description: "통합 물리보안 관제 서비스 개발",
-    period: "2025.05 ~ 현재 재직 중",
+    period: "2025.05 ~",
     homepage: "https://www.idisglobal.com/",
   },
 ];
@@ -38,7 +38,6 @@ export const activities: Data.Activity[] = [
     period: "2024.11 ~ 2025.05",
     result:
       "https://apps.apple.com/kr/app/%ED%95%8F%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8A%A4/id6457255298",
-    companyLink: "https://www.fitrace.co.kr/ko/",
   },
   {
     id: 2,
@@ -51,7 +50,7 @@ export const activities: Data.Activity[] = [
   },
   {
     id: 3,
-    name: "Bizepeer",
+    name: "비즈피어",
     description: "지하철 내부 부품 생명주기 관리 Web 서비스 개발",
     position: "Front-end 개발 인턴",
     period: "2023.09 ~ 2023.12",
