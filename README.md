@@ -1,69 +1,21 @@
-# React + TypeScript + Vite
+## Portfolio Web Project.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 경력 기술 웹 페이지 프로젝트: https://kyu-log.vercel.app/.
+- 작업 기간: 2025.07 ~ 현재 유지보수 중.
 
-Currently, two official plugins are available:
+### Function
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Tree 구조의 UI.
+  - 프로필 이미지부터 개발 상세 페이지 까지 연결되는 Tree 구조의 UI.
+  - 각 영역이 스크롤 되어도 edge 동적 연결.
+- PC full screen / half screen / mobile view RWD.
+- 개발 상세 페이지 데이터 - Notion 페이지 데이터 동적 연동.
 
-## Expanding the ESLint configuration
+### Tech Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Next.js, TypeScript 기반 구현.
+  - SSR 기반 SEO 최적화.
+- notionhq 기반 Notion 페이지 데이터 동적 연동 구현.
+- FSD 아키텍처 기반 폴더 구조 적용.
+- Tailwind CSS, Sharcn 기반 RWD 구현.
+- Vercel 기반 배포.
