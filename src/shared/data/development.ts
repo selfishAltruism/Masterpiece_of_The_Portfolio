@@ -10,9 +10,9 @@ export const developmentLogs: Data.Development[] = [
     techStacks: [
       "React",
       "TypeScript",
-      "PostgreSQL",
       "Zustand",
       "Tailwind CSS",
+      "PostgreSQL",
     ],
   },
 
@@ -52,8 +52,7 @@ export const developmentLogs: Data.Development[] = [
     period: "2024.11 ~ 2025.04",
     tags: [
       "iOS & AOS",
-      "FSD Architecture",
-      "TypeScript Migration",
+      "TypeScript & FSD Migration",
       "Bluetooth",
       "App Store Management",
     ],
@@ -85,9 +84,10 @@ export const developmentLogs: Data.Development[] = [
     linkedTo: "activity",
     linkedId: 3,
     title: "Grid Library 개발",
-    description: "지하철 내부 부품 Tree List 전시 및 관리 Grid Library 개발",
+    description:
+      "지하철 내부 부품 Tree 구조 List 전시 및 관리 Grid Web Library 개발",
     period: "2023.09 ~ 2023.11",
-    tags: ["Grid Library"],
+    tags: ["Grid Wab Library", "Tree 구조 시각화 & 관리 Tool"],
     techStacks: ["React", "TypeScript", "Redux"],
   },
 

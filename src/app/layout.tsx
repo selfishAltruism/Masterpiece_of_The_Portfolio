@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "강민규",
   manifest: "/site.webmanifest",
   description:
-    "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. Web과 App에서 Web Graphics, RWD, SEO를 주로 다루고 있습니다.",
+    "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. Web과 App을 개발하며, Web Graphics, RWD, SEO를 주로 다루고 있습니다.",
   keywords: [
     "강민규",
     "프론트엔드 개발자",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "강민규",
     description:
-      "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. React, Next.js, Web Graphics를 주로 다루고 있습니다.",
+      "안전지대를 넘어서는 개발자, 강민규의 경력 기술 웹 페이지입니다. Web과 App을 개발하며, Web Graphics, RWD, SEO를 주로 다루고 있습니다.",
     images: ["https://kyu-log.vercel.app/opengraph-image.png"],
   },
 };

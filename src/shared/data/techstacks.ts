@@ -7,7 +7,12 @@ export const techStacks = {
   ],
 
   "Pretty well-used / Language": ["JavaScript", "TypeScript"],
-  "Pretty well-used / Framework": ["React", "Next.js", "React Native"],
+  "Pretty well-used / Framework": [
+    "React",
+    "Next.js",
+    "React Native",
+    "PostgreSQL",
+  ],
   "Pretty well-used / Tool": ["VS Code", "Vite", "Webpack", "ESLint"],
   "Pretty well-used / Library": [
     "Axios",
@@ -19,6 +24,6 @@ export const techStacks = {
   ],
 
   "Well-used / Language": ["C++", "Python", "Dart"],
-  "Well-used / Framework": ["Flutter"],
+  "Well-used / Framework": ["Flutter", "FastAPI"],
   "Well-used / Library": ["Redux", "Recoil", "react-hook-form", "Tiptap"],
 };

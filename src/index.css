@@ -82,8 +82,8 @@
     --radius: 0.5rem;
     --page-bg: #faf9f6;
     --page-fg: #1f2937;
-    --page-fg-muted: rgba(31, 41, 55, 0.72);
-    --page-fg-soft: rgba(31, 41, 55, 0.55);
+    --page-fg-muted: rgba(31, 41, 55, 0.88);
+    --page-fg-soft: rgba(31, 41, 55, 0.74);
     --panel-bg: rgba(255, 255, 255, 0.82);
     --panel-border: rgba(15, 23, 42, 0.12);
     --panel-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
