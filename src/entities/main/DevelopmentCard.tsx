@@ -49,7 +49,7 @@ export const DevelopmentCard = ({
 
       {development.link && (
         <div className="">
-          <BasicButton to={development.link}>To Dev Detail</BasicButton>
+          <BasicButton to={development.link}>프로젝트 상세</BasicButton>
         </div>
       )}
     </div>

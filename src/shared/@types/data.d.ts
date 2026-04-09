@@ -5,7 +5,7 @@ declare namespace Data {
     position: string;
     description: string;
     period: string;
-    homepage: string;
+    homepage?: string;
   }
 
   export interface OwnedServcie {

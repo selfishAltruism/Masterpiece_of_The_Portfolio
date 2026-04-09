@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Github, Layers, Linkedin } from "lucide-react";
 
 import Title from "@/shared/ui/Title";
@@ -18,6 +18,18 @@ import { cn } from "@/shared/shadcn/lib/utils";
 import { TechStackDrawer } from "@/entities/main/TechStackDrawer";
 
 const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
+  const [isEmailCopied, setIsEmailCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("officialkyus@gmail.com");
+      setIsEmailCopied(true);
+      window.setTimeout(() => setIsEmailCopied(false), 1500);
+    } catch {
+      setIsEmailCopied(false);
+    }
+  };
+
   return (
     <div
       className={cn(
@@ -85,6 +97,27 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           </DialogContent>
         </Dialog>
 
+        <div className="relative mb-2 w-max">
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="theme-text-soft block text-left text-sm leading-tight underline decoration-[var(--panel-border)] underline-offset-2 max-lg:text-[12px] max-sm:text-[11px]"
+            aria-label="Copy officialkyus@gmail.com"
+            title="Copy: officialkyus@gmail.com"
+          >
+            Email: officialkyus@gmail.com
+          </button>
+          <span
+            aria-hidden={!isEmailCopied}
+            className={`absolute left-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
+              isEmailCopied ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+          >
+            복사됨
+            <span className="absolute -left-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
+          </span>
+        </div>
+
         <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
           <strong>연구원</strong> @ IDIS Co., Ltd
         </span>
@@ -97,17 +130,18 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         <div className="flex items-end gap-1 max-xl:flex-col">
           <div className="flex justify-end gap-1">
             <OutlineButton href="https://github.com/selfishAltruism">
-              <Github size={17} />
+              Github
+              <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
             </OutlineButton>
-            <OutlineButton href="https://www.linkedin.com/in/kyus/">
+            {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">
               <Linkedin size={17} />
-            </OutlineButton>
+            </OutlineButton> */}
           </div>
 
           <Drawer>
             <DrawerTrigger asChild>
               <BasicButton>
-                Tech Stack
+                기술 스택 상세
                 <Layers size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
               </BasicButton>
             </DrawerTrigger>

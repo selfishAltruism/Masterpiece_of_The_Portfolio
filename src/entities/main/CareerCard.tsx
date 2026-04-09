@@ -33,9 +33,11 @@ export const CareerCard = ({ career }: { career: Data.Career }) => {
         </p>
       </div>
 
-      <div className="">
-        <BasicButton href={career.homepage}>About Company</BasicButton>
-      </div>
+      {career.homepage && (
+        <div className="">
+          <BasicButton href={career.homepage}>About Company</BasicButton>
+        </div>
+      )}
     </div>
   );
 };

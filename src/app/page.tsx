@@ -139,7 +139,9 @@ export default function MainPage() {
         });
 
         activities.forEach((activity) => {
-          const activityCard = document.getElementById(`activity-${activity.id}`);
+          const activityCard = document.getElementById(
+            `activity-${activity.id}`,
+          );
 
           if (activityCard) {
             const activityRect = activityCard.getBoundingClientRect();
@@ -187,7 +189,7 @@ export default function MainPage() {
       <div className="max-sm:hidden">
         <main
           ref={mainRef}
-          className="multi-gradient-background fixed grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
+          className="multi-gradient-background fixed grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-10 xl:gap-8"
         >
           <h1 className="sr-only">Kyu Portfolio</h1>
           <section
@@ -197,14 +199,14 @@ export default function MainPage() {
             <Profile ref={profileSourceRef} />
           </section>
           <section
-            className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
+            className="col-span-3 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
             aria-label="Career and Activity"
           >
             <GroupList ref={careerRef} />
           </section>
           <section
-            className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
-            aria-label="Development Log"
+            className="col-span-5 row-span-4 max-lg:row-span-5 xl:col-span-5 xl:row-span-5"
+            aria-label="Project Log"
           >
             <DevelopmentList ref={devLogRef} />
           </section>
@@ -231,7 +233,9 @@ export default function MainPage() {
         type="button"
         onClick={() => setIsWhiteMode((prev) => !prev)}
         className="theme-panel theme-text-primary fixed bottom-4 left-4 z-50 hidden items-center gap-2 rounded-full border px-4 py-2 text-sm lg:flex"
-        aria-label={isWhiteMode ? "Switch to dark mode" : "Switch to white mode"}
+        aria-label={
+          isWhiteMode ? "Switch to dark mode" : "Switch to white mode"
+        }
       >
         {isWhiteMode ? <Moon size={16} /> : <Sun size={16} />}
         {isWhiteMode ? "Dark mode" : "White mode"}

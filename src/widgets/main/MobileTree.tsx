@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Github, Key, Layers, Linkedin } from "lucide-react";
 
 import Title from "@/shared/ui/Title";
@@ -34,6 +34,18 @@ const getLinkedDevelopments = (linkedTo: GroupType, linkedId: number) =>
   );
 
 const MobileProfile = () => {
+  const [isEmailCopied, setIsEmailCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("officialkyus@gmail.com");
+      setIsEmailCopied(true);
+      window.setTimeout(() => setIsEmailCopied(false), 1500);
+    } catch {
+      setIsEmailCopied(false);
+    }
+  };
+
   return (
     <section className="relative mb-6 px-1">
       <div className="relative flex items-stretch gap-3">
@@ -43,10 +55,10 @@ const MobileProfile = () => {
         <img
           src="/profile_img.jpg"
           alt="Profile"
-          className="h-[150px] w-[106px] rounded-md object-cover"
+          className="h-[170px] w-[130px] rounded-md object-cover"
         />
 
-        <div className="flex min-h-[150px] min-w-0 flex-1 flex-col">
+        <div className="flex min-h-[170px] min-w-0 flex-1 flex-col">
           <div>
             <Title>
               <strong>강민규,</strong> Kyu
@@ -96,7 +108,29 @@ const MobileProfile = () => {
               </DialogContent>
             </Dialog>
 
-            <p className="theme-text-primary mt-3 text-[12px] leading-tight">
+            <div className="relative my-2 w-max">
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="theme-text-soft block text-left text-[12px] leading-tight underline decoration-[var(--panel-border)] underline-offset-2"
+                aria-label="Copy officialkyus@gmail.com"
+                title="Copy: officialkyus@gmail.com"
+              >
+                Email: officialkyus@gmail.com
+              </button>
+              <span
+                aria-hidden={!isEmailCopied}
+                className={`absolute left-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
+                  isEmailCopied
+                    ? "opacity-100"
+                    : "pointer-events-none opacity-0"
+                }`}
+              >
+                복사됨
+                <span className="absolute -left-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
+              </span>
+            </div>
+            <p className="theme-text-primary mt-1 text-[12px] leading-tight">
               <strong>연구원</strong> @ IDIS Co., Ltd
             </p>
             <p className="theme-text-primary mt-1 text-[12px] leading-tight">
@@ -106,15 +140,16 @@ const MobileProfile = () => {
 
           <div className="mt-auto flex flex-wrap gap-2">
             <OutlineButton href="https://github.com/selfishAltruism">
-              <Github size={17} />
+              Github
+              <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
             </OutlineButton>
-            <OutlineButton href="https://www.linkedin.com/in/kyus/">
+            {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">
               <Linkedin size={17} />
-            </OutlineButton>
+            </OutlineButton> */}
             <Drawer>
               <DrawerTrigger asChild>
                 <BasicButton>
-                  Tech Stack
+                  기술 스택 상세
                   <Layers size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
                 </BasicButton>
               </DrawerTrigger>
@@ -203,8 +238,10 @@ const MobileDevelopmentNode = ({
           ))}
         </div>
         {development.link && (
-          <div className="mt-3 w-min">
-            <BasicButton to={development.link}>To Dev Detail</BasicButton>
+          <div className="flex w-full justify-end">
+            <div className="mt-3 w-min">
+              <BasicButton to={development.link}>프로젝트 상세</BasicButton>
+            </div>
           </div>
         )}
       </div>
@@ -297,7 +334,9 @@ const MobileTree = () => {
             linkedTo="career"
             linkedId={career.id}
             actions={
-              <BasicButton href={career.homepage}>About Company</BasicButton>
+              career.homepage && (
+                <BasicButton href={career.homepage}>About Company</BasicButton>
+              )
             }
           />
         ))}
