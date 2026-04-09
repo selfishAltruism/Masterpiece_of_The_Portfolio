@@ -49,7 +49,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                 "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
               )}
             >
-              안전지대를 넘어서는 개발자.
+              안전지대를 넘어서는 개발자
             </span>
           </DialogTrigger>
           <DialogContent>

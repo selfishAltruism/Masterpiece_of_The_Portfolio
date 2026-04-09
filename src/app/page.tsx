@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 import Profile from "@/widgets/main/Profile";
 import GroupList from "@/widgets/main/GroupList";
 import DevelopmentList from "@/widgets/main/DevelopmentList";
+import MobileTree from "@/widgets/main/MobileTree";
 
 import { developmentLogs } from "@/shared/data/development";
 import { careers, activities, ownedServices } from "@/shared/data/group";
@@ -35,6 +36,11 @@ export default function MainPage() {
 
   useEffect(() => {
     const calculateLines = () => {
+      if (window.innerWidth < 640) {
+        setLines([]);
+        return;
+      }
+
       if (!mainRef.current) return;
 
       const newLines: Line[] = [];
@@ -43,7 +49,6 @@ export default function MainPage() {
       const careerPanelTop =
         (careerRef.current?.getBoundingClientRect().top ?? 0) - mainRect.top;
 
-      // group(career, owned service, activity) - dev log cards edge.
       developmentLogs.forEach((log) => {
         const devCard = document.getElementById(`dev-${log.id}`);
         let startCard = null;
@@ -84,7 +89,6 @@ export default function MainPage() {
         const profileSourceRect =
           profileSourceRef.current.getBoundingClientRect();
 
-        // profile-career cards edge.
         careers.forEach((career) => {
           const careerCard = document.getElementById(`career-${career.id}`);
 
@@ -108,7 +112,6 @@ export default function MainPage() {
           }
         });
 
-        // profile-owned service cards edge.
         ownedServices.forEach((service) => {
           const serviceCard = document.getElementById(
             `owned-service-${service.id}`,
@@ -135,11 +138,8 @@ export default function MainPage() {
           }
         });
 
-        // profile-activity cards edge.
         activities.forEach((activity) => {
-          const activityCard = document.getElementById(
-            `activity-${activity.id}`,
-          );
+          const activityCard = document.getElementById(`activity-${activity.id}`);
 
           if (activityCard) {
             const activityRect = activityCard.getBoundingClientRect();
@@ -168,7 +168,6 @@ export default function MainPage() {
 
     const careerPanel = careerRef.current;
     const devLogPanel = devLogRef.current;
-
     const animationFrameId = requestAnimationFrame(calculateLines);
 
     window.addEventListener("resize", calculateLines);
@@ -185,54 +184,59 @@ export default function MainPage() {
 
   return (
     <>
-      <main
-        ref={mainRef}
-        className="multi-gradient-background fixed grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
-      >
-        <h1 className="sr-only">강민규</h1>
-        <section
-          className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
-          aria-label="프로필"
+      <div className="max-sm:hidden">
+        <main
+          ref={mainRef}
+          className="multi-gradient-background fixed grid h-screen w-screen grid-cols-8 grid-rows-5 max-lg:grid-rows-6 xl:grid-cols-9 xl:gap-8"
         >
-          <Profile ref={profileSourceRef} /> {/* Pass ref to Profile */}
-        </section>
-        <section
-          className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
-          aria-label="주요 경력"
-        >
-          <GroupList ref={careerRef} />
-        </section>
-        <section
-          className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
-          aria-label="개발 로그"
-        >
-          <DevelopmentList ref={devLogRef} />
-        </section>
-        <svg
-          className="absolute left-0 top-0 h-full w-full"
-          style={{ pointerEvents: "none" }}
-        >
-          {lines.map((line, index) => (
-            <path
-              key={index}
-              d={line.path}
-              fill="none"
-              stroke="var(--line-color)"
-              strokeWidth="2"
-            />
-          ))}
-        </svg>
-      </main>
+          <h1 className="sr-only">Kyu Portfolio</h1>
+          <section
+            className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
+            aria-label="Profile"
+          >
+            <Profile ref={profileSourceRef} />
+          </section>
+          <section
+            className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-3 xl:row-span-5"
+            aria-label="Career and Activity"
+          >
+            <GroupList ref={careerRef} />
+          </section>
+          <section
+            className="col-span-4 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
+            aria-label="Development Log"
+          >
+            <DevelopmentList ref={devLogRef} />
+          </section>
+          <svg
+            className="absolute left-0 top-0 h-full w-full"
+            style={{ pointerEvents: "none" }}
+          >
+            {lines.map((line, index) => (
+              <path
+                key={index}
+                d={line.path}
+                fill="none"
+                stroke="var(--line-color)"
+                strokeWidth="2"
+              />
+            ))}
+          </svg>
+        </main>
+      </div>
+
+      <MobileTree />
+
       <button
         type="button"
         onClick={() => setIsWhiteMode((prev) => !prev)}
         className="theme-panel theme-text-primary fixed bottom-4 left-4 z-50 hidden items-center gap-2 rounded-full border px-4 py-2 text-sm lg:flex"
-        aria-label={isWhiteMode ? "다크 모드로 전환" : "화이트 모드로 전환"}
+        aria-label={isWhiteMode ? "Switch to dark mode" : "Switch to white mode"}
       >
         {isWhiteMode ? <Moon size={16} /> : <Sun size={16} />}
         {isWhiteMode ? "Dark mode" : "White mode"}
       </button>
-      <footer className="theme-text-soft fixed right-2 top-2 w-max text-[10px] xl:left-2 xl:text-xs">
+      <footer className="theme-text-soft absolute right-2 top-2 z-50 w-max text-[10px] max-sm:hidden xl:left-2 xl:text-xs">
         Designed & Made by <strong>Kyu</strong>
       </footer>
     </>

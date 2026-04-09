@@ -47,11 +47,11 @@ export const DevelopmentCard = ({
         </p>
       </div>
 
-      {/* {development.link && (
+      {development.link && (
         <div className="">
           <BasicButton to={development.link}>To Dev Detail</BasicButton>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
