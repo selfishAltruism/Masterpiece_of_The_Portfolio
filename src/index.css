@@ -37,7 +37,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -46,7 +47,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -96,8 +97,8 @@
     --badge-outline-bg: rgba(10, 91, 189, 0.08);
     --badge-outline-fg: #1f2937;
     --overlay: rgba(15, 23, 42, 0.35);
-    --scrollbar-thumb: rgba(0, 0, 0, 0.03);
-    --scrollbar-thumb-hover: rgba(0, 0, 0, 0.05);
+    --scrollbar-thumb: rgba(15, 23, 42, 0.1);
+    --scrollbar-thumb-hover: rgba(15, 23, 42, 0.18);
     --fade-bg: linear-gradient(
       to bottom,
       color-mix(in srgb, var(--page-bg) 96%, transparent),
@@ -120,8 +121,8 @@
   --badge-outline-bg: rgba(255, 255, 255, 0.15);
   --badge-outline-fg: #ffffff;
   --overlay: rgba(22, 22, 22, 0.8);
-  --scrollbar-thumb: rgba(255, 255, 255, 0.22);
-  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.42);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.34);
   --fade-bg: linear-gradient(
     to bottom,
     color-mix(in srgb, var(--page-bg) 96%, transparent),
