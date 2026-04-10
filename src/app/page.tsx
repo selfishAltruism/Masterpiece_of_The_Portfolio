@@ -193,7 +193,7 @@ export default function MainPage() {
         >
           <h1 className="sr-only">Kyu Portfolio</h1>
           <section
-            className="col-span-8 row-span-1 xl:col-span-2 xl:row-span-5"
+            className="col-span-8 row-span-1 xl:col-span-3 xl:row-span-5"
             aria-label="Profile"
           >
             <Profile ref={profileSourceRef} />
@@ -205,7 +205,7 @@ export default function MainPage() {
             <GroupList ref={careerRef} />
           </section>
           <section
-            className="col-span-5 row-span-4 max-lg:row-span-5 xl:col-span-5 xl:row-span-5"
+            className="col-span-5 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
             aria-label="Project Log"
           >
             <DevelopmentList ref={devLogRef} />

@@ -5,14 +5,6 @@ import BasicButton from "@/shared/ui/BasicButton";
 import OutlineButton from "@/shared/ui/OutlineButton";
 import Title from "@/shared/ui/Title";
 import { Drawer, DrawerTrigger } from "@/shared/shadcn/components/ui/drawer";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/shared/shadcn/components/ui/dialog";
 
 import { TechStackDrawer } from "@/entities/main/TechStackDrawer";
 
@@ -44,84 +36,38 @@ const MobileProfile = () => {
         <div className="flex min-h-[170px] min-w-0 flex-1 flex-col">
           <div>
             <Title>
-              <strong>강민규,</strong> Kyu
+              <strong>강민규</strong> Kyu
             </Title>
 
-            <Dialog>
-              <DialogTrigger className="w-max">
-                <span className="inline-block w-max bg-[var(--accent-brand)] px-1.5 py-0.5 text-[12px] italic leading-tight text-white">
-                  안전지대를 넘어서는 개발자
-                </span>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle className="mb-5">
-                    안전지대를 넘어서는 개발자, 강민규입니다.
-                  </DialogTitle>
-                  <DialogDescription className="text-[14px]">
-                    <p>
-                      개발 경험이 쌓이면 익숙한 기술과 환경 속에서{" "}
-                      <strong className="text-[#0A5BBD]">안전지대</strong>가
-                      형성됩니다.
-                    </p>
-                    <div className="p-1" />
-                    <p>
-                      발전과 변화가 빠른 개발 분야에서 이러한 안전지대에
-                      머무르기보다,
-                      <br />
-                      <strong className="text-[#0A5BBD]">
-                        넘어서고 도전하며, 성장을 지향
-                      </strong>
-                      해야 한다고 생각합니다.
-                    </p>
-                    <div className="p-1" />
-                    <p>
-                      이러한 소신을 가지고{" "}
-                      <strong className="text-[#0A5BBD]">
-                        변화와 문제를 두려워하지 않으며
-                      </strong>
-                      ,{" "}
-                      <strong className="text-[#0A5BBD]">
-                        효과적인 기술과 문제 해결방법
-                      </strong>
-                      을 도입하며 개발 직무에 임하고 있습니다.
-                    </p>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-
-            <div className="relative my-2 w-max">
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="theme-text-soft block text-left text-[12px] leading-tight underline decoration-[var(--panel-border)] underline-offset-2"
-                aria-label="Copy officialkyus@gmail.com"
-                title="Copy: officialkyus@gmail.com"
-              >
-                Email: officialkyus@gmail.com
-              </button>
-              <span
-                aria-hidden={!isEmailCopied}
-                className={`absolute left-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
-                  isEmailCopied
-                    ? "opacity-100"
-                    : "pointer-events-none opacity-0"
-                }`}
-              >
-                복사됨
-                <span className="absolute -left-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
-              </span>
-            </div>
-            <p className="theme-text-primary mt-1 text-[12px] leading-tight">
+            <p className="theme-text-primary mt-2 text-[12px] leading-tight">
               <strong>연구원</strong> @ IDIS Co., Ltd
             </p>
             <p className="theme-text-primary mt-1 text-[12px] leading-tight">
-              <strong>컴퓨터공학사 우등 졸업</strong> @ 중앙대학교
+              <strong>컴퓨터공학과 졸업</strong> @ 중앙대학교
             </p>
           </div>
+          <div className="relative mb-2 mt-auto w-max">
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="theme-text-soft block text-left text-[12px] leading-tight underline decoration-[var(--panel-border)] underline-offset-2"
+              aria-label="Copy officialkyus@gmail.com"
+              title="Copy: officialkyus@gmail.com"
+            >
+              Email: officialkyus@gmail.com
+            </button>
+            <span
+              aria-hidden={!isEmailCopied}
+              className={`absolute left-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
+                isEmailCopied ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+            >
+              복사됨
+              <span className="absolute -left-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
+            </span>
+          </div>
 
-          <div className="mt-auto flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             <OutlineButton href="https://github.com/selfishAltruism">
               Github
               <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
@@ -137,6 +83,39 @@ const MobileProfile = () => {
             </Drawer>
           </div>
         </div>
+      </div>
+
+      <div className="mb-2 mt-4 flex flex-col gap-2 text-[12px]">
+        <span className="inline-block w-max bg-[var(--accent-brand)] px-1.5 py-0.5 text-[12px] italic leading-tight text-white">
+          해야할 일을 찾고, 책임감 있게 완수합니다.
+        </span>
+        <p className="break-keep leading-relaxed">
+          <span className="text-[10px] leading-3 text-[var(--page-fg-soft)]">
+            FITREAE
+          </span>
+          <br />
+          App 개발로 시작하여, <br />
+          <strong className="text-[#0A5BBD]">
+            데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
+          </strong>
+          까지.
+        </p>
+        <p className="break-keep leading-relaxed">
+          <span className="text-[10px] leading-3 text-[var(--page-fg-soft)]">
+            IDIS
+          </span>
+          <br />
+          Cloud Platform 서비스 개발로 시작하여, <br />
+          <strong className="text-[#0A5BBD]">
+            2차원 공간 객체 배치 시스템 개발, <br />
+            클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
+          </strong>
+          까지.
+        </p>
+        <p className="break-keep leading-relaxed">
+          수동적으로 하기보다 필요하고 문제가 있는 부분을 찾아, <br />
+          책임감 있게 완수하고 해결해 왔습니다.
+        </p>
       </div>
     </section>
   );
