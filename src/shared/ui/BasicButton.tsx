@@ -14,9 +14,8 @@ interface BasicButtonProps {
 const BasicButton = ({ children, onClick, href, to }: BasicButtonProps) => {
   const baseClass = cn(
     "flex transform items-center justify-between whitespace-nowrap rounded-md border-2 px-4 pb-[3px] pt-[5px] text-[12.5px]",
-    "border-[var(--accent-brand)] bg-[var(--accent-brand)] text-white",
+    "border-[var(--accent-brand-strong)] bg-[var(--accent-brand-strong)] text-white",
     "transition-all duration-200 active:scale-95 active:border-[var(--accent-brand-strong)] active:bg-[var(--accent-brand-strong)] active:text-white/70",
-    "max-md:text-[11px] max-md:px-2 max-md:pb-[1px] max-md:pt-[3px] ",
     "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
   );
 

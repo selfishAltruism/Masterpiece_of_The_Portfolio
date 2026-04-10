@@ -11,8 +11,7 @@ interface OutlineButtonProps {
 const OutlineButton = ({ children, onClick, href }: OutlineButtonProps) => {
   const baseClass = cn(
     "inline-flex items-center justify-between whitespace-nowrap rounded-md border-2 px-4 pb-[3px] pt-[5px] text-[12.5px]",
-    "border-[var(--accent-brand)] bg-[var(--accent-brand-soft)] backdrop-blur-md",
-    "max-md:text-[11px] max-md:px-2 max-md:pb-[1px] max-md:pt-[3px] ",
+    "border-[var(--accent-brand-strong)] bg-[var(--accent-brand-soft)] backdrop-blur-md",
     "theme-text-primary",
     "transition-all duration-200 active:scale-95 active:border-[var(--accent-brand-strong)] active:text-[color:var(--page-fg-soft)]",
     "sm:hover:border-[var(--accent-brand-strong)] sm:hover:text-[color:var(--page-fg-soft)]",

@@ -3,6 +3,7 @@ import React from "react";
 
 import {
   buildTree,
+  extractHeadingItems,
   fetchChildren,
   fetchPageTitle,
   groupLists,
@@ -11,7 +12,8 @@ import {
 import { isStringArray } from "@/shared/shadcn/lib/utils";
 
 import { NotionContent } from "@/widgets/detail/NotionContent";
-import { Header } from "@/widgets/detail/Header";
+import { DetailStacks, Header } from "@/widgets/detail/Header";
+import { TableOfContents } from "@/widgets/detail/TableOfContents";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -51,6 +53,7 @@ export default async function NotionPage({
     );
 
   const grouped = groupLists(tree);
+  const headings = extractHeadingItems(tree);
 
   const title = titleData[0];
   const peroid = titleData[1];
@@ -60,12 +63,31 @@ export default async function NotionPage({
   return (
     <>
       <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-        <header className="relative flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-center max-xl:bg-gradient-to-b max-xl:from-[#161616] max-xl:to-transparent max-xl:pr-2 max-xl:pt-3 xl:w-[500px] xl:flex-col xl:justify-center">
-          <Header title={title} peroid={peroid} tags={tags} techs={techs} />
+        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[380px] xl:flex-col xl:items-start xl:justify-center">
+          <Header
+            title={title}
+            peroid={peroid}
+            tags={tags}
+            techs={techs}
+            toc={<TableOfContents headings={headings} />}
+          />
         </header>
 
-        <div className="h-full overflow-y-auto px-3 pb-16 max-xl:pt-20">
-          <NotionContent blocks={grouped} />
+        <div
+          id="detail-scroll-container"
+          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-28"
+        >
+          <DetailStacks
+            tags={tags}
+            techs={techs}
+            className="flex flex-col gap-2 xl:hidden"
+          />
+          <div className="max-xl:block xl:hidden">
+            <TableOfContents headings={headings} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <NotionContent blocks={grouped} />
+          </div>
         </div>
       </main>
       <footer className="fixed bottom-2 right-2 w-max text-[10px] text-white/40 max-xl:top-2 xl:left-2 xl:text-xs">

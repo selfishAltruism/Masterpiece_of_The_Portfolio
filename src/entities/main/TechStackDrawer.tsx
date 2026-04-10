@@ -11,7 +11,7 @@ export const TechStackDrawer = () => {
     <DrawerContent>
       <Title>
         <strong className="flex items-center gap-2 px-3 text-black">
-          Tech Stack
+          기술 스택 상세
           <Layers size={19} className="xl:hidden" />
           <Layers size={27} className="max-xl:hidden" />
         </strong>
