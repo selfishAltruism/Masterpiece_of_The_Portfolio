@@ -20,16 +20,14 @@ interface DetailMetaProps {
   className?: string;
 }
 
-export const DetailMeta = ({
-  peroid,
-  tags,
-  techs,
-  className,
-}: DetailMetaProps) => (
+interface DetailStacksProps {
+  tags: string[];
+  techs: string[];
+  className?: string;
+}
+
+export const DetailStacks = ({ tags, techs, className }: DetailStacksProps) => (
   <div className={className}>
-    <h1 className="text-[10px] font-bold leading-tight tracking-tight md:text-sm">
-      {peroid}
-    </h1>
     <h1 className="flex items-start gap-1 font-bold tracking-tight">
       <Key size={16} className="mt-0.5 min-w-4" />
       <div className="flex w-full flex-wrap gap-1">
@@ -49,21 +47,38 @@ export const DetailMeta = ({
   </div>
 );
 
+export const DetailMeta = ({
+  peroid,
+  tags,
+  techs,
+  className,
+}: DetailMetaProps) => (
+  <div className={className}>
+    <h1 className="text-[10px] font-bold leading-tight tracking-tight md:text-sm">
+      {peroid}
+    </h1>
+    <DetailStacks tags={tags} techs={techs} className="flex flex-col gap-1" />
+  </div>
+);
+
 export const Header = ({ title, peroid, tags, techs, toc }: HeaderProps) => (
   <>
     <Link href="/" className="absolute left-2 top-2 xl:left-3 xl:top-3">
       <ChevronLeft className="h-6 w-6 max-xl:h-5 max-xl:w-5 xl:h-9 xl:w-9" />
     </Link>
     <Title>
-      <p className="w-full px-3 pt-5 pr-10 text-left leading-tight xl:pr-3 xl:text-end">
+      <p className="w-full pl-3 pt-5 text-left leading-tight xl:pr-3 xl:text-left">
         {title}
       </p>
     </Title>
+    <h1 className="w-[150px] pr-2 pt-[26px] text-end text-[10px] leading-tight tracking-tight md:text-sm xl:hidden">
+      {peroid}
+    </h1>
     <DetailMeta
       peroid={peroid}
       tags={tags}
       techs={techs}
-      className="hidden items-end gap-1 pt-4 xl:flex xl:flex-col"
+      className="hidden gap-1 px-3 pt-4 xl:flex xl:w-full xl:flex-col xl:items-start"
     />
     {toc && <div className="hidden w-full pt-6 xl:block">{toc}</div>}
   </>

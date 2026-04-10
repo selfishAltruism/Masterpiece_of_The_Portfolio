@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+import { highlightCode } from "@/entities/detail/highlight";
 import {
   getHeadingId,
   getPlainText,
@@ -50,7 +51,24 @@ function renderRichText(rich?: any[]) {
   });
 }
 
-function Block({
+async function CodeBlock({
+  code,
+  language,
+}: {
+  code: string;
+  language?: string;
+}) {
+  const html = await highlightCode(code, language);
+
+  return (
+    <div
+      className="notion-code-block my-4 overflow-hidden rounded-2xl border border-black/10 bg-white text-sm shadow-sm"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
+}
+
+async function Block({
   block,
   headingIds,
 }: {
@@ -79,7 +97,11 @@ function Block({
     }
 
     case "heading_2": {
-      const headingId = getHeadingId(getPlainText(data.rich_text), block.id, headingIds);
+      const headingId = getHeadingId(
+        getPlainText(data.rich_text),
+        block.id,
+        headingIds,
+      );
 
       return (
         <h2
@@ -92,7 +114,11 @@ function Block({
     }
 
     case "heading_3": {
-      const headingId = getHeadingId(getPlainText(data.rich_text), block.id, headingIds);
+      const headingId = getHeadingId(
+        getPlainText(data.rich_text),
+        block.id,
+        headingIds,
+      );
 
       return (
         <h3
@@ -122,11 +148,8 @@ function Block({
       const text = (data.rich_text || [])
         .map((r: any) => r.plain_text)
         .join("");
-      return (
-        <pre className="overflow-x-auto rounded-2xl border border-black/10 bg-white p-4 text-sm leading-6 text-[#161616] shadow-sm">
-          <code className={`language-${language ?? "plain"}`}>{text}</code>
-        </pre>
-      );
+
+      return <CodeBlock code={text} language={language} />;
     }
 
     case "image": {
@@ -176,7 +199,7 @@ function Block({
   }
 }
 
-export function NotionContent({
+export async function NotionContent({
   blocks,
   headingIds = new Map<string, number>(),
 }: {
@@ -187,27 +210,34 @@ export function NotionContent({
 
   return (
     <div className="max-md:text-[12px]">
-      {grouped.map((g: any, idx: number) => {
-        if (g._type === "ul") {
-          return (
-            <ul key={idx} className="my-2 space-y-2">
-              {g.items.map((it: any) => (
-                <Block key={it.id} block={it} headingIds={headingIds} />
-              ))}
-            </ul>
-          );
-        }
-        if (g._type === "ol") {
-          return (
-            <ol key={idx} className="my-2 space-y-2">
-              {g.items.map((it: any) => (
-                <Block key={it.id} block={it} headingIds={headingIds} />
-              ))}
-            </ol>
-          );
-        }
-        return <Block key={idx} block={g} headingIds={headingIds} />;
-      })}
+      {await Promise.all(
+        grouped.map(async (g: any, idx: number) => {
+          if (g._type === "ul") {
+            return (
+              <ul key={idx} className="my-2 space-y-2">
+                {await Promise.all(
+                  g.items.map((it: any) => (
+                    <Block key={it.id} block={it} headingIds={headingIds} />
+                  )),
+                )}
+              </ul>
+            );
+          }
+          if (g._type === "ol") {
+            return (
+              <ol key={idx} className="my-2 space-y-2">
+                {await Promise.all(
+                  g.items.map((it: any) => (
+                    <Block key={it.id} block={it} headingIds={headingIds} />
+                  )),
+                )}
+              </ol>
+            );
+          }
+
+          return <Block key={idx} block={g} headingIds={headingIds} />;
+        }),
+      )}
     </div>
   );
 }

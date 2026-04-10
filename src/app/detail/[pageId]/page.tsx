@@ -12,7 +12,7 @@ import {
 import { isStringArray } from "@/shared/shadcn/lib/utils";
 
 import { NotionContent } from "@/widgets/detail/NotionContent";
-import { DetailMeta, Header } from "@/widgets/detail/Header";
+import { DetailStacks, Header } from "@/widgets/detail/Header";
 import { TableOfContents } from "@/widgets/detail/TableOfContents";
 
 export const runtime = "nodejs";
@@ -63,7 +63,7 @@ export default async function NotionPage({
   return (
     <>
       <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[380px] xl:flex-col xl:justify-center">
+        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[380px] xl:flex-col xl:items-start xl:justify-center">
           <Header
             title={title}
             peroid={peroid}
@@ -75,10 +75,9 @@ export default async function NotionPage({
 
         <div
           id="detail-scroll-container"
-          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-36"
+          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-28"
         >
-          <DetailMeta
-            peroid={peroid}
+          <DetailStacks
             tags={tags}
             techs={techs}
             className="flex flex-col gap-2 xl:hidden"
