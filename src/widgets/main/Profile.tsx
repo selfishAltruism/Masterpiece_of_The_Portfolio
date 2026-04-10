@@ -34,7 +34,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
     <div
       className={cn(
         "h-full w-full bg-transparent",
-        "max-xl:flex max-xl:flex-row max-xl:items-end max-xl:justify-start max-xl:gap-7 max-xl:p-8 max-xl:pb-4 max-lg:pt-12 max-sm:gap-1 max-sm:px-2",
+        "max-xl:flex max-xl:flex-row max-xl:items-end max-xl:justify-start max-xl:gap-7 max-xl:p-8 max-xl:pb-4 max-lg:pt-12",
         "xl:flex xl:flex-col xl:items-start xl:justify-center xl:gap-0 xl:p-0 xl:pt-0",
       )}
     >
@@ -61,10 +61,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         <div className="mb-4 mt-5 flex flex-col gap-3 text-[14px]">
           <span
             ref={ref}
-            className={cn(
-              "inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white",
-              "xl:mb-1",
-            )}
+            className="mb-1 inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
           >
             해야할 일을 찾고, 책임감 있게 완수합니다.
           </span>
@@ -159,7 +156,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             <button
               type="button"
               onClick={handleCopyEmail}
-              className="theme-text-soft block text-left text-sm leading-tight underline decoration-[var(--panel-border)] underline-offset-2 max-lg:text-[12px] max-sm:text-[11px]"
+              className="theme-text-soft block text-left text-sm leading-tight underline decoration-[var(--panel-border)] underline-offset-2 max-lg:text-[12px]"
               aria-label="Copy officialkyus@gmail.com"
               title="Copy: officialkyus@gmail.com"
             >
@@ -180,8 +177,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             <DialogTrigger className="mb-1 mt-1 w-max">
               <span
                 className={cn(
-                  "mb-3 mt-3 w-max cursor-pointer border-b border-transparent bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white transition-all duration-200",
-                  "max-xl:text-[14px]",
+                  "mb-3 mt-3 w-max cursor-pointer border-b border-transparent bg-[var(--accent-brand)] p-0 px-[2px] text-[14px] italic text-white transition-all duration-200",
                   "active:scale-95 active:border-[var(--accent-brand-strong)] active:bg-[var(--accent-brand-strong)]",
                   "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
                 )}
@@ -189,7 +185,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                 해야할 일을 찾고, 책임감 있게 완수합니다.
               </span>
             </DialogTrigger>
-            <DialogContent className="xl:hidden">
+            <DialogContent>
               <DialogHeader>
                 <DialogTitle className="mb-5">
                   해야할 일을 찾고, 책임감 있게 완수합니다.
@@ -227,16 +223,16 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             </DialogContent>
           </Dialog>
 
-          <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
+          <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px]">
             <strong>연구원</strong> @ IDIS Co., Ltd
           </span>
-          <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px] max-sm:text-[11px]">
+          <span className="theme-text-primary text-sm leading-tight max-lg:text-[12px]">
             <strong>컴퓨터공학과 졸업</strong> @ 중앙대학교
           </span>
         </div>
 
-        <div className="flex flex-col items-end max-xl:h-full max-xl:flex-1 max-xl:justify-end">
-          <div className="flex items-end gap-1 max-xl:flex-col">
+        <div className="flex h-full flex-1 flex-col items-end justify-end">
+          <div className="flex items-end gap-1 flex-col">
             <div className="flex justify-end gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
                 Github

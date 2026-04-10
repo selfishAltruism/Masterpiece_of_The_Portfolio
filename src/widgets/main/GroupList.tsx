@@ -9,7 +9,7 @@ import { OwnedServiceCard } from "@/entities/main/OwnedServiceCard";
 
 const Groups = () => {
   return (
-    <div className="max-sm:mb-28">
+    <div>
       <Title description="정규직 경력">Career</Title>
       <div className="mb-2">
         {careers.map((career, index) => (
@@ -44,7 +44,7 @@ const GroupList = React.forwardRef<HTMLDivElement>((props, ref) => {
       <div className="theme-fade-top fixed z-40 h-8 w-full max-xl:-mt-1 max-xl:h-3" />
       <div
         ref={ref}
-        className="flex h-full w-full flex-col overflow-y-auto overflow-x-hidden bg-transparent p-8 max-xl:py-0 max-sm:p-2 max-sm:pr-3"
+        className="flex h-full w-full flex-col overflow-y-auto overflow-x-hidden bg-transparent p-8 max-xl:py-0"
       >
         <Groups />
       </div>
