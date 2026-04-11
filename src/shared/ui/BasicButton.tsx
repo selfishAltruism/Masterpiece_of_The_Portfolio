@@ -17,13 +17,15 @@ const BasicButton = ({ children, onClick, href, to }: BasicButtonProps) => {
     "border-[var(--accent-brand-strong)] bg-[var(--accent-brand-strong)] text-white",
     "transition-all duration-200 active:scale-95 active:border-[var(--accent-brand-strong)] active:bg-[var(--accent-brand-strong)] active:text-white/70",
     "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
+    "max-sm:text-[11.5px]",
   );
 
   if (to)
     return (
       <Link href={to} className={baseClass}>
         {children}
-        <Logs size={17} className="-mr-[1px] -mt-[3px] ml-2 max-md:ml-1" />
+        <Logs size={15} className="-mt-[1px] ml-2 sm:hidden" />
+        <Logs size={17} className="-mt-[2px] ml-2 max-sm:hidden" />
       </Link>
     );
 

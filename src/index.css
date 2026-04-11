@@ -91,7 +91,7 @@
     --line-color: rgba(15, 23, 42, 0.28);
     --accent-brand: #0a5bbd;
     --accent-brand-strong: #083e80;
-    --accent-brand-soft: rgba(10, 91, 189, 0.12);
+    --accent-brand-soft: rgba(255, 255, 255, 0);
     --badge-solid-bg: #0a5bbd;
     --badge-solid-fg: #ffffff;
     --badge-outline-bg: rgba(10, 91, 189, 0.08);

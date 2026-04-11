@@ -232,7 +232,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         <div className="flex h-full flex-1 flex-col items-end justify-end">
-          <div className="flex items-end gap-1 flex-col">
+          <div className="flex flex-col items-end gap-1">
             <div className="flex justify-end gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
                 Github

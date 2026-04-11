@@ -24,16 +24,16 @@ const MobileProfile = () => {
   return (
     <section className="relative mb-6 px-1">
       <div className="relative flex items-stretch gap-3">
-        <div className="theme-text-soft absolute right-1 top-0 text-[10px]">
+        <div className="theme-text-soft absolute -right-3 -top-3 text-[8px]">
           Designed & Made by <strong>Kyu</strong>
         </div>
         <img
           src="/profile_img.jpg"
           alt="Profile"
-          className="h-[170px] w-[130px] rounded-md object-cover"
+          className="h-[172px] w-[130px] rounded-md object-cover"
         />
 
-        <div className="flex min-h-[170px] min-w-0 flex-1 flex-col">
+        <div className="-mt-1 flex min-h-[170px] min-w-0 flex-1 flex-col">
           <div>
             <Title>
               <strong>강민규</strong> Kyu
@@ -46,6 +46,7 @@ const MobileProfile = () => {
               <strong>컴퓨터공학과 졸업</strong> @ 중앙대학교
             </p>
           </div>
+
           <div className="relative mb-2 mt-auto w-max">
             <button
               type="button"
@@ -58,25 +59,25 @@ const MobileProfile = () => {
             </button>
             <span
               aria-hidden={!isEmailCopied}
-              className={`absolute left-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
+              className={`absolute right-[calc(100%+10px)] top-1/2 z-20 -translate-y-1/2 rounded-md bg-black p-2 text-[12px] font-medium leading-none text-white shadow-sm transition-opacity duration-200 dark:bg-white dark:text-black ${
                 isEmailCopied ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
               복사됨
-              <span className="absolute -left-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
+              <span className="absolute -right-[4px] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 bg-black dark:bg-white" />
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1">
             <OutlineButton href="https://github.com/selfishAltruism">
               Github
-              <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
+              <Github size={15} className="-mr-[1px] -mt-[1px] ml-2" />
             </OutlineButton>
             <Drawer>
               <DrawerTrigger asChild>
                 <BasicButton>
                   기술 스택 상세
-                  <Layers size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
+                  <Layers size={15} className="-mr-[1px] -mt-[1px] ml-2" />
                 </BasicButton>
               </DrawerTrigger>
               <TechStackDrawer />
@@ -85,8 +86,8 @@ const MobileProfile = () => {
         </div>
       </div>
 
-      <div className="mb-2 mt-4 flex flex-col gap-2 text-[12px]">
-        <span className="inline-block w-max bg-[var(--accent-brand)] px-1.5 py-0.5 text-[12px] italic leading-tight text-white">
+      <div className="mb-2 mt-4 flex flex-col gap-2 text-[13px]">
+        <span className="inline-block w-max bg-[var(--accent-brand)] py-0.5 text-[14px] italic leading-tight text-white">
           해야할 일을 찾고, 책임감 있게 완수합니다.
         </span>
         <p className="break-keep leading-relaxed">
@@ -94,7 +95,7 @@ const MobileProfile = () => {
             FITREAE
           </span>
           <br />
-          App 개발로 시작하여, <br />
+          App 개발로 시작하여,
           <strong className="text-[#0A5BBD]">
             데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
           </strong>
@@ -105,10 +106,10 @@ const MobileProfile = () => {
             IDIS
           </span>
           <br />
-          Cloud Platform 서비스 개발로 시작하여, <br />
+          Cloud Platform 서비스 개발로 시작하여,
           <strong className="text-[#0A5BBD]">
-            2차원 공간 객체 배치 시스템 개발, <br />
-            클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
+            2차원 공간 객체 배치 시스템 개발, 클라이언트 WebSocket & WASM Load
+            최적화, 검색 DB 최적화
           </strong>
           까지.
         </p>
