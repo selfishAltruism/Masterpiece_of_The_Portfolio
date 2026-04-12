@@ -63,7 +63,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             ref={ref}
             className="inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
           >
-            해야할 일을 찾고, 책임감 있게 완수합니다.
+            해야 할 일을 찾고, 책임감 있게 완수합니다.
           </span>
           <p className="relative break-keep text-start">
             <span className="text-[11px] text-[var(--page-fg-soft)]">
@@ -182,13 +182,13 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                   "sm:hover:border-[var(--accent-brand-strong)] sm:hover:bg-[var(--accent-brand-strong)] sm:hover:text-white/70",
                 )}
               >
-                해야할 일을 찾고, 책임감 있게 완수합니다.
+                해야 할 일을 찾고, 책임감 있게 완수합니다.
               </span>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
                 <DialogTitle className="mb-5">
-                  해야할 일을 찾고, 책임감 있게 완수합니다.
+                  해야 할 일을 찾고, 책임감 있게 완수합니다.
                 </DialogTitle>
                 <DialogDescription className="space-y-4 break-keep text-[14px]">
                   <p>

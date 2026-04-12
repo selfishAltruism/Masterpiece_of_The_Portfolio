@@ -88,7 +88,7 @@ const MobileProfile = () => {
 
       <div className="mb-2 mt-4 flex flex-col gap-2 text-[13px]">
         <span className="inline-block w-max bg-[var(--accent-brand)] py-0.5 text-[14px] italic leading-tight text-white">
-          해야할 일을 찾고, 책임감 있게 완수합니다.
+          해야 할 일을 찾고, 책임감 있게 완수합니다.
         </span>
         <p className="break-keep leading-relaxed">
           <span className="text-[10px] leading-3 text-[var(--page-fg-soft)]">
