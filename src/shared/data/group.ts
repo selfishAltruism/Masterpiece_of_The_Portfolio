@@ -42,7 +42,7 @@ export const activities: Data.Activity[] = [
   {
     id: 2,
     name: "중앙대학교 소프트웨어학부 ICT 위원회",
-    description: "동문회 네트워킹 & 학부 활동 지원 Web 서비스 개발",
+    description: "동문회 네트워킹 & 학부 활동 지원 Web 서비스 개발 및 팀 운영",
     position: "Front-end 팀장",
     period: "2023.12 ~ 2025.05",
     /* result: "https://causw.co.kr",

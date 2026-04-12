@@ -13,8 +13,8 @@ export const DevelopmentCard = ({
     <div
       id={`dev-${development.id}`}
       className={cn(
-        "theme-panel theme-text-primary z-10 mb-2 mt-2 flex items-end justify-between rounded-lg border-2 p-5",
-        "max-lg:flex-col max-lg:gap-5 max-md:gap-2",
+        "theme-panel theme-text-primary z-10 mb-2 mt-2 flex flex-col items-end justify-between rounded-lg border-2 p-5",
+        "max-lg:gap-5 max-md:gap-2",
         "duration-200 sm:hover:scale-[1.015]",
       )}
     >
@@ -22,6 +22,10 @@ export const DevelopmentCard = ({
         <h3 className="mb-4 text-lg leading-tight max-md:mb-2 max-md:text-[13px] lg:w-[calc(100%+135px)]">
           {development.title}
         </h3>
+        <p className="theme-text-soft mb-1 text-xs leading-tight max-md:text-[10px]">
+          {development.period}
+        </p>
+
         <div className="flex gap-1 lg:w-[calc(100%+135px)]">
           <Key size={16} className="mr-1 min-w-4" />
           <div className="mb-1 flex flex-wrap items-center gap-1">
@@ -30,26 +34,34 @@ export const DevelopmentCard = ({
             ))}
           </div>
         </div>
-        <div className="flex gap-1 lg:w-[calc(100%+135px)]">
-          <Layers size={16} className="mr-1 min-w-4" />
-          <div className="mb-5 flex flex-wrap items-center gap-1 max-md:mb-2">
-            {development.techStacks.map((tag, i) => (
-              <SolidStackSpan key={tag} idx={i} tag={tag} />
-            ))}
+        {development.techStacks.length > 0 && (
+          <div className="flex gap-1 lg:w-[calc(100%+135px)]">
+            <Layers size={16} className="mr-1 min-w-4" />
+            <div className="flex flex-wrap items-center gap-1 max-md:mb-2">
+              {development.techStacks.map((tag, i) => (
+                <SolidStackSpan key={tag} idx={i} tag={tag} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        <p className="theme-text-soft mb-[2px] text-xs leading-tight max-md:text-[10px]">
-          {development.period}
-        </p>
-        <p className="theme-text-muted mb-[2px] text-sm leading-tight max-md:text-[11px]">
+        <p className="theme-text-muted mb-[2px] mt-4 text-sm leading-tight max-md:text-[11px]">
           {development.description}
         </p>
+        {development.tasks && development.tasks.length > 0 && (
+          <div className="mt-2">
+            <ul className="theme-text-muted list-disc space-y-0 pl-4 text-sm leading-snug max-md:text-[11px]">
+              {development.tasks.map((task) => (
+                <li key={task}>{task}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {development.link && (
         <div className="">
-          <BasicButton to={development.link}>프로젝트 상세</BasicButton>
+          <BasicButton to={development.link}>트러블 슈팅 상세</BasicButton>
         </div>
       )}
     </div>

@@ -206,7 +206,7 @@ export default function MainPage() {
           </section>
           <section
             className="col-span-5 row-span-4 max-lg:row-span-5 xl:col-span-4 xl:row-span-5"
-            aria-label="Project Log"
+            aria-label="Detail"
           >
             <DevelopmentList ref={devLogRef} />
           </section>

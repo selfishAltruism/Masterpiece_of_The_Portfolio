@@ -19,7 +19,7 @@ const DevelopmentList = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
       <div className="theme-fade-top fixed z-40 w-full p-8 max-xl:-mt-1 max-xl:py-0">
-        <Title description="개발 상세">Project Log</Title>
+        <Title description="개발 상세">Detail</Title>
       </div>
       <div
         ref={ref}

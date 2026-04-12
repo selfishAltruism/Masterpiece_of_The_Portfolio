@@ -29,16 +29,16 @@ interface DetailStacksProps {
 export const DetailStacks = ({ tags, techs, className }: DetailStacksProps) => (
   <div className={className}>
     <h1 className="flex items-start gap-1 font-bold tracking-tight">
-      <Key size={16} className="mt-0.5 min-w-4" />
-      <div className="flex w-full flex-wrap gap-1">
+      <div className="flex w-full flex-wrap justify-end gap-1">
+        <Key size={16} className="mt-0.5 min-w-4" />
         {tags.map((tag, i) => (
           <OutlineStackSpan key={tag} tag={tag} idx={i} />
         ))}
       </div>
     </h1>
     <h1 className="flex items-start gap-1 font-bold tracking-tight">
-      <Layers size={16} className="mt-0.5 min-w-4" />
-      <div className="flex w-full flex-wrap gap-1">
+      <div className="flex w-full flex-wrap justify-end gap-1">
+        <Layers size={16} className="mt-0.5 min-w-4" />
         {techs.map((tech, i) => (
           <SolidStackSpan key={tech} tag={tech} idx={i} />
         ))}

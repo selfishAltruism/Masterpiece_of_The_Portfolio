@@ -99,6 +99,15 @@ export const TechStackDrawer = () => {
           </div>
 
           <div className="theme-panel flex flex-col gap-2 rounded-[3px] border p-2">
+            <strong className="ml-[1px]">Tool</strong>
+            <div className="flex flex-wrap gap-1">
+              {techStacks["Well-used / Tool"].map((name, idx) => (
+                <SolidStackSpan key={name} tag={name} idx={idx} />
+              ))}
+            </div>
+          </div>
+
+          <div className="theme-panel flex flex-col gap-2 rounded-[3px] border p-2">
             <strong className="ml-[1px]">Library</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Library"].map((name, idx) => (

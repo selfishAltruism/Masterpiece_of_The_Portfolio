@@ -114,7 +114,7 @@ const MobileProfile = () => {
           까지.
         </p>
         <p className="break-keep leading-relaxed">
-          수동적으로 하기보다 필요하고 문제가 있는 부분을 찾아, <br />
+          수동적으로 하기보다 필요하고 리스크가 있는 부분을 찾아, <br />
           책임감 있게 완수하고 해결해 왔습니다.
         </p>
       </div>

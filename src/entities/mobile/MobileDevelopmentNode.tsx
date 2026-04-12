@@ -71,10 +71,8 @@ const MobileDevelopmentNode = ({
         <p className="theme-text-soft mb-1 text-[11px] leading-tight">
           {development.period}
         </p>
-        <p className="theme-text-muted mb-3 text-[12px] leading-snug">
-          {development.description}
-        </p>
-        <div className="mb-2 flex flex-wrap gap-1">
+
+        <div className="mb-1 mt-2 flex flex-wrap gap-1">
           <Key size={16} className="mr-1 min-w-4" />
           {development.tags.map((tag, idx) => (
             <OutlineStackSpan key={tag} idx={idx} tag={tag} />
@@ -86,10 +84,22 @@ const MobileDevelopmentNode = ({
             <SolidStackSpan key={tag} idx={idx} tag={tag} />
           ))}
         </div>
+        <p className="theme-text-muted mt-3 text-[12px] leading-snug">
+          {development.description}
+        </p>
+        {development.tasks && development.tasks.length > 0 && (
+          <div className="my-2">
+            <ul className="theme-text-muted list-disc space-y-0 pl-4 text-[11px] leading-snug">
+              {development.tasks.map((task) => (
+                <li key={task}>{task}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         {development.link && (
           <div className="flex w-full justify-end">
             <div className="mt-3 w-min">
-              <BasicButton to={development.link}>프로젝트 상세</BasicButton>
+              <BasicButton to={development.link}>트러블 슈팅 상세</BasicButton>
             </div>
           </div>
         )}
