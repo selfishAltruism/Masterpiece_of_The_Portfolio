@@ -17,19 +17,6 @@ export const developmentLogs: Data.Development[] = [
   },
 
   {
-    id: 2,
-    linkedTo: "activity",
-    linkedId: 1,
-    title: "코딩 문제 생성 Web 인터페이스 개발",
-    description:
-      "마크다운 문법 기반으로 코딩 문제를 생성하고 편집할 수 있는 Web 인터페이스 개발",
-    period: "2024.11 ~ 2025.04",
-    tags: ["WYS | WYG MD Editor", "Pre-signed URL", "MD Export & Import"],
-    techStacks: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
-    link: "detail/23248a0856d48058a94bcaec414175df",
-  },
-
-  {
     id: 1,
     linkedTo: "activity",
     linkedId: 0,
@@ -58,6 +45,19 @@ export const developmentLogs: Data.Development[] = [
     ],
     techStacks: ["React Native", "TypeScript"],
     link: "detail/23248a0856d480aeadf7e397b2582b86",
+  },
+
+  {
+    id: 2,
+    linkedTo: "activity",
+    linkedId: 1,
+    title: "코딩 문제 생성 Web 인터페이스 개발",
+    description:
+      "마크다운 문법 기반으로 코딩 문제를 생성하고 편집할 수 있는 Web 인터페이스 개발",
+    period: "2024.11 ~ 2025.04",
+    tags: ["WYS | WYG MD Editor", "Pre-signed URL", "MD Export & Import"],
+    techStacks: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
+    link: "detail/23248a0856d48058a94bcaec414175df",
   },
 
   {
