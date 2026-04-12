@@ -36,7 +36,7 @@ const MobileProfile = () => {
         <div className="-mt-1 flex min-h-[170px] min-w-0 flex-1 flex-col">
           <div>
             <Title>
-              <strong>강민규</strong> Kyu
+              <strong>강민규</strong> <span className="!font-normal">Kyu</span>
             </Title>
 
             <p className="theme-text-primary mt-2 text-[12px] leading-tight">

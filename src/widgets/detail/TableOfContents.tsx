@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 
 interface TableOfContentsProps {
   headings: { id: string; title: string; level: 1 | 2 | 3 }[];
@@ -9,6 +9,10 @@ interface TableOfContentsProps {
 export function TableOfContents({ headings }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>(headings[0]?.id ?? "");
   const listRef = useRef<HTMLUListElement | null>(null);
+
+  useEffect(() => {
+    setActiveId(headings[0]?.id ?? "");
+  }, [headings]);
 
   useEffect(() => {
     if (headings.length === 0) return;
@@ -80,9 +84,9 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   return (
     <nav
       aria-label="Table of contents"
-      className="theme-panel mb-4 w-full rounded-2xl border px-3 py-3 xl:ml-auto xl:w-[96%] xl:max-h-[50vh] xl:max-w-[400px] xl:overflow-hidden"
+      className="theme-panel mb-4 w-full rounded-2xl border px-3 py-3 xl:ml-auto xl:max-h-[50vh] xl:w-[96%] xl:max-w-[400px] xl:overflow-hidden"
     >
-      <p className="theme-text-soft mb-2 text-xs font-semibold tracking-[0.08em]">
+      <p className="theme-text-soft text-[11px] font-semibold tracking-[0.08em]">
         목차
       </p>
       <ul
@@ -98,10 +102,25 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
                 ? "pl-4 text-sm"
                 : "pl-8 text-sm";
 
+          const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+            event.preventDefault();
+
+            const target = document.getElementById(heading.id);
+            if (!target) return;
+
+            setActiveId(heading.id);
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            window.history.replaceState(null, "", `#${heading.id}`);
+          };
+
           return (
             <li key={heading.id}>
               <a
                 href={`#${heading.id}`}
+                onClick={handleClick}
                 data-toc-id={heading.id}
                 className={`block whitespace-normal break-keep rounded-lg px-2 py-1 leading-snug transition-colors ${levelClass} ${
                   isActive

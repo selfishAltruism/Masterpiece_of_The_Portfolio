@@ -75,7 +75,7 @@ export default async function NotionPage({
 
         <div
           id="detail-scroll-container"
-          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-28"
+          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-20 max-lg:pt-28"
         >
           <DetailStacks
             tags={tags}

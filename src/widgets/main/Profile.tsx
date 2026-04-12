@@ -48,7 +48,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         <Title>
-          <strong>강민규</strong> Kyu
+          <strong>강민규</strong> <span className="!font-normal">Kyu</span>
         </Title>
 
         <span className="theme-text-primary text-sm leading-tight xl:mt-1">
@@ -58,10 +58,10 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <strong>컴퓨터공학과 졸업</strong> @ 중앙대학교
         </span>
 
-        <div className="mb-4 mt-5 flex flex-col gap-3 text-[14px]">
+        <div className="mb-5 mt-5 flex flex-col gap-2 text-[14px]">
           <span
             ref={ref}
-            className="mb-1 inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
+            className="inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
           >
             해야할 일을 찾고, 책임감 있게 완수합니다.
           </span>
@@ -149,7 +149,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
         <div id="profile-source" className="flex flex-col">
           <Title>
-            <strong>강민규</strong> Kyu
+            <strong>강민규</strong> <span className="!font-normal">Kyu</span>
           </Title>
 
           <div className="relative my-1 w-max">

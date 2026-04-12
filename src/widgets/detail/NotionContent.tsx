@@ -1,11 +1,7 @@
 import React, { Fragment } from "react";
 
 import { highlightCode } from "@/entities/detail/highlight";
-import {
-  getHeadingId,
-  getPlainText,
-  groupLists,
-} from "@/entities/detail/util";
+import { getHeadingId, getPlainText, groupLists } from "@/entities/detail/util";
 
 function renderRichText(rich?: any[]) {
   if (!rich || !Array.isArray(rich)) return null;
@@ -80,7 +76,7 @@ async function Block({
 
   switch (type) {
     case "paragraph":
-      return <p className="mb-4 leading-7">{renderRichText(data.rich_text)}</p>;
+      return <p className="my-2 leading-6">{renderRichText(data.rich_text)}</p>;
 
     case "heading_1": {
       const headingText = getPlainText(data.rich_text);
@@ -89,7 +85,7 @@ async function Block({
       return (
         <h1
           id={headingId}
-          className="scroll-mt-24 mb-2 mt-8 text-[1.85rem] font-semibold leading-tight max-md:text-[1.55rem]"
+          className="mb-2 mt-8 scroll-mt-24 text-[1.85rem] font-semibold leading-tight max-md:text-[1.55rem]"
         >
           {renderRichText(data.rich_text)}
         </h1>
@@ -106,7 +102,7 @@ async function Block({
       return (
         <h2
           id={headingId}
-          className="scroll-mt-24 mb-2 mt-6 text-2xl font-semibold max-md:text-xl"
+          className="mb-2 mt-6 scroll-mt-24 text-2xl font-semibold max-md:text-xl"
         >
           {renderRichText(data.rich_text)}
         </h2>
@@ -123,7 +119,7 @@ async function Block({
       return (
         <h3
           id={headingId}
-          className="scroll-mt-24 mb-2 mt-4 text-xl font-semibold max-md:text-[19px]"
+          className="mb-2 mt-4 scroll-mt-24 text-xl font-semibold max-md:text-[19px]"
         >
           {renderRichText(data.rich_text)}
         </h3>
@@ -209,7 +205,7 @@ export async function NotionContent({
   const grouped = groupLists(blocks);
 
   return (
-    <div className="max-md:text-[12px]">
+    <div className="text-[14px] md:text-base">
       {await Promise.all(
         grouped.map(async (g: any, idx: number) => {
           if (g._type === "ul") {
