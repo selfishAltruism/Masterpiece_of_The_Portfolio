@@ -75,7 +75,7 @@ export const Header = ({ title, peroid, tags, techs, toc }: HeaderProps) => (
         {title}
       </p>
     </Title>
-    <h1 className="w-[150px] min-w-[150px] pr-2 pt-7 text-end text-[10px] leading-tight tracking-tight sm:w-[180px] sm:min-w-[180px] md:text-sm xl:hidden">
+    <h1 className="w-[150px] min-w-[150px] pr-2 pt-7 text-end text-[10px] leading-tight tracking-tight max-sm:w-[110px] max-sm:min-w-[110px] sm:w-[180px] sm:min-w-[180px] md:text-sm xl:hidden">
       {peroid}
     </h1>
     <DetailMeta

@@ -16,7 +16,7 @@ export const developmentLogs: Data.Development[] = [
       "PostgreSQL",
     ],
     tasks: [
-      "2차원 공간 객체 배치 시스템 개발",
+      "2차원 공간 객체 배치 Web 시스템 개발",
       "Cross-Platform 반응형 디자인 시스템 구현",
       "클라이언트 WebSocket & WASM Load 최적화",
       "PostgreSQL, OpenSearch 기반 검색 DB 최적화",
@@ -68,7 +68,7 @@ export const developmentLogs: Data.Development[] = [
     id: 2,
     linkedTo: "activity",
     linkedId: 1,
-    title: "코딩 문제 생성 및 편집 Web 인터페이스 개발",
+    title: "코딩 문제 생성 Web 인터페이스 개발",
     description:
       "마크다운 문법 기반으로 코딩 문제를 생성하고 편집할 수 있는 Web 인터페이스 개발",
     period: "2024.11 ~ 2025.04",
@@ -94,6 +94,7 @@ export const developmentLogs: Data.Development[] = [
     tasks: [
       "Agile 방법론 기반 Sprint 운영",
       "Next.js, 인증/인가 구조 관련 교육 진행",
+      "QA 진행 및 유지보수",
       "Cross-Platform 반응형 디자인 시스템 구현 & PWA 배포",
       "서비스 홍보 Web 페이지 구현 & SEO 최적화",
     ],

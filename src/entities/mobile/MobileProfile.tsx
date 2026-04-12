@@ -108,8 +108,8 @@ const MobileProfile = () => {
           <br />
           Cloud Platform 서비스 개발로 시작하여,
           <strong className="text-[#0A5BBD]">
-            2차원 공간 객체 배치 시스템 개발, 클라이언트 WebSocket & WASM Load
-            최적화, 검색 DB 최적화
+            2차원 공간 객체 배치 Web 시스템 개발, 클라이언트 WebSocket & WASM
+            Load 최적화, 검색 DB 최적화
           </strong>
           까지
         </p>

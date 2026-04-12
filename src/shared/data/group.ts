@@ -22,8 +22,8 @@ export const ownedServices: Data.OwnedServcie[] = [
 export const activities: Data.Activity[] = [
   {
     id: 0,
-    name: "FITRACE",
-    description: "스마트 홈트레이닝 IoT App 서비스 개발",
+    name: "핏티",
+    description: "스마트 홈트레이닝 IoT App 서비스 (FITRACE) 개발",
     position: "App 개발자 (계약직)",
     period: "2024.11 ~ 2025.05",
     /* result:
@@ -32,7 +32,7 @@ export const activities: Data.Activity[] = [
   {
     id: 1,
     name: "악어에듀",
-    description: "AI 코딩 교육 플랫폼 Web 서비스 개발",
+    description: "AI 코딩 교육 플랫폼 Web 서비스 (AKEO) 개발",
     position: "Front-end 개발자 (계약직)",
     period: "2024.11 ~ 2025.04",
     /* result:
@@ -45,8 +45,8 @@ export const activities: Data.Activity[] = [
     description: "동문회 네트워킹 & 학부 활동 지원 Web 서비스 개발 및 팀 운영",
     position: "Front-end 팀장",
     period: "2023.12 ~ 2025.05",
-    /* result: "https://causw.co.kr",
-    teamLink: "https://about.causw.co.kr/", */
+    /* result: "https://causw.co.kr", */
+    /*teamLink: "https://about.causw.co.kr/", */
   },
   {
     id: 3,
