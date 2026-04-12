@@ -63,7 +63,7 @@ export default async function NotionPage({
   return (
     <>
       <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[380px] xl:flex-col xl:items-start xl:justify-center">
+        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[500px] xl:flex-col xl:items-end xl:justify-center">
           <Header
             title={title}
             peroid={peroid}

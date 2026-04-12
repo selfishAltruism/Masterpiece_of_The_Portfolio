@@ -57,7 +57,11 @@ export const DetailMeta = ({
     <h1 className="text-[10px] font-bold leading-tight tracking-tight md:text-sm">
       {peroid}
     </h1>
-    <DetailStacks tags={tags} techs={techs} className="flex flex-col gap-1" />
+    <DetailStacks
+      tags={tags}
+      techs={techs}
+      className="flex flex-col items-end gap-1"
+    />
   </div>
 );
 
@@ -78,7 +82,7 @@ export const Header = ({ title, peroid, tags, techs, toc }: HeaderProps) => (
       peroid={peroid}
       tags={tags}
       techs={techs}
-      className="hidden gap-1 px-3 pt-4 xl:flex xl:w-full xl:flex-col xl:items-start"
+      className="hidden gap-1 px-3 pt-4 xl:flex xl:w-full xl:flex-col xl:items-end"
     />
     {toc && <div className="hidden w-full pt-6 xl:block">{toc}</div>}
   </>

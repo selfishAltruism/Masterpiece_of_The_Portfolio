@@ -3,7 +3,7 @@
 import { MouseEvent, useEffect, useRef, useState } from "react";
 
 interface TableOfContentsProps {
-  headings: { id: string; title: string; level: 1 | 2 | 3 }[];
+  headings: { id: string; title: string; level: 1 | 2 | 3 | 4 }[];
 }
 
 export function TableOfContents({ headings }: TableOfContentsProps) {
@@ -31,7 +31,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
         ): item is {
           id: string;
           title: string;
-          level: 1 | 2 | 3;
+          level: 1 | 2 | 3 | 4;
           element: HTMLElement;
         } => Boolean(item.element),
       );
@@ -84,7 +84,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   return (
     <nav
       aria-label="Table of contents"
-      className="theme-panel mb-4 w-full rounded-2xl border px-3 py-3 xl:ml-auto xl:max-h-[50vh] xl:w-[96%] xl:max-w-[400px] xl:overflow-hidden"
+      className="theme-panel mb-4 w-full rounded-2xl border px-3 py-3 xl:ml-auto xl:max-h-[50vh] xl:w-[96%] xl:max-w-[420px] xl:overflow-hidden"
     >
       <p className="theme-text-soft text-[11px] font-semibold tracking-[0.08em]">
         목차
@@ -100,7 +100,9 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
               ? "pl-0 text-sm"
               : heading.level === 2
                 ? "pl-4 text-sm"
-                : "pl-8 text-sm";
+                : heading.level === 3
+                  ? "pl-8 text-sm"
+                  : "pl-12 text-sm";
 
           const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
             event.preventDefault();

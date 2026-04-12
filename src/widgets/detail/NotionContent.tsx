@@ -126,6 +126,23 @@ async function Block({
       );
     }
 
+    case "heading_4": {
+      const headingId = getHeadingId(
+        getPlainText(data.rich_text),
+        block.id,
+        headingIds,
+      );
+
+      return (
+        <h4
+          id={headingId}
+          className="mb-2 mt-3 scroll-mt-24 text-lg font-semibold max-md:text-[17px]"
+        >
+          {renderRichText(data.rich_text)}
+        </h4>
+      );
+    }
+
     case "quote":
       return (
         <blockquote className="my-4 border-l-4 pl-4 italic">
