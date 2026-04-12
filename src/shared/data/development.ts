@@ -105,7 +105,7 @@ export const developmentLogs: Data.Development[] = [
     linkedId: 2,
     title: "Next.js Setting & 인증/인가 구조 구축",
     description:
-      "Next.js 기반 SSR & CSR 개발환경 구축 & Refrash Token 기반 인증/인가 시스템 구현",
+      "Next.js 기반 SSR, CSR 개발환경 구축 & Refrash Token 기반 인증/인가 시스템 구현",
     period: "2024.07 ~ 2024.10",
     tags: ["SSR & CSR", "Refrash Token"],
     techStacks: [
