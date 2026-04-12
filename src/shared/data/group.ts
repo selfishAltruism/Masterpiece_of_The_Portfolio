@@ -3,7 +3,7 @@ export const careers: Data.Career[] = [
     id: 1,
     company: "IDIS",
     position: "연구원 (정규직)",
-    description: "통합 물리보안 관제 서비스 개발",
+    description: "Cloud Platform 서비스 개발",
     period: "2025.05 ~",
     /* homepage: "https://www.idisglobal.com/", */
   },

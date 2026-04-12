@@ -5,9 +5,9 @@ export const developmentLogs: Data.Development[] = [
     linkedId: 1,
     title: "Cloud Platform 서비스 개발",
     description:
-      "보안 장비 통합 Cloud Platform Web 서비스 Dashboard, AI Search, Access Device 기능 개발",
+      "보안 통합 관리 Cloud Platform 서비스 Dashboard, AI Search, Access Device 관리 기능 개발",
     period: "2025.06 ~",
-    tags: ["Spatial Object Placement", "WASM", "2D Rendering"],
+    tags: ["Spatial Object Placement", "WASM", "Cross-Platform", "Search DB"],
     techStacks: [
       "React",
       "TypeScript",
@@ -17,7 +17,7 @@ export const developmentLogs: Data.Development[] = [
     ],
     tasks: [
       "2차원 공간 객체 배치 시스템 개발",
-      "Web Cross-Platform 반응형 디자인 시스템 구현",
+      "Cross-Platform 반응형 디자인 시스템 구현",
       "클라이언트 WebSocket & WASM Load 최적화",
       "PostgreSQL, OpenSearch 기반 검색 DB 최적화",
     ],
@@ -29,15 +29,15 @@ export const developmentLogs: Data.Development[] = [
     linkedId: 0,
     title: "Test-based 운동 카운팅 App 알고리즘 개발",
     description:
-      "Unit Test 환경 구축 & 데이터 시각화를 통해 압력 센서값 기반 운동 카운팅 알고리즘 개발 및 검증",
+      "테스트 환경 구축 & 데이터 시각화를 통해 압력 센서값 기반 운동 카운팅 알고리즘 개발 및 검증",
     period: "2024.12 ~ 2025.03",
     tags: ["Unit Test", "데이터 시각화", "적분 기반 알고리즘"],
-    techStacks: ["Next.js", "Python", "React Native"],
+    techStacks: ["React Native", "Next.js", "Python"],
     link: "detail/23248a0856d480c094d6de520c708f2d",
     tasks: [
       "펌웨어 의존 알고리즘 → App 기반 알고리즘 전환",
       "데이터 시각화 기반 넓이 기반 운동 판단 알고리즘 개발",
-      "Unit Test 환경 구축 및 영점 보정 및 노이즈 제거 로직 구현",
+      "테스트 환경 구축 및 영점 보정 및 노이즈 제거 로직 구현",
     ],
   },
   {
@@ -46,7 +46,7 @@ export const developmentLogs: Data.Development[] = [
     linkedId: 0,
     title: "스마트 홈트레이닝 IoT App 서비스 개발",
     description:
-      "스마트 홈트레이닝 IoT 서비스 App 개발 및 유지보수 & App 스토어 등록 및 관리",
+      "스마트 홈트레이닝 IoT App 서비스 개발 및 유지보수 & App 스토어 등록 및 관리",
     period: "2024.11 ~ 2025.04",
     tags: [
       "iOS & AOS",
@@ -58,9 +58,9 @@ export const developmentLogs: Data.Development[] = [
     link: "detail/23248a0856d480aeadf7e397b2582b86",
     tasks: [
       "실시간 데이터 처리 구조 설계 및 최적화",
-      "App 내부 튜토리얼 UI 개발",
-      "홈트레이닝 자극 UI 구현",
+      "홈트레이닝 관련 UI 설계 및 구현",
       "iOS & AOS App 스토어 등록 및 버전 관리",
+      "TypeScript 마이그레이션 및 FSD 아키텍처 도입",
     ],
   },
 
@@ -68,7 +68,7 @@ export const developmentLogs: Data.Development[] = [
     id: 2,
     linkedTo: "activity",
     linkedId: 1,
-    title: "코딩 문제 생성 Web 인터페이스 개발",
+    title: "코딩 문제 생성 및 편집 Web 인터페이스 개발",
     description:
       "마크다운 문법 기반으로 코딩 문제를 생성하고 편집할 수 있는 Web 인터페이스 개발",
     period: "2024.11 ~ 2025.04",
@@ -76,7 +76,7 @@ export const developmentLogs: Data.Development[] = [
     techStacks: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
     link: "detail/23248a0856d48058a94bcaec414175df",
     tasks: [
-      "코딩 문제 생성 인터페이스 개발",
+      "코딩 문제 생성 및 편집 인터페이스 개발",
       "Next.js CSR/SSR 환경 렌더링 개선",
     ],
   },
@@ -93,8 +93,8 @@ export const developmentLogs: Data.Development[] = [
     techStacks: [],
     tasks: [
       "Agile 방법론 기반 Sprint 운영",
-      "기능 별 역할 분배",
       "Next.js, 인증/인가 구조 관련 교육 진행",
+      "Cross-Platform 반응형 디자인 시스템 구현 & PWA 배포",
       "서비스 홍보 Web 페이지 구현 & SEO 최적화",
     ],
   },
@@ -112,13 +112,13 @@ export const developmentLogs: Data.Development[] = [
       "Next.js",
       "TypeScript",
       "Zustand",
-      "React Query",
+      "TanStack Query",
       "Tailwind CSS",
     ],
     link: "detail/23248a0856d480b2aa44c113e1a8acde",
     tasks: [
-      "App Structure 및 Layout 설계",
-      "SSR/CSR 통합 인증/인가 시스템 구축",
+      "Next.js App Structure 및 Layout 설계",
+      "SSR, CSR 통합 인증/인가 시스템 구축",
     ],
   },
 

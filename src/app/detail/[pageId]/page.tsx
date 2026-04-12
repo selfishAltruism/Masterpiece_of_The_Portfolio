@@ -90,9 +90,6 @@ export default async function NotionPage({
           </div>
         </div>
       </main>
-      <footer className="fixed bottom-2 right-2 w-max text-[10px] text-white/40 max-xl:top-2 xl:left-2 xl:text-xs">
-        Designed & Made by <strong>Kyu</strong>
-      </footer>
     </>
   );
 }

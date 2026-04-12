@@ -70,7 +70,7 @@ const MobileProfile = () => {
 
           <div className="flex flex-wrap gap-1">
             <OutlineButton href="https://github.com/selfishAltruism">
-              Github
+              GitHub
               <Github size={15} className="-mr-[1px] -mt-[1px] ml-2" />
             </OutlineButton>
             <Drawer>
@@ -99,7 +99,7 @@ const MobileProfile = () => {
           <strong className="text-[#0A5BBD]">
             데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
           </strong>
-          까지.
+          까지
         </p>
         <p className="break-keep leading-relaxed">
           <span className="text-[10px] leading-3 text-[var(--page-fg-soft)]">
@@ -111,7 +111,7 @@ const MobileProfile = () => {
             2차원 공간 객체 배치 시스템 개발, 클라이언트 WebSocket & WASM Load
             최적화, 검색 DB 최적화
           </strong>
-          까지.
+          까지
         </p>
         <p className="break-keep leading-relaxed">
           수동적으로 하기보다 필요하고 리스크가 있는 부분을 찾아, <br />

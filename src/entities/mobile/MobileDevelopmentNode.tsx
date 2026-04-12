@@ -72,17 +72,21 @@ const MobileDevelopmentNode = ({
           {development.period}
         </p>
 
-        <div className="mb-1 mt-2 flex flex-wrap gap-1">
-          <Key size={16} className="mr-1 min-w-4" />
-          {development.tags.map((tag, idx) => (
-            <OutlineStackSpan key={tag} idx={idx} tag={tag} />
-          ))}
+        <div className="mb-1 mt-2 flex items-start gap-2">
+          <Key size={16} className="mt-0.5 min-w-4 flex-none" />
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+            {development.tags.map((tag, idx) => (
+              <OutlineStackSpan key={tag} idx={idx} tag={tag} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-1">
-          <Layers size={16} className="mr-1 min-w-4" />
-          {development.techStacks.map((tag, idx) => (
-            <SolidStackSpan key={tag} idx={idx} tag={tag} />
-          ))}
+        <div className="flex items-start gap-2">
+          <Layers size={16} className="mt-0.5 min-w-4 flex-none" />
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+            {development.techStacks.map((tag, idx) => (
+              <SolidStackSpan key={tag} idx={idx} tag={tag} />
+            ))}
+          </div>
         </div>
         <p className="theme-text-muted mt-3 text-[12px] leading-snug">
           {development.description}
