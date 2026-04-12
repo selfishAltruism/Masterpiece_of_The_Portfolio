@@ -71,25 +71,39 @@ const MobileDevelopmentNode = ({
         <p className="theme-text-soft mb-1 text-[11px] leading-tight">
           {development.period}
         </p>
-        <p className="theme-text-muted mb-3 text-[12px] leading-snug">
+
+        <div className="mb-1 mt-2 flex items-start gap-2">
+          <Key size={16} className="mt-0.5 min-w-4 flex-none" />
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+            {development.tags.map((tag, idx) => (
+              <OutlineStackSpan key={tag} idx={idx} tag={tag} />
+            ))}
+          </div>
+        </div>
+        <div className="flex items-start gap-2">
+          <Layers size={16} className="mt-0.5 min-w-4 flex-none" />
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+            {development.techStacks.map((tag, idx) => (
+              <SolidStackSpan key={tag} idx={idx} tag={tag} />
+            ))}
+          </div>
+        </div>
+        <p className="theme-text-muted mt-3 text-[12px] leading-snug">
           {development.description}
         </p>
-        <div className="mb-2 flex flex-wrap gap-1">
-          <Key size={16} className="mr-1 min-w-4" />
-          {development.tags.map((tag, idx) => (
-            <OutlineStackSpan key={tag} idx={idx} tag={tag} />
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-1">
-          <Layers size={16} className="mr-1 min-w-4" />
-          {development.techStacks.map((tag, idx) => (
-            <SolidStackSpan key={tag} idx={idx} tag={tag} />
-          ))}
-        </div>
+        {development.tasks && development.tasks.length > 0 && (
+          <div className="my-2">
+            <ul className="theme-text-muted list-disc space-y-0 pl-4 text-[11px] leading-snug">
+              {development.tasks.map((task) => (
+                <li key={task}>{task}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         {development.link && (
           <div className="flex w-full justify-end">
             <div className="mt-3 w-min">
-              <BasicButton to={development.link}>프로젝트 상세</BasicButton>
+              <BasicButton to={development.link}>트러블 슈팅 상세</BasicButton>
             </div>
           </div>
         )}

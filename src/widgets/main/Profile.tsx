@@ -48,7 +48,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         <Title>
-          <strong>강민규</strong> Kyu
+          <strong>강민규</strong> <span className="!font-normal">Kyu</span>
         </Title>
 
         <span className="theme-text-primary text-sm leading-tight xl:mt-1">
@@ -58,15 +58,15 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <strong>컴퓨터공학과 졸업</strong> @ 중앙대학교
         </span>
 
-        <div className="mb-4 mt-5 flex flex-col gap-3 text-[14px]">
+        <div className="mb-5 mt-5 flex flex-col gap-2 text-[14px]">
           <span
             ref={ref}
-            className="mb-1 inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
+            className="inline-block w-max bg-[var(--accent-brand)] p-0 px-[2px] text-lg italic text-white"
           >
             해야할 일을 찾고, 책임감 있게 완수합니다.
           </span>
           <p className="relative break-keep text-start">
-            <span className="leading-2 text-[11px] text-[var(--page-fg-soft)]">
+            <span className="text-[11px] text-[var(--page-fg-soft)]">
               FITREAE
             </span>
             <br />
@@ -74,7 +74,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             <strong className="text-[#0A5BBD]">
               데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
             </strong>
-            까지.
+            까지
           </p>
           <p className="relative break-keep text-start">
             <span className="text-[11px] text-[var(--page-fg-soft)]">IDIS</span>
@@ -84,10 +84,10 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
               2차원 공간 객체 배치 시스템 개발, <br />
               클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
             </strong>
-            까지.
+            까지
           </p>
           <div>
-            수동적으로 하기보다 필요하고 문제가 있는 부분을 찾아, <br />
+            수동적으로 하기보다 필요하고 리스크가 있는 부분을 찾아, <br />
             책임감 있게 완수하고 해결해 왔습니다.
           </div>
         </div>
@@ -117,7 +117,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <div className="flex items-start gap-1">
             <div className="flex gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
-                Github
+                GitHub
                 <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
               </OutlineButton>
               {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">
@@ -149,7 +149,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
         <div id="profile-source" className="flex flex-col">
           <Title>
-            <strong>강민규</strong> Kyu
+            <strong>강민규</strong> <span className="!font-normal">Kyu</span>
           </Title>
 
           <div className="relative my-1 w-max">
@@ -200,7 +200,7 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                     <strong className="text-[#0A5BBD]">
                       데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
                     </strong>
-                    까지.
+                    까지
                   </p>
                   <p>
                     <span className="text-[11px] leading-3 text-[var(--page-fg-soft)]">
@@ -212,10 +212,11 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                       2차원 공간 객체 배치 시스템 개발, <br />
                       클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
                     </strong>
-                    까지.
+                    까지
                   </p>
                   <p>
-                    수동적으로 하기보다 필요하고 문제가 있는 부분을 찾아, <br />
+                    수동적으로 하기보다 필요하고 리스크가 있는 부분을 찾아,{" "}
+                    <br />
                     책임감 있게 완수하고 해결해 왔습니다.
                   </p>
                 </DialogDescription>
@@ -232,10 +233,10 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         <div className="flex h-full flex-1 flex-col items-end justify-end">
-          <div className="flex items-end gap-1 flex-col">
+          <div className="flex flex-col items-end gap-1">
             <div className="flex justify-end gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
-                Github
+                GitHub
                 <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
               </OutlineButton>
               {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">

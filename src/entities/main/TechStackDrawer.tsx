@@ -25,7 +25,7 @@ export const TechStackDrawer = () => {
           {techStacks["Core Dev Area"].map((item) => (
             <span
               key={item}
-              className="theme-panel whitespace-nowrap rounded-[3px] border px-4 pb-[8px] pt-[9px] text-sm"
+              className="theme-panel whitespace-nowrap rounded-[3px] border px-4 pb-[8px] pt-[9px] text-sm max-sm:px-2 max-sm:pb-1 max-sm:pt-1 max-sm:text-[12px]"
             >
               {item}
             </span>
@@ -93,6 +93,15 @@ export const TechStackDrawer = () => {
             <strong className="ml-[1px]">Framework</strong>
             <div className="flex flex-wrap gap-1">
               {techStacks["Well-used / Framework"].map((name, idx) => (
+                <SolidStackSpan key={name} tag={name} idx={idx} />
+              ))}
+            </div>
+          </div>
+
+          <div className="theme-panel flex flex-col gap-2 rounded-[3px] border p-2">
+            <strong className="ml-[1px]">Tool</strong>
+            <div className="flex flex-wrap gap-1">
+              {techStacks["Well-used / Tool"].map((name, idx) => (
                 <SolidStackSpan key={name} tag={name} idx={idx} />
               ))}
             </div>

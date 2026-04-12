@@ -91,7 +91,9 @@
     --line-color: rgba(15, 23, 42, 0.28);
     --accent-brand: #0a5bbd;
     --accent-brand-strong: #083e80;
-    --accent-brand-soft: rgba(10, 91, 189, 0.12);
+    --accent-brand-soft: rgba(255, 255, 255, 0);
+    --outline-button-fg: var(--accent-brand-strong);
+    --outline-button-fg-hover: var(--accent-brand);
     --badge-solid-bg: #0a5bbd;
     --badge-solid-fg: #ffffff;
     --badge-outline-bg: rgba(10, 91, 189, 0.08);
@@ -116,6 +118,8 @@
   --panel-border: rgba(255, 255, 255, 0.9);
   --panel-shadow: none;
   --line-color: #ffffff;
+  --outline-button-fg: #ffffff;
+  --outline-button-fg-hover: rgba(255, 255, 255, 0.82);
   --badge-solid-bg: #ffffff;
   --badge-solid-fg: #374151;
   --badge-outline-bg: rgba(255, 255, 255, 0.15);

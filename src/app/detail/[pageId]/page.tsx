@@ -63,7 +63,7 @@ export default async function NotionPage({
   return (
     <>
       <main className="multi-gradient-background relative flex h-screen w-screen flex-row gap-5 text-white">
-        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[380px] xl:flex-col xl:items-start xl:justify-center">
+        <header className="relative z-20 flex w-full items-end justify-between gap-1 max-xl:absolute max-xl:items-start max-xl:pr-2 max-xl:pt-2 max-xl:[background-image:linear-gradient(to_bottom,var(--page-bg)_0%,color-mix(in_srgb,var(--page-bg)_94%,transparent)_60%,transparent_100%)] xl:w-[500px] xl:flex-col xl:items-end xl:justify-center">
           <Header
             title={title}
             peroid={peroid}
@@ -75,7 +75,7 @@ export default async function NotionPage({
 
         <div
           id="detail-scroll-container"
-          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-28"
+          className="relative z-0 flex h-full min-w-0 flex-1 flex-col gap-4 overflow-y-auto scroll-smooth px-3 pb-16 max-xl:pt-20 max-lg:pt-28"
         >
           <DetailStacks
             tags={tags}
@@ -90,9 +90,6 @@ export default async function NotionPage({
           </div>
         </div>
       </main>
-      <footer className="fixed bottom-2 right-2 w-max text-[10px] text-white/40 max-xl:top-2 xl:left-2 xl:text-xs">
-        Designed & Made by <strong>Kyu</strong>
-      </footer>
     </>
   );
 }

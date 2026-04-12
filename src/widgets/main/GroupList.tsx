@@ -28,7 +28,7 @@ const Groups = () => {
         </>
       )}
 
-      <Title description="계약직 및 인턴 경력 & 대내외 활동">Activity</Title>
+      <Title description="계약직 경력 & 활동">Activity</Title>
       <div>
         {activities.map((activity, index) => (
           <ActivityCard activity={activity} key={index} />

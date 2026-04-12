@@ -103,7 +103,7 @@ export function getHeadingId(
 }
 
 export function extractHeadingItems(blocks: any[]) {
-  const headings: { id: string; title: string; level: 1 | 2 | 3 }[] = [];
+  const headings: { id: string; title: string; level: 1 | 2 | 3 | 4 }[] = [];
   const usedIds = new Map<string, number>();
 
   const walk = (items: any[]) => {
@@ -111,9 +111,10 @@ export function extractHeadingItems(blocks: any[]) {
       if (
         block?.type === "heading_1" ||
         block?.type === "heading_2" ||
-        block?.type === "heading_3"
+        block?.type === "heading_3" ||
+        block?.type === "heading_4"
       ) {
-        const level = Number(block.type.slice(-1)) as 1 | 2 | 3;
+        const level = Number(block.type.slice(-1)) as 1 | 2 | 3 | 4;
         const title = getPlainText(block[block.type]?.rich_text);
 
         if (title) {

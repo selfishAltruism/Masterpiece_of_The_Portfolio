@@ -7,10 +7,10 @@ interface TitleProps {
 
 const Title = ({ children, description }: TitleProps) => {
   return (
-    <h1 className="theme-text-primary -mb-1 flex items-end justify-between pt-1 text-[35px] font-normal max-xl:text-2xl max-lg:-mb-0">
+    <h1 className="theme-text-primary -mb-1 flex items-end justify-between pt-1 text-[35px] font-bold max-xl:text-2xl max-lg:-mb-0">
       <span>{children}</span>
       {description && (
-        <span className="theme-text-soft text-sm max-lg:text-[11px] max-sm:hidden lg:mb-2">
+        <span className="theme-text-soft text-sm font-normal max-lg:text-[11px] max-sm:hidden lg:mb-2">
           : {description}
         </span>
       )}

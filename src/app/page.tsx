@@ -232,15 +232,15 @@ export default function MainPage() {
       <button
         type="button"
         onClick={() => setIsWhiteMode((prev) => !prev)}
-        className="theme-panel theme-text-primary fixed bottom-4 left-4 z-50 hidden items-center gap-2 rounded-full border px-4 py-2 text-sm lg:flex"
+        className="theme-panel theme-text-primary fixed bottom-4 left-4 z-50 hidden items-center gap-2 rounded-full border px-3 py-2 text-sm transition-all duration-200 active:scale-95 active:text-[var(--page-fg-soft)] sm:hover:text-[var(--page-fg-soft)] lg:flex"
         aria-label={
           isWhiteMode ? "Switch to dark mode" : "Switch to white mode"
         }
       >
-        {isWhiteMode ? <Moon size={16} /> : <Sun size={16} />}
+        {isWhiteMode ? <Moon size={15} /> : <Sun size={15} />}
         {isWhiteMode ? "Dark mode" : "White mode"}
       </button>
-      <footer className="theme-text-soft absolute right-2 top-2 z-50 w-max text-[10px] max-sm:hidden xl:left-2 xl:text-xs">
+      <footer className="theme-text-soft absolute right-2 top-2 z-50 w-max text-[9px] max-sm:hidden xl:left-2 xl:text-[11px]">
         Designed & Made by <strong>Kyu</strong>
       </footer>
     </>

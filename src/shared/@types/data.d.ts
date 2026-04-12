@@ -36,6 +36,7 @@ declare namespace Data {
     period: string;
     tags: string[];
     techStacks: string[];
+    tasks?: string[];
     link?: string;
   }
 }
