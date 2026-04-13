@@ -58,7 +58,7 @@ export const developmentLogs: Data.Development[] = [
     techStacks: ["React Native", "TypeScript"],
     link: "detail/23248a0856d480aeadf7e397b2582b86",
     tasks: [
-      "실시간 데이터 처리 구조 설계 및 최적화",
+      "200ms 주기 BLE 실시간 데이터 스트림 처리 구조 설계 및 최적화",
       "홈트레이닝 관련 UI 설계 및 구현",
       "iOS & AOS App 스토어 등록 및 버전 관리",
       "TypeScript 마이그레이션 및 FSD 아키텍처 도입",

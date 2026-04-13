@@ -25,7 +25,7 @@ export const activities: Data.Activity[] = [
     name: "핏티",
     description: "스마트 홈트레이닝 IoT App 서비스 (FITRACE) 개발",
     position: "App 개발자 (계약직)",
-    period: "2024.11 ~ 2025.05",
+    period: "2024.11 ~ 2025.04",
     /* result:
       "https://apps.apple.com/kr/app/%ED%95%8F%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8A%A4/id6457255298", */
   },
@@ -44,7 +44,7 @@ export const activities: Data.Activity[] = [
     name: "중앙대학교 소프트웨어학부 ICT 위원회",
     description: "동문회 네트워킹 & 학부 활동 지원 Web 서비스 개발 및 팀 운영",
     position: "Front-end 팀장",
-    period: "2023.12 ~ 2025.05",
+    period: "2023.12 ~ 2024.12",
     /* result: "https://causw.co.kr", */
     /*teamLink: "https://about.causw.co.kr/", */
   },

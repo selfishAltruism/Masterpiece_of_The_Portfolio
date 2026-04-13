@@ -72,7 +72,9 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
             <br />
             App 개발로 시작하여, <br />
             <strong className="text-[#0A5BBD]">
-              데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
+              데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발,
+              <br />
+              실시간 데이터 처리 구조 최적화
             </strong>
             까지
           </p>
@@ -198,7 +200,9 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                     <br />
                     App 개발로 시작하여, <br />
                     <strong className="text-[#0A5BBD]">
-                      데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발
+                      데이터 시각화 및 테스트 시스템 기반 카운팅 알고리즘 개발,
+                      <br />
+                      실시간 데이터 처리 구조 최적화
                     </strong>
                     까지
                   </p>
