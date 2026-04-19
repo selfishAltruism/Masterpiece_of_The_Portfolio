@@ -17,7 +17,7 @@ export const developmentLogs: Data.Development[] = [
     ],
     tasks: [
       "2차원 공간 객체 배치 Web 시스템 개발",
-      "Session, Token 기반 인증/인가 구조 개발",
+      "Session, Refresh Token 기반 인증/인가 구조 개발",
       "Cross-Platform 반응형 디자인 시스템 구현",
       "클라이언트 WebSocket & WASM Load 최적화",
       "PostgreSQL, OpenSearch 기반 검색 DB 최적화",
@@ -120,7 +120,8 @@ export const developmentLogs: Data.Development[] = [
     link: "detail/23248a0856d480b2aa44c113e1a8acde",
     tasks: [
       "Next.js App Structure 및 Layout 설계",
-      "SSR, CSR 통합 인증/인가 시스템 구축",
+      "SSR, CSR 통합 로그인 유지 구조 개발",
+      "권한 별 인증/인가 구조 구축",
     ],
   },
 

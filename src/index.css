@@ -146,7 +146,8 @@
     }
   }
   body {
-    @apply bg-background text-foreground;
+    background: var(--page-bg);
+    color: var(--page-fg);
   }
   html,
   body {
