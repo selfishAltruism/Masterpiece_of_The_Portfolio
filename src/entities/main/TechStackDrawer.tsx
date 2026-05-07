@@ -8,7 +8,7 @@ import Title from "@/shared/ui/Title";
 
 export const TechStackDrawer = () => {
   return (
-    <DrawerContent>
+    <DrawerContent className="pb-24">
       <Title>
         <strong className="flex items-center gap-2 px-3 text-black">
           기술 스택 상세
@@ -17,7 +17,7 @@ export const TechStackDrawer = () => {
         </strong>
       </Title>
       <div className="flex max-h-[70vh] w-full flex-col gap-2 overflow-y-auto px-4 pb-10 pt-2">
-        <strong className="theme-text-primary -mb-2">
+        {/* <strong className="theme-text-primary -mb-2">
           <span className="text-[var(--accent-brand)]">Core</span> Dev Area
         </strong>
         <Divider />
@@ -30,7 +30,7 @@ export const TechStackDrawer = () => {
               {item}
             </span>
           ))}
-        </div>
+        </div> */}
 
         <strong className="theme-text-primary -mb-2 mt-1">
           <span className="text-[var(--accent-brand)]">Pretty well</span>-used

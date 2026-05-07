@@ -5,8 +5,8 @@ export const developmentLogs: Data.Development[] = [
     linkedId: 1,
     title: "Cloud Platform 서비스 개발",
     description:
-      "보안 통합 관리 Cloud Platform 서비스 Dashboard, AI Search, Access Device 관리 기능 개발",
-    period: "2025.06 ~",
+      "보안 통합 관리 Cloud Platform 서비스 Dashboard, 출입 관리 시스템, AI Search 기능 개발",
+    period: "2025.08 ~",
     tags: ["Spatial Object Placement", "WASM", "Cross-Platform", "Search DB"],
     techStacks: [
       "React",
@@ -17,9 +17,10 @@ export const developmentLogs: Data.Development[] = [
     ],
     tasks: [
       "2차원 공간 객체 배치 Web 시스템 개발",
-      "Session, Refresh Token 기반 인증/인가 구조 개발",
+      "Session, Refresh Token 기반 인증 및 로그인 유지 구조 개발",
       "Cross-Platform 반응형 디자인 시스템 구현",
-      "클라이언트 WebSocket & WASM Load 최적화",
+      "Custom Event Dispatch 구조 기반 실시간 이벤트 처리 구조 최적화",
+      "Google Map Instance 유지 구조 구현을 통한 GCP 비용 최소화",
       "PostgreSQL, OpenSearch 기반 검색 DB 최적화",
     ],
   },
@@ -31,7 +32,7 @@ export const developmentLogs: Data.Development[] = [
     title: "Test-based 운동 카운팅 App 알고리즘 개발",
     description:
       "테스트 환경 구축 & 데이터 시각화를 통해 압력 센서값 기반 운동 카운팅 알고리즘 개발 및 검증",
-    period: "2024.12 ~ 2025.03",
+    period: "2025.03 ~ 2025.05",
     tags: ["Unit Test", "데이터 시각화", "적분 기반 알고리즘"],
     techStacks: ["React Native", "Next.js", "Python"],
     link: "detail/23248a0856d480c094d6de520c708f2d",
@@ -48,7 +49,7 @@ export const developmentLogs: Data.Development[] = [
     title: "스마트 홈트레이닝 IoT App 서비스 개발",
     description:
       "스마트 홈트레이닝 IoT App 서비스 개발 및 유지보수 & App 스토어 등록 및 관리",
-    period: "2024.11 ~ 2025.04",
+    period: "2025.02 ~ 2025.05",
     tags: [
       "iOS & AOS",
       "TypeScript & FSD Migration",

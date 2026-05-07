@@ -81,10 +81,14 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
           <p className="relative break-keep text-start">
             <span className="text-[11px] text-[var(--page-fg-soft)]">IDIS</span>
             <br />
-            Cloud Platform 서비스 개발로 시작하여, <br />
+            Cloud Platform Web 개발로 시작하여, <br />
             <strong className="text-[#0A5BBD]">
               2차원 공간 객체 배치 Web 시스템 개발, <br />
-              클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
+              검색 DB 구조 최적화
+            </strong>
+            와{" "}
+            <strong className="text-[#0A5BBD]">
+              클라이언트 이벤트 처리 구조 최적화
             </strong>
             까지
           </p>
@@ -117,15 +121,15 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
         <div className="flex flex-col items-start">
           <div className="flex items-start gap-1">
-            <div className="flex gap-1">
+            {/* <div className="flex gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
                 GitHub
                 <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
               </OutlineButton>
-              {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">
+              <OutlineButton href="https://www.linkedin.com/in/kyus/">
               <Linkedin size={17} />
-            </OutlineButton> */}
-            </div>
+            </OutlineButton>
+            </div> */}
 
             <Drawer>
               <DrawerTrigger asChild>
@@ -211,10 +215,14 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
                       IDIS
                     </span>
                     <br />
-                    Cloud Platform 서비스 개발로 시작하여, <br />
+                    Cloud Platform Web 개발로 시작하여, <br />
                     <strong className="text-[#0A5BBD]">
                       2차원 공간 객체 배치 Web 시스템 개발, <br />
-                      클라이언트 WebSocket & WASM Load 최적화, 검색 DB 최적화
+                      검색 DB 구조 최적화
+                    </strong>
+                    와{" "}
+                    <strong className="text-[#0A5BBD]">
+                      클라이언트 이벤트 처리 구조 최적화
                     </strong>
                     까지
                   </p>
@@ -238,15 +246,15 @@ const Profile = React.forwardRef<HTMLDivElement>((props, ref) => {
 
         <div className="flex h-full flex-1 flex-col items-end justify-end">
           <div className="flex flex-col items-end gap-1">
-            <div className="flex justify-end gap-1">
+            {/* <div className="flex justify-end gap-1">
               <OutlineButton href="https://github.com/selfishAltruism">
                 GitHub
                 <Github size={16} className="-mr-[1px] -mt-[2.5px] ml-2" />
               </OutlineButton>
-              {/* <OutlineButton href="https://www.linkedin.com/in/kyus/">
+              <OutlineButton href="https://www.linkedin.com/in/kyus/">
                 <Linkedin size={17} />
-              </OutlineButton> */}
-            </div>
+              </OutlineButton>
+            </div> */}
 
             <Drawer>
               <DrawerTrigger asChild>
