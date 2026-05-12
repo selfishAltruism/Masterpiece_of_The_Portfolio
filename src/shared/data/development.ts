@@ -16,7 +16,7 @@ export const developmentLogs: Data.Development[] = [
       "PostgreSQL",
     ],
     tasks: [
-      "2차원 공간 객체 배치 Web 시스템 개발",
+      "2차원 공간 객체 배치 Web 시스템 개발 및 RAF 기반 최적화",
       "Session, Refresh Token 기반 인증 및 로그인 유지 구조 개발",
       "Cross-Platform 반응형 디자인 시스템 구현",
       "Custom Event Dispatch 구조 기반 실시간 이벤트 처리 구조 최적화",

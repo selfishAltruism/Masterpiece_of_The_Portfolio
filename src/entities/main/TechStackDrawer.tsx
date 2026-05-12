@@ -8,7 +8,7 @@ import Title from "@/shared/ui/Title";
 
 export const TechStackDrawer = () => {
   return (
-    <DrawerContent className="pb-24">
+    <DrawerContent className="pb-24 max-sm:pb-12">
       <Title>
         <strong className="flex items-center gap-2 px-3 text-black">
           기술 스택 상세
